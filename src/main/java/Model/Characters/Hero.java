@@ -1,11 +1,11 @@
-package Models.Mobs;
+package Model.Characters;
 
-import Models.Artifacts.Artifact;
-import Models.Items.Item;
+import Model.Artifacts.Artifact;
+import Model.Artifacts.Item;
 
 import java.util.List;
 
-import static Models.Artifacts.Artifact.*;
+import static Model.Artifacts.Artifact.*;
 
 public class Hero extends Mob {
 

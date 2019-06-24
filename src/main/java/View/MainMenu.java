@@ -1,6 +1,6 @@
-package Views;
+package View;
 
-import GameLogic.EventData;
+import Controller.EventData;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

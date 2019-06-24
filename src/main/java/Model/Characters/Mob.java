@@ -1,13 +1,13 @@
-package Models.Mobs;
+package Model.Characters;
 
-import Models.Artifacts.Artifact;
-import Models.Items.Item;
+import Model.Artifacts.Artifact;
+import Model.Artifacts.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static Models.Artifacts.Artifact.*;
-import static Models.Artifacts.Artifact.HELM;
+import static Model.Artifacts.Artifact.*;
+import static Model.Artifacts.Artifact.HELM;
 
 public abstract class Mob {
 

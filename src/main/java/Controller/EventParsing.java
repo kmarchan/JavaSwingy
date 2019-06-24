@@ -1,6 +1,6 @@
-package GameLogic;
+package Controller;
 
-import Views.BaseWindow;
+import View.BaseWindow;
 import java.util.List;
 
 public class EventParsing {
@@ -33,7 +33,7 @@ public class EventParsing {
 								case exit: {
 									EventData.setIsRunning(false);
 									System.out.println("killing program");
-									GameLogic.ApplicationControls.closeApplication();
+									Controller.ApplicationControls.closeApplication();
 									break;
 								}
 								case gui:

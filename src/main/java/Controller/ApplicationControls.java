@@ -1,7 +1,7 @@
-package GameLogic;
+package Controller;
 
-import Views.BaseWindow;
-import Views.MainMenu;
+import View.BaseWindow;
+import View.MainMenu;
 
 public class ApplicationControls {
 

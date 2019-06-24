@@ -1,4 +1,4 @@
-package Models.Items;
+package Model.Artifacts;
 
 public class Item {
 

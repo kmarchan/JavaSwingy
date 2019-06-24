@@ -1,4 +1,4 @@
-package Models.Artifacts;
+package Model.Artifacts;
 
 public class Artifact {
     public static final int HELM = 0;
