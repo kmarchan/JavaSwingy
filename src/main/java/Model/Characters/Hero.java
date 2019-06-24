@@ -2,11 +2,15 @@ package Model.Characters;
 
 import Model.Artifacts.Artifact;
 import Model.Artifacts.Item;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
 import static Model.Artifacts.Artifact.*;
 
+@Getter
+@Setter
 public class Hero extends Mob {
 
     public Hero() {
@@ -17,7 +21,7 @@ public class Hero extends Mob {
         super(name, level, experiencePnts, maxHitPnts, maxAttackPnts, maxDefencePnts, backpack, equipped);
     }
 
-    public void gainExperince(int gain){
+    public void gainExperience(int gain){
         experiencePnts += gain;
 
         if (experiencePnts >= maxExperiencePnts) {
