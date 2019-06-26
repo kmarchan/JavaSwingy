@@ -38,7 +38,7 @@
                         <manifest>
 <!--                            <addClassPath>true</addClassPath>-->
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>Controller.Main</mainClass>
+                            <mainClass>Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

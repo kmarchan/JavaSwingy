@@ -9,9 +9,7 @@ import java.util.List;
 
 import static Model.Artifacts.Artifact.*;
 
-@Getter
-@Setter
-public class Hero extends Mob {
+public class Hero extends Character {
 
     public Hero() {
         super();

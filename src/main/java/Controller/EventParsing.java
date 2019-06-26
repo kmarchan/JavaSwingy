@@ -12,7 +12,7 @@ public class EventParsing {
 		gui
 	}
 
-	static void instructionParseAsync() {
+	public static void instructionParseAsync() {
 		new Thread(new Runnable() {
 			List<String> instructions;
 			int instructionIndex = 0;
