@@ -3,21 +3,16 @@ package View;
 import Model.Characters.Hero;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 
 public class StartGame extends javax.swing.JFrame implements WindowManager {
 
 	private javax.swing.JButton button;
+	private JButton button1;
+	private JButton newGameButton;
+	private JTextPane jKKZTextPane;
 
-	public StartGame() { initComponents();}
-
-	private void initComponents() {
-		button = new javax.swing.JButton();
-
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-		button.setText("Select Hero");
-//		button.addActionListener({jButtonActionPerformed(evt)});
+	public StartGame() {
+		button1.addActionListener((evt) -> {jButtonActionPerformed(evt);});
 	}
 
 	private void jButtonActionPerformed(java.awt.event.ActionEvent evt) { showSelectedHero(); }

@@ -2,6 +2,7 @@ package Controller;
 
 import View.BaseWindow;
 import View.MainMenu;
+import View.StartGame;
 
 public class ApplicationControls {
 

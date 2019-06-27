@@ -1,6 +1,7 @@
 import Controller.ApplicationControls;
 import Controller.EventData;
 import Controller.EventParsing;
+import View.StartGame;
 
 public class Main {
 
@@ -8,7 +9,6 @@ public class Main {
 			System.out.println("Starting");
 
 			ApplicationControls.createWindow();
-
 			EventParsing.instructionParseAsync();
 
 			EventData.readStdinAsync();
