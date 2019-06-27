@@ -2,8 +2,14 @@ package View;
 
 import Model.Characters.Hero;
 
+import javax.swing.*;
+import java.awt.*;
+
 public interface WindowManager {
-	void showSelectHero();
+
+	void showSelectedHero();
 	void showNewHero();
-	void showSelecMission(Hero hero);
+	void showSelectedMission(Hero hero);
+
+
 }
