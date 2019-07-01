@@ -33,6 +33,7 @@ public class MainMenu extends BaseWindow{
 		});
 		exitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
+				System.out.println("EXIT");
 				EventData.addInstructions("exit");
 			}
 		});

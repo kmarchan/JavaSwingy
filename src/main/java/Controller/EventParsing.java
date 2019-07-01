@@ -4,6 +4,7 @@ import View.BaseWindow;
 import java.util.List;
 
 public class EventParsing {
+	private static List<String> instructions;
 
 	enum Instruction {
 		print,
@@ -12,12 +13,11 @@ public class EventParsing {
 		gui
 	}
 
-	public static void instructionParseAsync() {
-		new Thread(new Runnable() {
-			List<String> instructions;
+	public static void instructionParse() {
 			int instructionIndex = 0;
 			public void run() {
 				try {
+					instructions = EventData.getOutput();
 					while(EventData.getIsRunning()) {
 						instructions = EventData.getOutput();
 						for (int i=0; i < instructions.size(); i++) {

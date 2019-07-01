@@ -1,4 +1,4 @@
 package Model.Characters;
 
-public class Foe extends Character {
+public class Foe extends Hero {
 }
