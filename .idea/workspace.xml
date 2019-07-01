@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0da854f9-7168-4ee2-970d-f1d68ee8bc75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/EventParsing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/EventParsing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Characters/BlackMage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Characters/BlackMage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Characters/Elf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Characters/Elf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Characters/Foe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Characters/Foe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Characters/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Characters/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Characters/Orc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Characters/Orc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainMenu.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,13 +35,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="610" />
-          <entry key="txt" value="44" />
+          <entry key="txt" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="610" />
-          <entry key="PLAIN_TEXT" value="44" />
+          <entry key="PLAIN_TEXT" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -138,8 +131,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventParsing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="585">
+              <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -445,7 +438,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561973954447" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561974196661" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -557,7 +550,7 @@
       <option name="presentableId" value="Default" />
       <updated>1561457063143</updated>
       <workItem from="1561457071290" duration="3960000" />
-      <workItem from="1561964913544" duration="4723000" />
+      <workItem from="1561964913544" duration="5013000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml as per vid">
       <created>1561462082375</created>
@@ -594,11 +587,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561968987138</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Exit not working">
+      <created>1561974049881</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561974049881</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18100000" />
+    <option name="totallyTimeSpent" value="18390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1201" y="23" width="1356" height="1337" extended-state="0" />
@@ -647,7 +647,8 @@
     <MESSAGE value="Exception in thread &quot;main&quot; java.lang.NullPointerException" />
     <MESSAGE value="WIP with Gui" />
     <MESSAGE value="Reset to start fresher" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reset to start fresher" />
+    <MESSAGE value="Exit not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exit not working" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Swingy.iml">
@@ -885,8 +886,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventParsing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="585">
+          <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
