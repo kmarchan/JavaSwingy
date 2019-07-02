@@ -2,7 +2,7 @@ package View;
 
 import javax.swing.*;
 
-public class BaseWindow {
+public class BaseWindow extends JFrame{
 	static public JFrame frame ;
 
 	static public void createBaseWindow(){
