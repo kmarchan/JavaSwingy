@@ -8,7 +8,7 @@ public class Main {
 			System.out.println("Starting");
 
 			ApplicationControls.createWindow();
-			EventParsing.instructionParseAsync();
+			EventParsing.instructionParse();
 
 			EventData.readStdinAsync();
 

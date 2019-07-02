@@ -15,7 +15,6 @@ public class EventParsing {
 
 	public static void instructionParse() {
 			int instructionIndex = 0;
-			public void run() {
 				try {
 					instructions = EventData.getOutput();
 					while(EventData.getIsRunning()) {
@@ -50,10 +49,7 @@ public class EventParsing {
 				} catch (IllegalArgumentException e){
 					System.out.println("Invalid instruction:"+instructions.get(instructionIndex));
 					EventData.removeInstructions(instructions.get(instructionIndex));
-					instructionParseAsync();
+					instructionParse();
 				}
 			}
-		}).start();
-
-	}
-}
+		}
