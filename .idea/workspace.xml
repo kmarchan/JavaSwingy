@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0da854f9-7168-4ee2-970d-f1d68ee8bc75" name="Default Changelist" comment="remove async from main.">
+    <list default="true" id="0da854f9-7168-4ee2-970d-f1d68ee8bc75" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_0.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_commons_3_0.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_tree_3_0.xml" afterDir="false" />
@@ -80,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="87" column="34" lean-forward="true" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+            <state relative-caret-position="-798">
+              <caret line="32" column="59" lean-forward="true" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -593,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562090341183</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="remove async from main.">
+      <created>1562091308874</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1562091308874</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -601,16 +608,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="-37" width="1920" height="1117" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.15208112" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.15208112" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.30945274" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.30945274" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
@@ -828,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="87" column="34" lean-forward="true" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
+        <state relative-caret-position="-798">
+          <caret line="32" column="59" lean-forward="true" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
         </state>
       </provider>
     </entry>
