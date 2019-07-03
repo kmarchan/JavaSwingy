@@ -24,7 +24,6 @@ public class EventData {
 	}
 
 	public static void readStdinAsync(){
-
 		new Thread(new Runnable() {
 			Scanner input = new Scanner(System.in);
 

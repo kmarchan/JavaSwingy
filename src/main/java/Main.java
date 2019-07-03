@@ -8,9 +8,11 @@ public class Main{
 			System.out.println("Starting");
 
 			ApplicationControls.createWindow();
-			EventParsing.instructionParse();
+            EventData.readStdinAsync();
+            System.out.println("End ");
+            EventParsing.instructionParse();
 
-			EventData.readStdinAsync();
+
 
 			System.out.println("End of main");
 
