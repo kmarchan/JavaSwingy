@@ -3,7 +3,6 @@ package View;
 import Controller.EventData;
 
 import javax.swing.*;
-import javax.validation.constraints.NotNull;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -34,7 +33,6 @@ public class MainMenu extends BaseWindow{
 		});
 		exitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				System.out.println("EXIT");
 				EventData.addInstructions("exit");
 			}
 		});
