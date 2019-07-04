@@ -23,15 +23,11 @@ public class EventParsing {
 					instructions = EventData.getOutput();
 
 					while(EventData.getIsRunning()) {
-						if (instructions.size() > 0)
-						{
-							System.out.println("big" + instructions.get(0));
-						}
 						for (int i=0; i < instructions.size(); i++) {
 							instructionIndex = i;
 							/* IMPORTANT: remove instruction after use. */
 							if (instructions.get(i) != null) {
-
+								System.out.println("case"+Instruction.valueOf(instructions.get(i).toLowerCase()));
 								switch (Instruction.valueOf(instructions.get(i).toLowerCase())) {
 									case exit: {
 										EventData.setIsRunning(false);

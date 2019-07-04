@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0da854f9-7168-4ee2-970d-f1d68ee8bc75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/LoadHero.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/LoadHero.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/LoadHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/LoadHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/NewGame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/NewGame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/NewGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/NewGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/EventData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/EventData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/EventParsing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/EventParsing.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +30,7 @@
         <counts>
           <entry key="class" value="3" />
           <entry key="form" value="12" />
-          <entry key="java" value="53" />
+          <entry key="java" value="57" />
           <entry key="txt" value="1" />
           <entry key="xml" value="3" />
         </counts>
@@ -42,7 +39,7 @@
         <counts>
           <entry key="CLASS" value="3" />
           <entry key="GUI_DESIGNER_FORM" value="12" />
-          <entry key="JAVA" value="53" />
+          <entry key="JAVA" value="57" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="3" />
         </counts>
@@ -50,7 +47,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="form" value="1" />
-          <entry key="java" value="1327" />
+          <entry key="java" value="1410" />
           <entry key="sh" value="4" />
           <entry key="txt" value="224" />
         </counts>
@@ -58,7 +55,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="GUI_DESIGNER_FORM" value="1" />
-          <entry key="JAVA" value="1327" />
+          <entry key="JAVA" value="1410" />
           <entry key="PLAIN_TEXT" value="228" />
         </counts>
       </usages-collector>
@@ -78,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state relative-caret-position="360">
+              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#470#471#0" expanded="true" />
@@ -101,6 +98,56 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ApplicationControls.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="31" column="58" lean-forward="true" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+              <folding>
+                <element signature="e#272#273#0" expanded="true" />
+                <element signature="e#298#299#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
+                <element signature="e#417#418#0" expanded="true" />
+                <element signature="e#455#456#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventParsing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/NewGame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -112,38 +159,8 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/NewGame.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventParsing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="34" column="97" lean-forward="true" selection-start-line="34" selection-start-column="97" selection-end-line="34" selection-end-column="97" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/View/Controls.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#504#505#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/View/Controls.form">
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
@@ -162,18 +179,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/LoadHero.form">
           <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -211,7 +216,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/Characters/Knight.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Characters/Orc.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/EventData.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/running.txt" />
         <option value="$PROJECT_DIR$/running.sh" />
@@ -219,12 +223,13 @@
         <option value="$PROJECT_DIR$/src/main/java/View/BaseWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/Controls.form" />
         <option value="$PROJECT_DIR$/src/main/java/View/NewGame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/EventParsing.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/Controls.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/LoadHero.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/LoadHero.form" />
         <option value="$PROJECT_DIR$/src/main/java/View/NewGame.form" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/EventData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/EventParsing.java" />
       </list>
     </option>
   </component>
@@ -513,6 +518,11 @@
               <item name="View" type="462c0819:PsiDirectoryNode" />
               <item name="NewGame" type="e9f4de52:FormNode" />
             </path>
+            <path>
+              <item name="Swingy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaSwingy2" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -524,7 +534,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562236993444" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562239809998" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -652,7 +662,7 @@
       <workItem from="1561457071290" duration="3960000" />
       <workItem from="1561964913544" duration="5034000" />
       <workItem from="1562135276915" duration="4495000" />
-      <workItem from="1562224232388" duration="8977000" />
+      <workItem from="1562224232388" duration="9795000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml as per vid">
       <created>1561462082375</created>
@@ -731,15 +741,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562234411953</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="{unreliable instruction input}">
+      <created>1562237022456</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1562237022456</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31883000" />
+    <option name="totallyTimeSpent" value="32701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="256" y="23" width="2234" height="1337" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -791,7 +807,8 @@
     <MESSAGE value="add running file" />
     <MESSAGE value="add loadHero, NewGame, Control view not navigating" />
     <MESSAGE value="naviating to new views. {unreliable instruction input}" />
-    <option name="LAST_COMMIT_MESSAGE" value="naviating to new views. {unreliable instruction input}" />
+    <MESSAGE value="{unreliable instruction input}" />
+    <option name="LAST_COMMIT_MESSAGE" value="{unreliable instruction input}" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Swingy.iml">
@@ -820,13 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -917,16 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ApplicationControls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
@@ -964,37 +964,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#272#273#0" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#339#340#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventParsing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="34" column="97" lean-forward="true" selection-start-line="34" selection-start-column="97" selection-end-line="34" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1028,10 +1001,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/NewGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/NewGame.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ApplicationControls.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/MainMenu.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="360">
+          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#470#471#0" expanded="true" />
@@ -1046,21 +1052,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/MainMenu.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/NewGame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="435">
+          <caret line="31" column="58" lean-forward="true" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+          <folding>
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#455#456#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventParsing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/NewGame.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
   <component name="masterDetails">
