@@ -1,8 +1,6 @@
 package Controller;
 
-import View.BaseWindow;
-import View.LoadHero;
-import View.NewGame;
+import View.*;
 
 import java.util.List;
 
@@ -14,6 +12,7 @@ public class EventParsing {
 		exit,
 		newgame,
 		controls,
+		menu,
 		gui
 	}
 
@@ -22,11 +21,12 @@ public class EventParsing {
 		System.out.println("here");
 				try {
 					instructions = EventData.getOutput();
-					if (instructions.size() > 0)
-					{
-						System.out.println("big");
-					}
+
 					while(EventData.getIsRunning()) {
+						if (instructions.size() > 0)
+						{
+							System.out.println("big" + instructions.get(0));
+						}
 						for (int i=0; i < instructions.size(); i++) {
 							instructionIndex = i;
 							/* IMPORTANT: remove instruction after use. */
@@ -44,10 +44,16 @@ public class EventParsing {
 										break;
 									case newgame:
 										NewGame.displayNewGame();
+										break;
 									case controls:
-
+										Controls.displayControls();
+										break;
 									case loadgame:
 										LoadHero.displayLoadHero();
+										break;
+									case menu:
+										MainMenu.displayMainMenu();
+										break;
 									default: {
 										System.out.println("Invalid instruction:" + instructions.get(i));
 									}
