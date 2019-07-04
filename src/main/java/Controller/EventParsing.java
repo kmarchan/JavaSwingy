@@ -1,15 +1,19 @@
 package Controller;
 
 import View.BaseWindow;
+import View.LoadHero;
+import View.NewGame;
+
 import java.util.List;
 
 public class EventParsing {
 	private static List<String> instructions;
 
 	enum Instruction {
-		print,
+		loadgame,
 		exit,
-		test,
+		newgame,
+		controls,
 		gui
 	}
 
@@ -29,11 +33,6 @@ public class EventParsing {
 							if (instructions.get(i) != null) {
 
 								switch (Instruction.valueOf(instructions.get(i).toLowerCase())) {
-
-									case print: {
-										System.out.println(EventData.getOutput());
-										break;
-									}
 									case exit: {
 										EventData.setIsRunning(false);
 										System.out.println("killing program");
@@ -43,7 +42,12 @@ public class EventParsing {
 									case gui:
 										BaseWindow.showBaseWindow();
 										break;
+									case newgame:
+										NewGame.displayNewGame();
+									case controls:
 
+									case loadgame:
+										LoadHero.displayLoadHero();
 									default: {
 										System.out.println("Invalid instruction:" + instructions.get(i));
 									}

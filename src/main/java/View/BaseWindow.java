@@ -9,7 +9,6 @@ public class BaseWindow extends JFrame{
 		frame = new JFrame("Swingy");
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		frame.setVisible(true);
-
 		}
 
 	static public void destoryWindow(){
@@ -20,4 +19,5 @@ public class BaseWindow extends JFrame{
 	static public void showBaseWindow(){
 		frame.setVisible(true);
 	}
+
 }
