@@ -22,7 +22,6 @@ public class MainMenu extends BaseWindow{
 		});
 		controlsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
 				EventData.addInstructions("controls");
 			}
 		});

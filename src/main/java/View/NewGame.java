@@ -10,8 +10,6 @@ public class NewGame extends BaseWindow{
     private JButton createHero;
     private JComboBox heroTypeSelector;
     private JTextField heroNameInput;
-    private JLabel heroType;
-    private JLabel heroName;
     private JPanel newGame;
     private JButton cancel;
 
