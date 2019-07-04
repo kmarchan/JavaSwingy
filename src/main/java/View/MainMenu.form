@@ -15,34 +15,39 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="b67e6" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="b67e6" class="javax.swing.JButton" binding="newGameButton">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="229" height="30"/>
           </grid>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <background color="-13340588"/>
+          <text value="New Game"/>
         </properties>
       </component>
-      <component id="1cb22" class="javax.swing.JButton" binding="printButton" default-binding="true">
+      <component id="1cb22" class="javax.swing.JButton" binding="controlsButton">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="229" height="30"/>
           </grid>
         </constraints>
         <properties>
-          <text value="print"/>
+          <background color="-13340588"/>
+          <doubleBuffered value="false"/>
+          <focusCycleRoot value="false"/>
+          <text value="Controls"/>
         </properties>
       </component>
-      <component id="9fcb6" class="javax.swing.JButton" binding="validButton">
+      <component id="9fcb6" class="javax.swing.JButton" binding="loadGameButton">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="229" height="30"/>
           </grid>
         </constraints>
         <properties>
-          <text value="valid test button"/>
+          <background color="-13340588"/>
+          <text value="Load Game"/>
         </properties>
       </component>
       <component id="28f24" class="javax.swing.JButton" binding="exitButton" default-binding="true">
@@ -52,6 +57,7 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13340588"/>
           <text value="exit"/>
         </properties>
       </component>

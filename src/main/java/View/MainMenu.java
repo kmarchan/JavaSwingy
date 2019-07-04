@@ -7,28 +7,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainMenu extends BaseWindow{
-	private JButton button1;
+	private JButton newGameButton;
 	private JPanel panel1;
-	private JButton printButton;
-	private JButton validButton;
+	private JButton controlsButton;
+	private JButton loadGameButton;
 	private JButton exitButton;
 
 
 	public MainMenu() {
-		button1.addActionListener(new ActionListener() {
+		newGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				EventData.addInstructions("this was a button click");
+				EventData.addInstructions("newgame");
 			}
 		});
-		printButton.addActionListener(new ActionListener() {
+		controlsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				EventData.addInstructions("print");
+				EventData.addInstructions("controls");
 			}
 		});
-		validButton.addActionListener(new ActionListener() {
+		loadGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				EventData.addInstructions("test");
+				EventData.addInstructions("loadgame");
 			}
 		});
 		exitButton.addActionListener(new ActionListener() {

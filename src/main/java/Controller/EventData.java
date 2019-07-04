@@ -39,9 +39,11 @@ public class EventData {
 
 	public static void addInstructions(String input) {
 		instructions.add(input);
+		System.out.println("_" + input);
 	}
 
 	public static void removeInstructions(String input) {
+		System.out.println("r" + input);
 		instructions.remove(input);
 	}
 
