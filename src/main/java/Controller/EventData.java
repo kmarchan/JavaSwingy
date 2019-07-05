@@ -1,14 +1,21 @@
 package Controller;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+
 
 public class EventData {
 
 	private static List<String> instructions = new ArrayList<String>();
 	private static Boolean isRunning;
+    @Setter
+    private static Boolean isProcessed;
 
 
 	public static List<String> getOutput() {
@@ -39,12 +46,17 @@ public class EventData {
 
 	public static void addInstructions(String input) {
 		instructions.add(input);
-		System.out.println("_" + input);
 	}
 
 	public static void removeInstructions(String input) {
-		System.out.println("r" + input);
-		instructions.remove(input);
+		if (isProcessed) {
+			instructions.remove(input);
+			isProcessed = false;
+		}
+		else {
+			EventParsing.instructionParse();
+			removeInstructions(input);
+		}
 	}
 
 }
