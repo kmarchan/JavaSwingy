@@ -12,9 +12,12 @@ public class NewGame extends BaseWindow{
     private JTextField heroNameInput;
     private JPanel newGame;
     private JButton cancel;
+    private JTextArea heroStats;
+    private String[] heroType = {"Black Mage", "Elf", "Knight", "Orc"};
 
     public NewGame() {
 
+        System.out.println(heroType[heroTypeSelector.getSelectedIndex()]);
         createHero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
