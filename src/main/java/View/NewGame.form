@@ -24,6 +24,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Select Type"/>
             <item value="Black Mage"/>
             <item value="Elf"/>
             <item value="Knight"/>
@@ -82,7 +83,14 @@
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <doubleBuffered value="false"/>
+          <editable value="false"/>
+          <enabled value="false"/>
+          <focusable value="false"/>
+          <requestFocusEnabled value="false"/>
+          <verifyInputWhenFocusTarget value="false"/>
+        </properties>
       </component>
     </children>
   </grid>

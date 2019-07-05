@@ -13,7 +13,7 @@ public class NewGame extends BaseWindow{
     private JPanel newGame;
     private JButton cancel;
     private JTextArea heroStats;
-    private String[] heroType = {"Black Mage", "Elf", "Knight", "Orc"};
+    private String[] heroType = {"select type", "Black Mage", "Elf", "Knight", "Orc"};
 
     public NewGame() {
 
@@ -21,7 +21,9 @@ public class NewGame extends BaseWindow{
         createHero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if (!heroNameInput.getText().isEmpty()) {
+                    Utils.CharacterFactory.createHero(heroNameInput.getText(), heroType[heroTypeSelector.getSelectedIndex()]);
+                }
             }
         });
         cancel.addActionListener(new ActionListener() {
@@ -30,8 +32,15 @@ public class NewGame extends BaseWindow{
                 EventData.addInstructions("menu");
             }
         });
+        heroTypeSelector.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (heroTypeSelector.getSelectedIndex() != 0) {
+                    heroStats.append(heroType[heroTypeSelector.getSelectedIndex()]);
+                }
+            }
+        });
     }
-
     static public void displayNewGame(){
         frame.setContentPane(new NewGame().newGame);
         frame.pack();
