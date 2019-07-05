@@ -38,6 +38,9 @@ public class NewGame extends BaseWindow{
                 if (heroTypeSelector.getSelectedIndex() != 0) {
                     heroStats.append(heroType[heroTypeSelector.getSelectedIndex()]);
                 }
+                else {
+                    heroStats.append("Please select a Hero Type");
+                }
             }
         });
     }
