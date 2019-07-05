@@ -18,7 +18,6 @@ public class EventParsing {
 
 	public static void instructionParse() {
 			int instructionIndex = 0;
-		System.out.println("here");
 				try {
 					instructions = EventData.getOutput();
 
@@ -27,7 +26,7 @@ public class EventParsing {
 							instructionIndex = i;
 							/* IMPORTANT: remove instruction after use. */
 							if (instructions.get(i) != null) {
-								System.out.println("case"+Instruction.valueOf(instructions.get(i).toLowerCase()));
+								EventData.setIsProcessed(true);
 								switch (Instruction.valueOf(instructions.get(i).toLowerCase())) {
 									case exit: {
 										EventData.setIsRunning(false);

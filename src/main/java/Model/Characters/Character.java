@@ -2,6 +2,7 @@ package Model.Characters;
 
 import Model.Artifacts.Artifact;
 import Model.Artifacts.Item;
+import lombok.NonNull;
 
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import static Model.Artifacts.Artifact.*;
 import static Model.Artifacts.Artifact.HELM;
 
 public class Character {
+    @NonNull
 	protected String name;
 	protected int level;
 	protected int attackPnts;
