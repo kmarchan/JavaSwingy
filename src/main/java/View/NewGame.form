@@ -47,6 +47,7 @@
           </grid>
         </constraints>
         <properties>
+          <labelFor value="803ef"/>
           <text value="Hero Name"/>
         </properties>
       </component>
@@ -57,6 +58,7 @@
           </grid>
         </constraints>
         <properties>
+          <labelFor value="6036"/>
           <text value="Hero Type"/>
         </properties>
       </component>
@@ -77,19 +79,28 @@
           <text value="Cancel"/>
         </properties>
       </component>
-      <component id="81cd5" class="javax.swing.JTextArea" binding="heroStats">
+      <component id="7d3b5" class="javax.swing.JEditorPane" binding="heroStats">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
         <properties>
-          <doubleBuffered value="false"/>
           <editable value="false"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
+          <focusCycleRoot value="false"/>
           <focusable value="false"/>
           <requestFocusEnabled value="false"/>
           <verifyInputWhenFocusTarget value="false"/>
+        </properties>
+      </component>
+      <component id="4119d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <labelFor value="7d3b5"/>
+          <text value="Hero Stats"/>
         </properties>
       </component>
     </children>

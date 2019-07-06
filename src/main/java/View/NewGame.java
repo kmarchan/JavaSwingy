@@ -12,7 +12,7 @@ public class NewGame extends BaseWindow{
     private JTextField heroNameInput;
     private JPanel newGame;
     private JButton cancel;
-    private JTextArea heroStats;
+    private JEditorPane heroStats;
     private String[] heroType = {"select type", "Black Mage", "Elf", "Knight", "Orc"};
 
     public NewGame() {
@@ -21,7 +21,7 @@ public class NewGame extends BaseWindow{
         createHero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!heroNameInput.getText().isEmpty()) {
+                if (!heroNameInput.getText().isEmpty() && heroTypeSelector.getSelectedIndex() != 0) {
                     Utils.CharacterFactory.createHero(heroNameInput.getText(), heroType[heroTypeSelector.getSelectedIndex()]);
                 }
             }
@@ -36,10 +36,10 @@ public class NewGame extends BaseWindow{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (heroTypeSelector.getSelectedIndex() != 0) {
-                    heroStats.append(heroType[heroTypeSelector.getSelectedIndex()]);
+                    heroStats.setText(heroType[heroTypeSelector.getSelectedIndex()]);
                 }
                 else {
-                    heroStats.append("Please select a Hero Type");
+                    heroStats.setText("Please select a Hero Type");
                 }
             }
         });
