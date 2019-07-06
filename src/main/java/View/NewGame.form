@@ -40,7 +40,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="89322" class="javax.swing.JLabel">
+      <component id="89322" class="javax.swing.JLabel" binding="heroNameLabel">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="114" height="16"/>
@@ -51,7 +51,7 @@
           <text value="Hero Name"/>
         </properties>
       </component>
-      <component id="17f0e" class="javax.swing.JLabel">
+      <component id="17f0e" class="javax.swing.JLabel" binding="heroTypeSelectorLabel">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="114" height="16"/>
