@@ -1,9 +1,8 @@
 package View;
 
 import Controller.EventData;
-import Storage.HeroStorage;
 import Exception.InputException;
-import lombok.var;
+import Model.HeroStorage;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,6 +17,11 @@ public class LoadHero extends BaseWindow{
 
     public LoadHero() throws InputException {
 
+        selectHero.addItem("Please select a save");
+        for (int i = 0; i < HeroStorage.savedHeroes.size(); i++) {
+            selectHero.addItem(HeroStorage.savedHeroes.get(i).getName());
+        }
+
         selectHeroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -28,7 +32,6 @@ public class LoadHero extends BaseWindow{
             @Override
             public void actionPerformed(ActionEvent e) {
                 EventData.addInstructions("menu");
-
             }
         });
     }

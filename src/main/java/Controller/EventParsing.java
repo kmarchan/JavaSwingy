@@ -1,9 +1,8 @@
 package Controller;
 
-import Storage.HeroStorage;
+import Model.HeroStorage;
 import View.*;
 import Exception.InputException;
-
 import java.util.List;
 
 public class EventParsing {
@@ -46,11 +45,7 @@ public class EventParsing {
 										Controls.displayControls();
 										break;
 									case loadgame:
-                                        try {
-                                            HeroStorage.getSavedHeroes();
-                                        } catch (InputException e) {
-                                            e.printStackTrace();
-                                        }
+                                       	HeroStorage.getSavedHeroes();
                                         LoadHero.displayLoadHero();
 										break;
 									case menu:
@@ -73,4 +68,4 @@ public class EventParsing {
                     e.printStackTrace();
                 }
     }
-		}
+}

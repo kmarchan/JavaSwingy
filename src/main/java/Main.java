@@ -1,7 +1,6 @@
 import Controller.ApplicationControls;
 import Controller.EventData;
 import Controller.EventParsing;
-import Storage.HeroStorage;
 import Exception.InputException;
 
 public class Main{
