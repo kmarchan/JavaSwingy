@@ -18,6 +18,7 @@ import static Model.Artifacts.Artifact.HELM;
 public class Character {
     @NonNull
 	protected String name;
+    protected String type;
 	protected int level;
 	protected int attackPnts;
 	protected int defencePnts;

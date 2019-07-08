@@ -2,7 +2,8 @@ package View;
 
 import Controller.EventData;
 import Exception.InputException;
-import Model.HeroStorage;
+import Model.Characters.Hero;
+import Storage.HeroStorage;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -21,7 +22,6 @@ public class LoadHero extends BaseWindow{
         for (int i = 0; i < HeroStorage.savedHeroes.size(); i++) {
             selectHero.addItem(HeroStorage.savedHeroes.get(i).getName());
         }
-
         selectHeroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -32,6 +32,21 @@ public class LoadHero extends BaseWindow{
             @Override
             public void actionPerformed(ActionEvent e) {
                 EventData.addInstructions("menu");
+            }
+        });
+        selectHero.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                if (selectHero.getSelectedIndex() != 0) {
+                    int id = selectHero.getSelectedIndex() - 1;
+                    Hero hero = HeroStorage.savedHeroes.get(id);
+                    heroStats.setText(
+                        "Name: " + hero.getName() + "\n" +
+                        "Type: " + hero.getType() + "\n" +
+                        "Damage: " + hero.getAttackPnts() + "\n" +
+                        "Hit Points: " + hero.getAttackPnts() + "/" + hero.getMaxAttackPnts() + "\n" +
+                        "Defence Points: " + hero.getDefencePnts() + "/" + hero.getMaxDefencePnts() + "\n");
+                }
             }
         });
     }

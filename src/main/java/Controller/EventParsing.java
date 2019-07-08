@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.HeroStorage;
+import Storage.HeroStorage;
 import View.*;
 import Exception.InputException;
 import java.util.List;
