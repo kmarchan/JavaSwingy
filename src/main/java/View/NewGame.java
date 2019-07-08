@@ -1,7 +1,6 @@
 package View;
 
 import Controller.EventData;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -34,6 +33,7 @@ public class NewGame extends BaseWindow{
                 }
                 if ((!heroNameInput.getText().isEmpty()) && heroTypeSelector.getSelectedIndex() != 0) {
                     Utils.CharacterFactory.createHero(heroNameInput.getText(), heroType[heroTypeSelector.getSelectedIndex()]);
+
                 }
             }
         });
@@ -63,6 +63,7 @@ public class NewGame extends BaseWindow{
             }
         });
     }
+
     static public void displayNewGame(){
         frame.setContentPane(new NewGame().newGame);
         frame.pack();

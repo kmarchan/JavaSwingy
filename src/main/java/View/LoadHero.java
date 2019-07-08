@@ -25,7 +25,6 @@ public class LoadHero extends BaseWindow{
         selectHeroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
             }
         });
         cancelButton.addActionListener(new ActionListener() {
