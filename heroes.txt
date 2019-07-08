@@ -1,3 +1,1 @@
-Philip the Personal Lord and Saviour, knight, 2, 540, short sword, leather armor
-Kirsten the timid, mage, 3, 124, staff, leather armor
-Khali the brave, argonaught, 6, 990, long sword, steel armor
+Philip the Personal Lord and Saviour, Orc, 2, 540, 200, short sword, leather armor, hat, Kirsten the timid, Black Mage, 3, 124, 300, staff, leather armor, helmte, Khali the brave, Knight, 6, 990, 600, long sword, steel armor, shoe,

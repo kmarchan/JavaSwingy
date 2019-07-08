@@ -1,6 +1,8 @@
 package Controller;
 
+import Storage.HeroStorage;
 import View.*;
+import Exception.InputException;
 
 import java.util.List;
 
@@ -44,7 +46,12 @@ public class EventParsing {
 										Controls.displayControls();
 										break;
 									case loadgame:
-										LoadHero.displayLoadHero();
+                                        try {
+                                            HeroStorage.getSavedHeroes();
+                                        } catch (InputException e) {
+                                            e.printStackTrace();
+                                        }
+                                        LoadHero.displayLoadHero();
 										break;
 									case menu:
 										MainMenu.displayMainMenu();
@@ -62,6 +69,8 @@ public class EventParsing {
 					System.out.println("Invalid instruction:"+instructions.get(instructionIndex));
 					EventData.removeInstructions(instructions.get(instructionIndex));
 					instructionParse();
-				}
-			}
+				} catch (InputException e) {
+                    e.printStackTrace();
+                }
+    }
 		}

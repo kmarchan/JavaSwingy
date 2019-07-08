@@ -10,4 +10,8 @@ public class Knight extends Hero {
 
     public Knight(String name) {
     }
+
+    public Knight(String name, int level, int damage, int defence, String weapon, String armour, String helm) {
+        // TODO
+    }
 }

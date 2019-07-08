@@ -25,7 +25,11 @@
             <preferred-size width="156" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="Select A Save"/>
+          </model>
+        </properties>
       </component>
       <component id="48fb0" class="javax.swing.JLabel">
         <constraints>
