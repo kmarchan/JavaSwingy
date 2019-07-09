@@ -1,13 +1,9 @@
 package Controller;
 
-import Model.Characters.Elf;
 import Model.Characters.Hero;
-import Model.Characters.Orc;
 import Utils.CharacterFactory;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.rmi.CORBA.Util;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

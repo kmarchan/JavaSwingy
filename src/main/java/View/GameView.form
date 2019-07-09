@@ -51,8 +51,8 @@
         <properties>
           <editable value="false"/>
           <enabled value="true"/>
-          <font name="Bodoni Ornaments" size="24" style="1"/>
-          <text value="t    z    "/>
+          <font/>
+          <text value=""/>
         </properties>
       </component>
       <component id="cb39f" class="javax.swing.JLabel">

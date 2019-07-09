@@ -55,11 +55,8 @@ public class GameView extends BaseWindow {
             }
         });
     }
-
     static public void displayGameView() throws InputException {
 		frame.setContentPane(new GameView().gameView);
 		frame.pack();
 	}
-
-
 }

@@ -1,19 +1,28 @@
 package Model.Characters;
 
 public class Elf extends Hero {
+
+    private int defence = 20;
+    private int hitPoints = 36;
+    private int attack = 15;
+
     public Elf(String name) {
         this.name = name;
         this.type = "Elf";
         this.level = 1;
-        this.baseDefencePnts = 10;
-        this.baseHitPnts = 90;
-        this.baseAttackPnts = 30;
+        this.baseHitPnts = level * hitPoints;
+        this.baseDefencePnts = level * defence;
+        this.baseAttackPnts = level * attack;
     }
 
-    public Elf(String name, int level, int damage, int defence, String weapon, String armour, String helm) {
+    public Elf(String name, int level, int currentHealth, int currentDefence, String weapon, String armour, String helm) {
         this.name = name;
+        this.type = "Elf";
         this.level = level;
-        this.baseHitPnts = damage;
-        this.baseDefencePnts = defence;
+        this.hitPnts = currentHealth;
+        this.defencePnts = currentDefence;
+        this.baseHitPnts = level * hitPoints;
+        this.baseDefencePnts = level * defence;
+        this.baseAttackPnts = level * attack;
     }
 }

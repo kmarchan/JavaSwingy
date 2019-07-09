@@ -7,20 +7,27 @@ import lombok.Setter;
 @Setter
 public class Knight extends Hero {
 
+    private int defence = 20;
+    private int hitPoints = 36;
+    private int attack = 15;
+
     public Knight(String name) {
         this.name = name;
         this.type = "Knight";
         this.level = 1;
-        this.baseDefencePnts = 20;
-        this.baseHitPnts = 80;
-        this.baseAttackPnts = 20;
+        this.baseDefencePnts = level * defence;
+        this.baseHitPnts = level * hitPoints;
+        this.baseAttackPnts = level * attack;
     }
 
-    public Knight(String name, int level, int damage, int defence, String weapon, String armour, String helm) {
+    public Knight(String name, int level, int currentHealth, int currentDefence, String weapon, String armour, String helm) {
         this.name = name;
         this.type = "Knight";
         this.level = level;
-        this.baseHitPnts = damage;
-        this.baseDefencePnts = defence;
+        this.hitPnts = currentHealth;
+        this.defencePnts = currentDefence;
+        this.baseHitPnts = level * hitPoints;
+        this.baseDefencePnts = level * defence;
+        this.baseAttackPnts = level * attack;
     }
 }

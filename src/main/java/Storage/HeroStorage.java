@@ -25,8 +25,8 @@ public class HeroStorage {
             String name;
             String type;
             int level;
-            int damage;
-            int defence;
+            int currentHealth;
+            int currentDefence;
             String weapon;
             String armour;
             String helm;
@@ -39,10 +39,10 @@ public class HeroStorage {
                 System.out.println("type: " + type);
                 level = sc.nextInt();
                 System.out.println("level: " + level);
-                damage = sc.nextInt();
-                System.out.println("damage: " + damage);
-                defence = sc.nextInt();
-                System.out.println("defence: " + defence);
+                currentHealth = sc.nextInt();
+                System.out.println("currentHealth: " + currentHealth);
+                currentDefence = sc.nextInt();
+                System.out.println("currentDefence: " + currentDefence);
                 weapon = sc.next();
                 System.out.println("weapon: " + weapon);
                 armour = sc.next();
@@ -50,7 +50,7 @@ public class HeroStorage {
                 helm = sc.next();
                 System.out.println("helm: " + helm);
                 sc.reset();
-                savedHeroes.add(CharacterFactory.recreateHero(type, name, level, damage, defence, weapon, armour, helm));
+                savedHeroes.add(CharacterFactory.recreateHero(type, name, level, currentHealth, currentDefence, weapon, armour, helm));
             }
         }
     }

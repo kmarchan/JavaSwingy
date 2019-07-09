@@ -1,14 +1,9 @@
 package Model.Characters;
 
 import Model.Artifacts.Artifact;
-import Model.Artifacts.Item;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
-
 import static Model.Artifacts.Artifact.*;
 import static Model.Artifacts.Artifact.HELM;
 
@@ -27,7 +22,6 @@ public class Character {
 	protected int baseAttackPnts;
 	protected int baseDefencePnts;
 	protected int baseExperiencePnts;
-	protected List<Item> backpack = new ArrayList<Item>();
 	protected Artifact[] equipped = new Artifact[3];
 
 	public Character() {
@@ -37,14 +31,12 @@ public class Character {
 		this.defencePnts = 0;
 		this.hitPnts = 0;
 		this.experiencePnts = 0;
-		this.backpack = null;
 		this.equipped = null;
 	}
 
-	public Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, List<Item> backpack, Artifact[] equipped) {
+	public Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
 		this.name = name;
 		this.level = level;
-
 		this.baseAttackPnts = baseAttackPnts;
 		attackPnts = baseAttackPnts;
 		if (equipped[WEAPON] != null)
@@ -62,7 +54,6 @@ public class Character {
 
 		this.experiencePnts -= baseExperiencePnts;
 		baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;
-		this.backpack = backpack;
 		this.equipped = equipped;
 	}
 
@@ -74,5 +65,7 @@ public class Character {
 
 	public void gainHitPnts(){}
 
-
+	public static int calculateExperiencePnts(int level) {
+		return level * 1000 + (int)Math.pow(level - 1, 2) * 450;
+	}
 }

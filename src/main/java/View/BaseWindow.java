@@ -30,10 +30,11 @@ public class BaseWindow extends JFrame{
 
     public void showStats(Hero hero, JTextPane heroStats) {
         heroStats.setText(
-                "Name: " + hero.getName() + "\n" +
-                "Type: " + hero.getType() + "\n" +
-                "Damage: " + hero.getAttackPnts() + "\n" +
-                "Hit Points: " + hero.getAttackPnts() + "/" + hero.getBaseAttackPnts() + "\n" +
-                "Defence Points: " + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n");
+			"Name: " + hero.getName() + "\n" +
+			"Type: " + hero.getType() + "\n" +
+		// TODO	change to damage with weapon adjustment getAttackPoints()
+			"Damage: " + hero.getBaseAttackPnts() + "\n" +
+			"Hit Points: " + hero.getHitPnts() + "/" + hero.getBaseHitPnts() + "\n" +
+			"Defence Points: " + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n");
     }
 }
