@@ -12,6 +12,7 @@ public class EventParsing {
 		loadgame,
 		exit,
 		newgame,
+        start,
 		controls,
 		menu,
 		gui
@@ -51,6 +52,9 @@ public class EventParsing {
 									case menu:
 										MainMenu.displayMainMenu();
 										break;
+                                    case start:
+                                        GameView.displayGameView();
+                                        break;
 									default: {
 										System.out.println("Invalid instruction:" + instructions.get(i));
 									}
