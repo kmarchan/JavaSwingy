@@ -1,7 +1,10 @@
 package View;
 
 import javax.swing.*;
+
+import Controller.EventData;
 import Exception.InputException;
+import Model.Characters.Hero;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,8 +18,12 @@ public class GameView extends BaseWindow {
 	private JButton forwardButton;
     private JTextPane heroStats;
     private JTextPane foeStats;
+    private JButton saveAndExitButton;
 
     public GameView() {
+
+        showStats(EventData.getHero(), heroStats);
+
         forwardButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,10 +48,18 @@ public class GameView extends BaseWindow {
 
             }
         });
+        saveAndExitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     static public void displayGameView() throws InputException {
 		frame.setContentPane(new GameView().gameView);
 		frame.pack();
 	}
+
+
 }

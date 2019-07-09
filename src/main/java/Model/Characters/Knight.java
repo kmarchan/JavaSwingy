@@ -1,7 +1,6 @@
 package Model.Characters;
 
 import lombok.Getter;
-import lombok.NonNull;
 import lombok.Setter;
 
 @Getter

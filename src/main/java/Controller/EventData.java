@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.Characters.Hero;
+import lombok.Getter;
 import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,11 +9,13 @@ import java.util.Scanner;
 
 public class EventData {
 
+    @Getter
+    @Setter
+    private static Hero hero;
 	private static List<String> instructions = new ArrayList<String>();
 	private static Boolean isRunning;
     @Setter
     private static Boolean isProcessed;
-
 
 	public static List<String> getOutput() {
 		return instructions;

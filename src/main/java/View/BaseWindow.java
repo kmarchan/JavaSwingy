@@ -1,5 +1,7 @@
 package View;
 
+import Model.Characters.Hero;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -26,4 +28,12 @@ public class BaseWindow extends JFrame{
 		frame.setVisible(true);
 	}
 
+    public void showStats(Hero hero, JTextPane heroStats) {
+        heroStats.setText(
+                "Name: " + hero.getName() + "\n" +
+                        "Type: " + hero.getType() + "\n" +
+                        "Damage: " + hero.getAttackPnts() + "\n" +
+                        "Hit Points: " + hero.getAttackPnts() + "/" + hero.getMaxAttackPnts() + "\n" +
+                        "Defence Points: " + hero.getDefencePnts() + "/" + hero.getMaxDefencePnts() + "\n");
+    }
 }

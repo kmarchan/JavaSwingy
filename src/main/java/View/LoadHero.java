@@ -39,12 +39,7 @@ public class LoadHero extends BaseWindow{
                 if (selectHero.getSelectedIndex() != 0) {
                     int id = selectHero.getSelectedIndex() - 1;
                     Hero hero = HeroStorage.savedHeroes.get(id);
-                    heroStats.setText(
-                        "Name: " + hero.getName() + "\n" +
-                        "Type: " + hero.getType() + "\n" +
-                        "Damage: " + hero.getAttackPnts() + "\n" +
-                        "Hit Points: " + hero.getAttackPnts() + "/" + hero.getMaxAttackPnts() + "\n" +
-                        "Defence Points: " + hero.getDefencePnts() + "/" + hero.getMaxDefencePnts() + "\n");
+                    showStats(hero, heroStats);
                 }
             }
         });
