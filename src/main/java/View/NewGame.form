@@ -96,6 +96,7 @@
         <properties>
           <editable value="false"/>
           <enabled value="true"/>
+          <toolTipText value=""/>
         </properties>
       </component>
     </children>

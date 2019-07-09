@@ -19,13 +19,14 @@
         <properties>
           <editable value="false"/>
           <enabled value="true"/>
+          <toolTipText value=""/>
         </properties>
       </component>
       <component id="dbc1" class="javax.swing.JComboBox" binding="selectHero">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="9" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="20" height="20"/>
-            <preferred-size width="156" height="30"/>
+            <preferred-size width="203" height="30"/>
           </grid>
         </constraints>
         <properties>
@@ -35,7 +36,7 @@
       <component id="48fb0" class="javax.swing.JLabel">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="156" height="16"/>
+            <preferred-size width="203" height="16"/>
           </grid>
         </constraints>
         <properties>
@@ -66,6 +67,15 @@
           <text value="Select Hero"/>
         </properties>
       </component>
+      <hspacer id="79f69">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="-1"/>
+            <preferred-size width="100" height="11"/>
+            <maximum-size width="100" height="-1"/>
+          </grid>
+        </constraints>
+      </hspacer>
     </children>
   </grid>
 </form>

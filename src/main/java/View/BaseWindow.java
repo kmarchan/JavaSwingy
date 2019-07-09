@@ -12,8 +12,8 @@ public class BaseWindow extends JFrame{
 		frame = new JFrame("Swingy");
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int height = screenSize.height  / 4;
-        int width = screenSize.width  / 4;
+        int height = screenSize.height  / 2;
+        int width = screenSize.width  / 2;
 
         frame.setPreferredSize(new Dimension(width, height));
 		frame.setVisible(true);

@@ -73,6 +73,7 @@
         <properties>
           <editable value="false"/>
           <enabled value="true"/>
+          <toolTipText value=""/>
         </properties>
       </component>
       <component id="e6179" class="javax.swing.JTextPane" binding="foeStats">
@@ -84,6 +85,7 @@
         <properties>
           <editable value="false"/>
           <enabled value="true"/>
+          <toolTipText value=""/>
         </properties>
       </component>
       <component id="6c585" class="javax.swing.JLabel">
