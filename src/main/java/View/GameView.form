@@ -50,7 +50,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
           <font name="Bodoni Ornaments" size="24" style="1"/>
           <text value="t    z    "/>
         </properties>
@@ -72,7 +72,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
         </properties>
       </component>
       <component id="e6179" class="javax.swing.JTextPane" binding="foeStats">
@@ -83,7 +83,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
         </properties>
       </component>
       <component id="6c585" class="javax.swing.JLabel">

@@ -18,7 +18,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <enabled value="false"/>
+          <enabled value="true"/>
         </properties>
       </component>
       <component id="dbc1" class="javax.swing.JComboBox" binding="selectHero">

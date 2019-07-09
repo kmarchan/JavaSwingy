@@ -15,6 +15,7 @@ public class LoadHero extends BaseWindow{
     private JButton selectHeroButton;
     private JButton cancelButton;
     private JPanel loadHeroPane;
+    private Hero hero;
 
     public LoadHero() throws InputException {
 
@@ -25,6 +26,8 @@ public class LoadHero extends BaseWindow{
         selectHeroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                EventData.setHero(hero);
+                EventData.addInstructions("start");
             }
         });
         cancelButton.addActionListener(new ActionListener() {
@@ -38,7 +41,7 @@ public class LoadHero extends BaseWindow{
             public void actionPerformed(ActionEvent actionEvent) {
                 if (selectHero.getSelectedIndex() != 0) {
                     int id = selectHero.getSelectedIndex() - 1;
-                    Hero hero = HeroStorage.savedHeroes.get(id);
+                    hero = HeroStorage.savedHeroes.get(id);
                     showStats(hero, heroStats);
                 }
             }

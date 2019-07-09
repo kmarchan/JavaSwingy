@@ -31,9 +31,9 @@ public class BaseWindow extends JFrame{
     public void showStats(Hero hero, JTextPane heroStats) {
         heroStats.setText(
                 "Name: " + hero.getName() + "\n" +
-                        "Type: " + hero.getType() + "\n" +
-                        "Damage: " + hero.getAttackPnts() + "\n" +
-                        "Hit Points: " + hero.getAttackPnts() + "/" + hero.getBaseAttackPnts() + "\n" +
-                        "Defence Points: " + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n");
+                "Type: " + hero.getType() + "\n" +
+                "Damage: " + hero.getAttackPnts() + "\n" +
+                "Hit Points: " + hero.getAttackPnts() + "/" + hero.getBaseAttackPnts() + "\n" +
+                "Defence Points: " + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n");
     }
 }
