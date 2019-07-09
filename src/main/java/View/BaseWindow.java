@@ -33,7 +33,7 @@ public class BaseWindow extends JFrame{
                 "Name: " + hero.getName() + "\n" +
                         "Type: " + hero.getType() + "\n" +
                         "Damage: " + hero.getAttackPnts() + "\n" +
-                        "Hit Points: " + hero.getAttackPnts() + "/" + hero.getMaxAttackPnts() + "\n" +
-                        "Defence Points: " + hero.getDefencePnts() + "/" + hero.getMaxDefencePnts() + "\n");
+                        "Hit Points: " + hero.getAttackPnts() + "/" + hero.getBaseAttackPnts() + "\n" +
+                        "Defence Points: " + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n");
     }
 }

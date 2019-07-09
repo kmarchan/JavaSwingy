@@ -14,7 +14,7 @@ public class NewGame extends BaseWindow{
     private JTextField heroNameInput;
     private JPanel newGame;
     private JButton cancel;
-    private JEditorPane heroStats;
+    private JTextPane heroStats;
     private JLabel heroNameLabel;
     private JLabel heroTypeSelectorLabel;
     private String[] heroType = {"select type", "Black Mage", "Elf", "Knight", "Orc"};
@@ -32,7 +32,7 @@ public class NewGame extends BaseWindow{
                     heroTypeSelectorLabel.setForeground(Color.RED);
                 }
                 if ((!heroNameInput.getText().isEmpty()) && heroTypeSelector.getSelectedIndex() != 0) {
-                    EventData.setHero(Utils.CharacterFactory.createHero(heroNameInput.getText(), heroType[heroTypeSelector.getSelectedIndex()]));
+//                    EventData.setHero(Utils.CharacterFactory.createHero(heroNameInput.getText(), heroType[heroTypeSelector.getSelectedIndex()]));
                     EventData.addInstructions("start");
                 }
             }
@@ -49,6 +49,8 @@ public class NewGame extends BaseWindow{
                 if (heroTypeSelector.getSelectedIndex() != 0) {
                     heroStats.setText(heroType[heroTypeSelector.getSelectedIndex()]);
                     heroTypeSelectorLabel.setForeground(Color.BLACK);
+                    EventData.createHeroPreview(heroType[heroTypeSelector.getSelectedIndex()], heroNameInput.getText().isEmpty() ? "The Unnamed One" : heroNameInput.getText());
+                    showStats(EventData.getHero(), heroStats);
                 }
                 else {
                     heroStats.setText("Please select a Hero Type");
@@ -60,6 +62,10 @@ public class NewGame extends BaseWindow{
             public void keyTyped(KeyEvent e) {
                 super.keyTyped(e);
                 heroNameLabel.setForeground(Color.BLACK);
+                if (heroTypeSelector.getSelectedIndex() != 0) {
+                    heroStats.setText(heroType[heroTypeSelector.getSelectedIndex()]);
+                    EventData.createHeroPreview(heroType[heroTypeSelector.getSelectedIndex()], heroNameInput.getText().isEmpty() ? "The Unnamed One" : heroNameInput.getText());
+                    showStats(EventData.getHero(), heroStats);}
             }
         });
     }

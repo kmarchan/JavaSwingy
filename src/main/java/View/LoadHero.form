@@ -16,7 +16,10 @@
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+          <enabled value="false"/>
+        </properties>
       </component>
       <component id="dbc1" class="javax.swing.JComboBox" binding="selectHero">
         <constraints>

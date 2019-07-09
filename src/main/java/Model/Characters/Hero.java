@@ -2,8 +2,6 @@ package Model.Characters;
 
 import Model.Artifacts.Artifact;
 import Model.Artifacts.Item;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
@@ -22,7 +20,7 @@ public class Hero extends Character {
     public void gainExperience(int gain){
         experiencePnts += gain;
 
-        if (experiencePnts >= maxExperiencePnts) {
+        if (experiencePnts >= baseExperiencePnts) {
             this.levelUp();
         }
     }
@@ -31,23 +29,23 @@ public class Hero extends Character {
 
         level++;
 
-        maxAttackPnts += 2;
-        attackPnts = maxAttackPnts;
+        baseAttackPnts += 2;
+        attackPnts = baseAttackPnts;
         if (equipped[WEAPON] != null)
             attackPnts += equipped[WEAPON].getBuff();
 
-        maxDefencePnts += 2;
-        defencePnts = maxDefencePnts;
+        baseDefencePnts += 2;
+        defencePnts = baseDefencePnts;
         if (equipped[ARMOUR] != null)
             defencePnts += equipped[ARMOUR].getBuff();
 
-        maxHitPnts += 2;
-        hitPnts = maxHitPnts;
+        baseHitPnts += 2;
+        hitPnts = baseHitPnts;
         if (equipped[HELM] != null)
             hitPnts += equipped[HELM].getBuff();
 
-        experiencePnts -= maxExperiencePnts;
-        maxExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;
+        experiencePnts -= baseExperiencePnts;
+        baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;
     }
 
     public void unequipArtifact(){}
@@ -65,10 +63,10 @@ public class Hero extends Character {
                 ", defencePnts=" + defencePnts +
                 ", hitPnts=" + hitPnts +
                 ", experiencePnts=" + experiencePnts +
-                ", maxHitPnts=" + maxHitPnts +
-                ", maxAttackPnts=" + maxAttackPnts +
-                ", maxDefencePnts=" + maxDefencePnts +
-                ", maxExperiencePnts=" + maxExperiencePnts +
+                ", baseHitPnts=" + baseHitPnts +
+                ", baseAttackPnts=" + baseAttackPnts +
+                ", baseDefencePnts=" + baseDefencePnts +
+                ", baseExperiencePnts=" + baseExperiencePnts +
                 ", backpack=" + backpack +
                 ", equipped=" + equipped +
                 '}';
