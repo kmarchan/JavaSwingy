@@ -23,6 +23,7 @@ public class HeroStorage {
                 e1.printStackTrace();
             }
             String name;
+            int experience;
             String type;
             int level;
             int currentHealth;
@@ -35,8 +36,10 @@ public class HeroStorage {
                 sc.useDelimiter(", ");
                 name = sc.next();
                 System.out.println("name: " + name);
+				experience = sc.nextInt();
+				System.out.println("experience: " + experience);
                 type = sc.next();
-                System.out.println("type: " + type);
+				System.out.println("type: " + type);
                 level = sc.nextInt();
                 System.out.println("level: " + level);
                 currentHealth = sc.nextInt();
@@ -50,7 +53,7 @@ public class HeroStorage {
                 helm = sc.next();
                 System.out.println("helm: " + helm);
                 sc.reset();
-                savedHeroes.add(CharacterFactory.recreateHero(type, name, level, currentHealth, currentDefence, weapon, armour, helm));
+                savedHeroes.add(CharacterFactory.recreateHero(type, name, experience, level, currentHealth, currentDefence, weapon, armour, helm));
             }
         }
     }

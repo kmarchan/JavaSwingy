@@ -1,27 +1,24 @@
 package Model.Characters;
 
 import Model.Artifacts.Artifact;
-import Model.Artifacts.Item;
-
-import javax.xml.stream.events.Characters;
 
 public class Orc extends Hero{
 
-    private int defence = 20;
-    private int hitPoints = 36;
-    private int attack = 15;
+    private static int defence = 20;
+    private static int hitPoints = 36;
+    private static int attack = 15;
 
     public Orc(String name) {
+        super(name, 1, Character.calculateExperiencePnts(1), hitPoints, attack, defence, new Artifact[3]);
         this.type = "Orc";
-        Artifact[] equipped = new Artifact[3];
-        Characters.Character(name, 1, Character.calculateExperiencePnts(level), level * hitPoints, level * attack, level * defence, equipped);
     }
 
-    public Orc(String name, int level, int currentHealth, int currentDefence, String weapon, String armour, String helm) {
-        this.type = "Orc";
-        this.level = level;
+    // TODO -- Artifact array needs to be done. String conversion to Artifact
+    public Orc(String name, int experience, int level, int currentHealth, int currentDefence, String weapon, String armour, String helm) {
+        super(name, level, Character.calculateExperiencePnts(level), level * hitPoints, level * attack, level * defence, new Artifact[3]);
+		this.experiencePnts = experience;
+		this.type = "Orc";
         this.hitPnts = currentHealth;
         this.defencePnts = currentDefence;
-        Characters.Character(name, 1, Character.calculateExperiencePnts(level), level * hitPoints, level * attack, level * defence);
     }
 }

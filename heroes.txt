@@ -1,1 +1,1 @@
-Philip the Greatest, Orc, 1, 11, 11, short sword, leather armor, hat, Jack the timid, Black Mage, 3, 11, 11, staff, leather armor, helmet, Khali the brave, Knight, 6, 11, 11, long sword, steel armor, shoe
+Philip the Greatest, 990, Orc, 1, 11, 11, short sword, leather armor, hat, Jack the timid, 2300, Black Mage, 3, 11, 11, staff, leather armor, helmet, Khali the brave, 7000, Knight, 6, 11, 11, long sword, steel armor, shoe

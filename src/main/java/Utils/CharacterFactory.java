@@ -20,16 +20,16 @@ public class CharacterFactory {
         }
     }
 
-    public static Hero recreateHero(String type, String name, int level, int currentHealth, int currentDefence, String weapon, String armour, String helm) throws InputException{
+    public static Hero recreateHero(String type,  String name, int experience, int level, int currentHealth, int currentDefence, String weapon, String armour, String helm) throws InputException{
         switch (type) {
             case "Orc" :
-                return new Orc(name, level, currentHealth, currentDefence, weapon, armour, helm);
+                return new Orc(name, experience, level, currentHealth, currentDefence, weapon, armour, helm);
             case "Black Mage":
-                return new BlackMage(name, level, currentHealth, currentDefence, weapon, armour, helm);
+                return new BlackMage(name, experience, level, currentHealth, currentDefence, weapon, armour, helm);
             case "Knight":
-                return new Knight(name, level, currentHealth, currentDefence, weapon, armour, helm);
+                return new Knight(name, experience, level, currentHealth, currentDefence, weapon, armour, helm);
             case "Elf":
-                return new Elf(name, level, currentHealth, currentDefence, weapon, armour, helm);
+                return new Elf(name, experience, level, currentHealth, currentDefence, weapon, armour, helm);
             default:
                 throw new InputException("Invalid hero type");
         }

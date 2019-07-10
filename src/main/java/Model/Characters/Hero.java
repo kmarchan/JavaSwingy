@@ -13,8 +13,8 @@ public class Hero extends Character {
         super();
     }
 
-    public Hero(String name, int level, int experiencePnts, int maxHitPnts, int maxAttackPnts, int maxDefencePnts, List<Item> backpack, Artifact[] equipped) {
-        super(name, level, experiencePnts, maxHitPnts, maxAttackPnts, maxDefencePnts, backpack, equipped);
+    public Hero(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
+        super(name, level, experiencePnts, baseHitPnts, baseAttackPnts, baseDefencePnts,  equipped);
     }
 
     public void gainExperience(int gain){
@@ -67,7 +67,6 @@ public class Hero extends Character {
                 ", baseAttackPnts=" + baseAttackPnts +
                 ", baseDefencePnts=" + baseDefencePnts +
                 ", baseExperiencePnts=" + baseExperiencePnts +
-                ", backpack=" + backpack +
                 ", equipped=" + equipped +
                 '}';
     }
