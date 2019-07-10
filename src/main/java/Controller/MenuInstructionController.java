@@ -5,7 +5,7 @@ import View.*;
 import Exception.InputException;
 import java.util.List;
 
-public class InstructionController {
+public class MenuInstructionController {
 	private static List<String> instructions;
 
 	enum Instruction {
@@ -15,7 +15,7 @@ public class InstructionController {
         start,
 		controls,
 		menu,
-		gui
+		gui,
 	}
 
 	public static void instructionParse() {
@@ -54,6 +54,7 @@ public class InstructionController {
 								break;
 							case start:
 								GameController.startGame();
+								EventDataController.setIsRunning(false);
 								break;
 							default: {
 								System.out.println("Invalid instruction:" + instructions.get(i));

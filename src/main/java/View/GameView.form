@@ -6,40 +6,42 @@
       <xy x="20" y="20" width="1111" height="400"/>
     </constraints>
     <properties>
+      <autoscrolls value="true"/>
       <background color="-6436705"/>
+      <minimumSize width="1000" height="233"/>
     </properties>
     <border type="none"/>
     <children>
-      <component id="242db" class="javax.swing.JButton" binding="backwardButton" default-binding="true">
+      <component id="242db" class="javax.swing.JButton" binding="southButton">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Backward"/>
+          <text value="South"/>
         </properties>
       </component>
-      <component id="ae269" class="javax.swing.JButton" binding="forwardButton" default-binding="true">
+      <component id="ae269" class="javax.swing.JButton" binding="northButton">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Forward"/>
+          <text value="North"/>
         </properties>
       </component>
-      <component id="eedea" class="javax.swing.JButton" binding="leftButton" default-binding="true">
+      <component id="eedea" class="javax.swing.JButton" binding="westButton">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Left"/>
+          <text value="West"/>
         </properties>
       </component>
-      <component id="f2b80" class="javax.swing.JButton" binding="rightButton" default-binding="true">
+      <component id="f2b80" class="javax.swing.JButton" binding="eastButton">
         <constraints>
           <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Right"/>
+          <text value="East"/>
         </properties>
       </component>
       <component id="cb39f" class="javax.swing.JLabel">
@@ -51,22 +53,11 @@
           <text value="Game Map"/>
         </properties>
       </component>
-      <component id="ef2ad" class="javax.swing.JTextPane" binding="heroStats">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties>
-          <editable value="false"/>
-          <enabled value="true"/>
-          <toolTipText value=""/>
-        </properties>
-      </component>
       <component id="e6179" class="javax.swing.JTextPane" binding="foeStats">
         <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="250" height="-1"/>
+            <preferred-size width="200" height="50"/>
           </grid>
         </constraints>
         <properties>
@@ -105,7 +96,8 @@
       </component>
       <component id="449d7" class="javax.swing.JTextPane" binding="gameMap">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="2" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="400" height="-1"/>
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
@@ -115,6 +107,19 @@
           <margin top="20" left="20" bottom="0" right="20"/>
           <requestFocusEnabled value="false"/>
           <text value=""/>
+        </properties>
+      </component>
+      <component id="ef2ad" class="javax.swing.JTextPane" binding="heroStats">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="250" height="-1"/>
+            <preferred-size width="200" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <toolTipText value=""/>
         </properties>
       </component>
     </children>

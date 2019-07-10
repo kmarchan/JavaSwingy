@@ -57,7 +57,7 @@ public class EventDataController {
 			isProcessed = false;
 		}
 		else {
-			InstructionController.instructionParse();
+			MenuInstructionController.instructionParse();
 			removeInstructions(input);
 		}
 	}

@@ -66,4 +66,9 @@ public class Hero extends Character {
                 ", equipped=" + equipped +
                 '}';
     }
+
+	public void setPreviousPosition(int row, int column) {
+	    this.previousPosition[0] = row;
+	    this.previousPosition[1] = column;
+    }
 }

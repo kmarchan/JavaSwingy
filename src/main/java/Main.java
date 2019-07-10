@@ -1,6 +1,7 @@
 import Controller.ApplicationController;
 import Controller.EventDataController;
-import Controller.InstructionController;
+import Controller.GameInstructionController;
+import Controller.MenuInstructionController;
 import Exception.InputException;
 
 public class Main{
@@ -9,7 +10,9 @@ public class Main{
 			System.out.println("Starting");
 			ApplicationController.createWindow();
             EventDataController.readStdinAsync();
-            InstructionController.instructionParse();
+            MenuInstructionController.instructionParse();
+            EventDataController.setIsRunning(true);
+			GameInstructionController.gameInstructionParse();
 			System.out.println("End of main");
 		}
 }

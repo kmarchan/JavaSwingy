@@ -1,11 +1,7 @@
 package Model.Characters;
 
 import Model.Artifacts.Artifact;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class Knight extends Hero {
 
     private static int defence = 20;
@@ -14,12 +10,7 @@ public class Knight extends Hero {
 
     public Knight(String name) {
         super(name, 1, 0, hitPoints, attack, defence, new Artifact[3]);
-        this.name = name;
         this.type = "Knight";
-        this.level = 1;
-        this.baseDefencePnts = level * defence;
-        this.baseHitPnts = level * hitPoints;
-        this.baseAttackPnts = level * attack;
     }
 
     // TODO -- Artifact array needs to be done. String conversion to Artifact
