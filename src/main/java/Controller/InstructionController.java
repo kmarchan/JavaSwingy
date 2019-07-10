@@ -5,7 +5,7 @@ import View.*;
 import Exception.InputException;
 import java.util.List;
 
-public class EventParsing {
+public class InstructionController {
 	private static List<String> instructions;
 
 	enum Instruction {
@@ -21,19 +21,19 @@ public class EventParsing {
 	public static void instructionParse() {
 		int instructionIndex = 0;
 		try {
-			instructions = EventData.getOutput();
+			instructions = EventDataController.getOutput();
 
-			while(EventData.getIsRunning()) {
+			while(EventDataController.getIsRunning()) {
 				for (int i=0; i < instructions.size(); i++) {
 					instructionIndex = i;
 					/* IMPORTANT: remove instruction after use. */
 					if (instructions.get(i) != null) {
-						EventData.setIsProcessed(true);
+						EventDataController.setIsProcessed(true);
 						switch (Instruction.valueOf(instructions.get(i).toLowerCase())) {
 							case exit: {
-								EventData.setIsRunning(false);
+								EventDataController.setIsRunning(false);
 								System.out.println("killing program");
-								Controller.ApplicationControls.closeApplication();
+								ApplicationController.closeApplication();
 								break;
 							}
 							case gui:
@@ -53,28 +53,24 @@ public class EventParsing {
 								MainMenu.displayMainMenu();
 								break;
 							case start:
-								GameView.displayGameView();
+								GameController.startGame();
 								break;
 							default: {
 								System.out.println("Invalid instruction:" + instructions.get(i));
 							}
 						}
 					}
-					EventData.removeInstructions(instructions.get(i));
+					EventDataController.removeInstructions(instructions.get(i));
 				}
-				instructions = EventData.getOutput();
+				instructions = EventDataController.getOutput();
 			}
 		} catch (IllegalArgumentException e){
 			System.out.println("Invalid instruction:"+instructions.get(instructionIndex));
-			EventData.removeInstructions(instructions.get(instructionIndex));
+			EventDataController.removeInstructions(instructions.get(instructionIndex));
 			instructionParse();
 		}
 		catch (InputException e) {
 			e.printStackTrace();
 		}
-    }
-
-//    public static String removeDelimiter(String input) {
-//		return input.replaceAll(",", "");
-//	}
+	}
 }

@@ -31,6 +31,7 @@ public class BaseWindow extends JFrame{
 	public void showStats(Hero hero, JTextPane heroStats) {
 		heroStats.setText(
 			"Name:		" + hero.getName() + "\n" +
+			"Level:		" + hero.getLevel() + "\n" +
 			"Experience Points:	" + hero.getExperiencePnts() + "/" + hero.getBaseExperiencePnts() + "\n" +
 			"Type:		" + hero.getType() + "\n" +
 		// TODO	change to damage with weapon adjustment getAttackPoints()

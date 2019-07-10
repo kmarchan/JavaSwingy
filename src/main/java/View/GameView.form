@@ -42,24 +42,6 @@
           <text value="Right"/>
         </properties>
       </component>
-      <component id="78f98" class="javax.swing.JTextPane" binding="gameMap">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties>
-          <alignmentX value="0.5"/>
-          <dragEnabled value="false"/>
-          <editable value="false"/>
-          <enabled value="true"/>
-          <focusable value="false"/>
-          <font/>
-          <margin top="20" left="20" bottom="20" right="20"/>
-          <requestFocusEnabled value="false"/>
-          <text value=""/>
-        </properties>
-      </component>
       <component id="cb39f" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
@@ -119,6 +101,17 @@
         </constraints>
         <properties>
           <text value="Save and Exit"/>
+        </properties>
+      </component>
+      <component id="449d7" class="javax.swing.JTextPane" binding="gameMap">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <margin top="20" left="20" bottom="20" right="20"/>
+          <text value=""/>
         </properties>
       </component>
     </children>

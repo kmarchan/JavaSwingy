@@ -1,6 +1,6 @@
 package View;
 
-import Controller.EventData;
+import Controller.EventDataController;
 import Exception.InputException;
 import Model.Characters.Hero;
 import Storage.HeroStorage;
@@ -26,14 +26,14 @@ public class LoadHero extends BaseWindow{
         selectHeroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EventData.setHero(hero);
-                EventData.addInstructions("start");
+                EventDataController.setHero(hero);
+                EventDataController.addInstructions("start");
             }
         });
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EventData.addInstructions("menu");
+                EventDataController.addInstructions("menu");
             }
         });
         selectHero.addActionListener(new ActionListener() {

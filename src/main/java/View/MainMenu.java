@@ -1,6 +1,6 @@
 package View;
 
-import Controller.EventData;
+import Controller.EventDataController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,22 +17,22 @@ public class MainMenu extends BaseWindow{
 	public MainMenu() {
 		newGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				EventData.addInstructions("newgame");
+				EventDataController.addInstructions("newgame");
 			}
 		});
 		controlsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EventData.addInstructions("controls");
+				EventDataController.addInstructions("controls");
 			}
 		});
 		loadGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				EventData.addInstructions("loadgame");
+				EventDataController.addInstructions("loadgame");
 			}
 		});
 		exitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
-				EventData.addInstructions("exit");
+				EventDataController.addInstructions("exit");
 			}
 		});
 	}

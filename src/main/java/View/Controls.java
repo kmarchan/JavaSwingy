@@ -1,6 +1,6 @@
 package View;
 
-import Controller.EventData;
+import Controller.EventDataController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +15,7 @@ public class Controls extends BaseWindow{
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EventData.addInstructions("menu");
+                EventDataController.addInstructions("menu");
             }
         });
     }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class EventData {
+public class EventDataController {
 
     @Getter
     @Setter
@@ -17,6 +17,9 @@ public class EventData {
 	private static Boolean isRunning;
     @Setter
     private static Boolean isProcessed;
+    @Getter
+	@Setter
+	private static String map;
 
 	public static List<String> getOutput() {
 		return instructions;
@@ -27,7 +30,7 @@ public class EventData {
 	}
 
 	public static void setIsRunning(Boolean isRunning) {
-		EventData.isRunning = isRunning;
+		EventDataController.isRunning = isRunning;
 	}
 
 	public static void readStdinAsync(){
@@ -54,7 +57,7 @@ public class EventData {
 			isProcessed = false;
 		}
 		else {
-			EventParsing.instructionParse();
+			InstructionController.instructionParse();
 			removeInstructions(input);
 		}
 	}

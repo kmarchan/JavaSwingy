@@ -3,6 +3,8 @@ package Model.Characters;
 import Model.Artifacts.Artifact;
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.Contract;
+
 import javax.validation.constraints.NotNull;
 import static Model.Artifacts.Artifact.*;
 import static Model.Artifacts.Artifact.HELM;
