@@ -9,7 +9,7 @@ public class Orc extends Hero{
     private static int attack = 15;
 
     public Orc(String name) {
-        super(name, 1, Character.calculateExperiencePnts(1), hitPoints, attack, defence, new Artifact[3]);
+        super(name, 1, 0, hitPoints, attack, defence, new Artifact[3]);
         this.type = "Orc";
     }
 

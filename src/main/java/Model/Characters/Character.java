@@ -35,7 +35,7 @@ public class Character {
 	}
 
 	public Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
-		this.name = name;
+		this.name = cleanNameInput(name);
 		this.level = level;
 		this.baseAttackPnts = baseAttackPnts;
 		attackPnts = baseAttackPnts;
@@ -52,7 +52,9 @@ public class Character {
 		if (equipped[HELM] != null)
 			hitPnts += equipped[HELM].getBuff();
 
-		this.experiencePnts -= baseExperiencePnts;
+//		this.experiencePnts -= baseExperiencePnts;
+		// Todo -- make sure you didnt brake anything commenting out above line
+		this.experiencePnts = experiencePnts;
 		baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;
 		this.equipped = equipped;
 	}
@@ -67,5 +69,9 @@ public class Character {
 
 	public static int calculateExperiencePnts(int level) {
 		return level * 1000 + (int)Math.pow(level - 1, 2) * 450;
+	}
+
+	private String cleanNameInput(String input) {
+		return input.replaceAll(",", "");
 	}
 }

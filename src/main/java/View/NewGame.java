@@ -1,6 +1,8 @@
 package View;
 
 import Controller.EventData;
+import Controller.EventParsing;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

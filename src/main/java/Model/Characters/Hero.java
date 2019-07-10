@@ -1,10 +1,6 @@
 package Model.Characters;
 
 import Model.Artifacts.Artifact;
-import Model.Artifacts.Item;
-
-import java.util.List;
-
 import static Model.Artifacts.Artifact.*;
 
 public class Hero extends Character {
@@ -14,7 +10,7 @@ public class Hero extends Character {
     }
 
     public Hero(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
-        super(name, level, experiencePnts, baseHitPnts, baseAttackPnts, baseDefencePnts,  equipped);
+        super(name, level, experiencePnts, baseHitPnts, baseAttackPnts, baseDefencePnts, equipped);
     }
 
     public void gainExperience(int gain){

@@ -49,9 +49,14 @@
           </grid>
         </constraints>
         <properties>
+          <alignmentX value="0.5"/>
+          <dragEnabled value="false"/>
           <editable value="false"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <font/>
+          <margin top="20" left="20" bottom="20" right="20"/>
+          <requestFocusEnabled value="false"/>
           <text value=""/>
         </properties>
       </component>
