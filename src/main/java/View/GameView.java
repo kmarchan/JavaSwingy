@@ -27,7 +27,7 @@ public class GameView extends BaseWindow {
         northButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-				EventDataController.addInstructions("north");
+				GameInstructionController.addInstructions("north");
 				gameMap.setText(GameController.printMap());
             }
         });
@@ -35,19 +35,24 @@ public class GameView extends BaseWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
 				GameInstructionController.addInstructions("east");
-            }
+				gameMap.setText(GameController.printMap());
+			}
         });
         southButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-				EventDataController.addInstructions("south");
-            }
+
+				GameInstructionController.addInstructions("south");
+				gameMap.setText(GameController.printMap());
+			}
         });
         westButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-				EventDataController.addInstructions("west");
-            }
+
+            	GameInstructionController.addInstructions("west");
+				gameMap.setText(GameController.printMap());
+			}
         });
         saveAndExitButton.addActionListener(new ActionListener() {
             @Override

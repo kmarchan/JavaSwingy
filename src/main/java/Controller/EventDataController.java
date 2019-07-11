@@ -58,7 +58,7 @@ public class EventDataController {
 		}
 		else {
 			MenuInstructionController.instructionParse();
-			removeInstructions(input);
+//			removeInstructions(input);
 		}
 	}
 
