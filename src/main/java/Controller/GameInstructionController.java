@@ -1,8 +1,12 @@
 package Controller;
 
+import Exception.InputException;
 import Model.GameModel;
 import View.BaseWindow;
+
 import java.util.List;
+
+import static View.GameView.displayGameView;
 
 public class GameInstructionController {
 	private static List<String> gameInstructions;
@@ -44,32 +48,36 @@ public class GameInstructionController {
 								break;
 							case south:
 								GameModel.moveSouth(EventDataController.getHero());
+								displayGameView();
 								break;
 							case north:
 								GameModel.moveNorth(EventDataController.getHero());
+								displayGameView();
 								break;
 							case west:
 								GameModel.moveWest(EventDataController.getHero());
+								displayGameView();
 								break;
 							case east:
+								displayGameView();
 								GameModel.moveEast(EventDataController.getHero());
 								break;
 							default: {
 								System.out.println("Invalid instruction:" + gameInstructions.get(i));
 							}
 						}
+						displayGameView();
 						removeGameInstructions(gameInstructions.get(i));
 					}
 				}
 				gameInstructions = EventDataController.getOutput();
 			}
-		} catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException | InputException e) {
 			System.out.println("Invalid instruction:" + gameInstructions.get(instructionIndex));
 			removeGameInstructions(gameInstructions.get(instructionIndex));
 			gameInstructionParse();
 		}
 	}
-
 
 	public static void addInstructions(String input) {
 		isProcessed = false;

@@ -25,7 +25,7 @@ public class GameController {
 					mapString += "# ";
 				}
 				else
-					mapString += "_ ";
+					mapString += " _ ";
 			}
 			mapString += "\n";
 		}

@@ -1,6 +1,7 @@
 package Model;
 
 import Controller.EventDataController;
+import Controller.GameController;
 import Model.Characters.Hero;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,21 +33,24 @@ public class GameModel {
 			hero.setRow(hero.getRow() - 1);
 		}
 		updateHeroPlacement(hero);
+		System.out.println(GameController.printMap());
 	}
 
 	public static void moveSouth(Hero hero) {
 		hero.setPreviousPosition(hero.getRow(), hero.getColumn());
-		if (hero.getRow() < mapSize) {
+		if (hero.getRow() + 1< mapSize) {
 			hero.setRow(hero.getRow() + 1);
 		}
 		updateHeroPlacement(hero);
+		System.out.println(GameController.printMap());
 	}
 	public static void moveEast(Hero hero) {
 		hero.setPreviousPosition(hero.getRow(), hero.getColumn());
-		if (hero.getColumn() < mapSize) {
+		if (hero.getColumn() + 1 < mapSize) {
 			hero.setColumn(hero.getColumn() + 1);
 		}
 		updateHeroPlacement(hero);
+		System.out.println(GameController.printMap());
 	}
 	public static void moveWest(Hero hero) {
 		hero.setPreviousPosition(hero.getRow(), hero.getColumn());
@@ -54,5 +58,6 @@ public class GameModel {
 			hero.setColumn(hero.getColumn() - 1);
 		}
 		updateHeroPlacement(hero);
+		System.out.println(GameController.printMap());
 	}
 }

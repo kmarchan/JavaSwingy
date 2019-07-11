@@ -28,14 +28,12 @@ public class GameView extends BaseWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
 				GameInstructionController.addInstructions("north");
-				gameMap.setText(GameController.printMap());
-            }
+			}
         });
         eastButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 				GameInstructionController.addInstructions("east");
-				gameMap.setText(GameController.printMap());
 			}
         });
         southButton.addActionListener(new ActionListener() {
@@ -43,7 +41,6 @@ public class GameView extends BaseWindow {
             public void actionPerformed(ActionEvent e) {
 
 				GameInstructionController.addInstructions("south");
-				gameMap.setText(GameController.printMap());
 			}
         });
         westButton.addActionListener(new ActionListener() {
@@ -51,7 +48,7 @@ public class GameView extends BaseWindow {
             public void actionPerformed(ActionEvent e) {
 
             	GameInstructionController.addInstructions("west");
-				gameMap.setText(GameController.printMap());
+
 			}
         });
         saveAndExitButton.addActionListener(new ActionListener() {
@@ -60,8 +57,10 @@ public class GameView extends BaseWindow {
 
             }
         });
-        gameMap.setText(GameController.printMap());
-    }
+		gameMap.setText(GameController.printMap());
+
+	}
+
 
 	static public void displayGameView() throws InputException {
 		frame.setContentPane(new GameView().gameView);
