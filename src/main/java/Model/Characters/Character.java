@@ -72,8 +72,6 @@ import static Model.Artifacts.Artifact.*;
 
 	public void takeDamage(){}
 
-	public void gainHitPnts(){}
-
 	public static int calculateExperiencePnts(int level) {
 		return level * 1000 + (int)Math.pow(level - 1, 2) * 450;
 	}

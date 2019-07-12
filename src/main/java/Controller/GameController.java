@@ -22,7 +22,7 @@ public class GameController {
 					mapString += "@ ";
 				}
 				else if (GameModel.getMap()[i][x] == 8) {
-					mapString += "# ";
+					mapString += " # ";
 				}
 				else
 					mapString += " _ ";

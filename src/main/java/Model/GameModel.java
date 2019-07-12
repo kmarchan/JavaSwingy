@@ -13,6 +13,7 @@ public class GameModel {
 
 	public static void createMap(Hero hero) {
 		setMapSize((hero.getLevel()-1)*5+10-(hero.getLevel()%2));
+		resetHeroPlacement(hero);
 		setMap(new int[mapSize][mapSize]);
 		for (int i = 0; i < mapSize; i++){
 			for (int x = 0; x < mapSize; x++){
@@ -27,10 +28,21 @@ public class GameModel {
 		map[hero.getRow()][hero.getColumn()] = 8;
 	}
 
+	public static void resetHeroPlacement(Hero hero) {
+		int center = mapSize / 2;
+		hero.setRow(center);
+		hero.setColumn(center);
+		hero.setPreviousPosition(center, center);
+	}
+
 	public static void moveNorth(Hero hero) {
 		hero.setPreviousPosition(hero.getRow(), hero.getColumn());
 		if (hero.getRow() > 0) {
 			hero.setRow(hero.getRow() - 1);
+		}
+		else
+		{
+			mapEdgeReached(hero);
 		}
 		updateHeroPlacement(hero);
 		System.out.println(GameController.printMap());
@@ -41,6 +53,10 @@ public class GameModel {
 		if (hero.getRow() + 1< mapSize) {
 			hero.setRow(hero.getRow() + 1);
 		}
+		else
+		{
+			mapEdgeReached(hero);
+		}
 		updateHeroPlacement(hero);
 		System.out.println(GameController.printMap());
 	}
@@ -48,6 +64,10 @@ public class GameModel {
 		hero.setPreviousPosition(hero.getRow(), hero.getColumn());
 		if (hero.getColumn() + 1 < mapSize) {
 			hero.setColumn(hero.getColumn() + 1);
+		}
+		else
+		{
+			mapEdgeReached(hero);
 		}
 		updateHeroPlacement(hero);
 		System.out.println(GameController.printMap());
@@ -57,7 +77,15 @@ public class GameModel {
 		if (hero.getColumn() > 0) {
 			hero.setColumn(hero.getColumn() - 1);
 		}
+		else
+		{
+			mapEdgeReached(hero);
+		}
 		updateHeroPlacement(hero);
 		System.out.println(GameController.printMap());
+	}
+	private static void mapEdgeReached(Hero hero) {
+		Hero.gainExperience(hero, hero.getLevel() * 15);
+		createMap(hero);
 	}
 }
