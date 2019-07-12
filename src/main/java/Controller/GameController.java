@@ -2,6 +2,7 @@ package Controller;
 
 import Exception.InputException;
 import Model.GameModel;
+import View.FightView;
 import View.GameView;
 
 
@@ -19,13 +20,15 @@ public class GameController {
 		for (int i = 0; i < GameModel.getMapSize(); i++){
 			for (int x = 0; x < GameModel.getMapSize(); x++){
 				if (GameModel.getMap()[i][x] == 1) {
-					mapString += "@ ";
+					mapString += " @ ";
 				}
 				else if (GameModel.getMap()[i][x] == 8) {
 					mapString += " # ";
 				}
-				else
+				else if (GameModel.getMap()[i][x] == 0) {
 					mapString += " _ ";
+				}
+				else FightView.displayFightView();
 			}
 			mapString += "\n";
 		}

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="View.FightView">
+  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="1004" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="703e7" binding="fightView" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="20" left="20" bottom="20" right="20"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="true"/>
+          <background color="-6436705"/>
+          <minimumSize width="1000" height="233"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="f52aa" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Bodoni 72 Smallcaps" size="24" style="1"/>
+              <text value="Fight!"/>
+            </properties>
+          </component>
+          <component id="bb8e3" class="javax.swing.JTextPane" binding="foeStats">
+            <constraints>
+              <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="250" height="-1"/>
+                <preferred-size width="200" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <toolTipText value=""/>
+            </properties>
+          </component>
+          <component id="5f55c" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Bodoni 72 Smallcaps" size="20" style="1"/>
+              <labelFor value="ef2ad"/>
+              <text value="Hero stats"/>
+            </properties>
+          </component>
+          <component id="5fb63" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Bodoni 72 Smallcaps" size="20" style="1"/>
+              <labelFor value="e6179"/>
+              <text value="Monster stats"/>
+            </properties>
+          </component>
+          <component id="fa801" class="javax.swing.JTextPane" binding="fightBox">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="2" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="400" height="-1"/>
+                <preferred-size width="150" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <margin top="20" left="20" bottom="0" right="20"/>
+              <requestFocusEnabled value="false"/>
+              <text value=""/>
+            </properties>
+          </component>
+          <component id="b2eff" class="javax.swing.JTextPane" binding="heroStats">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="250" height="-1"/>
+                <preferred-size width="200" height="50"/>
+              </grid>
+            </constraints>
+            <properties>
+              <editable value="false"/>
+              <enabled value="true"/>
+              <toolTipText value=""/>
+            </properties>
+          </component>
+          <component id="2ae07" class="javax.swing.JButton" binding="fightButton">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Button"/>
+            </properties>
+          </component>
+          <component id="71ff1" class="javax.swing.JButton" binding="runButton">
+            <constraints>
+              <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Button"/>
+            </properties>
+          </component>
+          <component id="cf8be" class="javax.swing.JButton" default-binding="true">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <focusable value="false"/>
+              <text value="Button"/>
+              <visible value="false"/>
+            </properties>
+          </component>
+          <component id="f8d9f" class="javax.swing.JButton" default-binding="true">
+            <constraints>
+              <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="false"/>
+              <focusPainted value="true"/>
+              <focusable value="false"/>
+              <text value="Button"/>
+              <visible value="false"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
