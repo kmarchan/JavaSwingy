@@ -71,4 +71,24 @@ public class Hero extends Character {
 	    this.previousPosition[0] = row;
 	    this.previousPosition[1] = column;
     }
+
+    public String saveString(){
+//        int currentDefencePnts = (defencePnts  <= 0 ? 0 : defencePnts);
+//        int currentHp = (hitPnts - this.equipped[HELM].getBuff()) <= 0 ? 0 : hitPnts - this.equipped[HELM].getBuff();
+//        int maxDefence = (baseDefencePnts - this.equipped[ARMOUR].getBuff());
+//        System.out.println("save"+ maxDefence + ", "+ maxDefence);
+        return  ", " + name + ", " +
+                experiencePnts + ", " +
+                type + ", " +
+                level + ", " +
+                hitPnts + ", " +
+                defencePnts + ", " +
+                "WAohgjh, " + "arghfgh, helm, ";
+//                this.equipped[HELM].getName().replaceAll(" ", "_") + " " +
+//                this.equipped[ARMOUR].getName().replaceAll(" ", "_") + " " +
+//                this.equipped[ARMOUR].getBuff() + " " +
+//                this.equipped[WEAPON].getName().replaceAll(" ", "_") + " " +
+//                this.equipped[WEAPON].getBuff() + " " +
+    }
+
 }
