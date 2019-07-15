@@ -34,4 +34,8 @@ public class CharacterFactory {
                 throw new InputException("Invalid hero type");
         }
     }
+
+    public static Foe createFoe(int heroLevel) {
+        return new Foe(heroLevel);
+    }
 }

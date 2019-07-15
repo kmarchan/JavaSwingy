@@ -21,9 +21,8 @@ public class FightInstructionController {
 
 		public static void fightInstructionParse() {
 			int instructionIndex = 0;
-
 			try {
-				fightInstructions = EventDataController.getOutput();
+				fightInstructions = EventDataController.getInstructions();
 				while (isFightRunning) {
 					for (int i = 0; i < fightInstructions.size(); i++) {
 						instructionIndex = i;
@@ -46,7 +45,7 @@ public class FightInstructionController {
 							removeFightInstructions(fightInstructions.get(i));
 						}
 					}
-					fightInstructions = EventDataController.getOutput();
+					fightInstructions = EventDataController.getInstructions();
 				}
 			} catch (IllegalArgumentException e) {
 				System.out.println("Invalid instruction:" + fightInstructions.get(instructionIndex));

@@ -1,5 +1,6 @@
 package View;
 
+import Model.Characters.Foe;
 import Model.Characters.Hero;
 
 import javax.swing.*;
@@ -38,5 +39,15 @@ public class BaseWindow extends JFrame{
 			"Damage:		" + hero.getAttackPnts() + "\n" +
 			"Hit Points:		" + hero.getHitPnts() + "/" + hero.getBaseHitPnts() + "\n" +
 			"Defence Points:	" + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n");
+	}
+
+	public void showFoeStats(Foe foe, JTextPane heroStats) {
+		heroStats.setText(
+				"Name:		" + foe.getName() + "\n" +
+						"Level:		" + foe.getLevel() + "\n" +
+						"Type:		" + foe.getType() + "\n" +
+						"Damage:		" + foe.getAttackPnts() + "\n" +
+						"Hit Points:		" + foe.getHitPnts() + "/" + foe.getBaseHitPnts() + "\n" +
+						"Defence Points:	" + foe.getDefencePnts() + "/" + foe.getBaseDefencePnts() + "\n");
 	}
 }

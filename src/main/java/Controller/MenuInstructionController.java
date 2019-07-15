@@ -21,7 +21,7 @@ public class MenuInstructionController {
 	public static void instructionParse() {
 		int instructionIndex = 0;
 		try {
-			instructions = EventDataController.getOutput();
+			instructions = EventDataController.getInstructions();
 
 			while(EventDataController.getIsRunning()) {
 				for (int i=0; i < instructions.size(); i++) {
@@ -63,7 +63,7 @@ public class MenuInstructionController {
 					}
 					EventDataController.removeInstructions(instructions.get(i));
 				}
-				instructions = EventDataController.getOutput();
+				instructions = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException e){
 			System.out.println("Invalid instruction:"+instructions.get(instructionIndex));

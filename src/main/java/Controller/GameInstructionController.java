@@ -27,7 +27,7 @@ public class GameInstructionController {
 	public static void gameInstructionParse() {
 		int instructionIndex = 0;
 		try {
-			gameInstructions = EventDataController.getOutput();
+			gameInstructions = EventDataController.getInstructions();
 
 			while (isGameRunning) {
 				for (int i = 0; i < gameInstructions.size(); i++) {
@@ -47,18 +47,14 @@ public class GameInstructionController {
 								break;
 							case south:
 								GameModel.moveSouth(EventDataController.getHero());
-								displayGameView();
 								break;
 							case north:
 								GameModel.moveNorth(EventDataController.getHero());
-								displayGameView();
 								break;
 							case west:
 								GameModel.moveWest(EventDataController.getHero());
-								displayGameView();
 								break;
 							case east:
-								displayGameView();
 								GameModel.moveEast(EventDataController.getHero());
 								break;
 							default: {
@@ -69,7 +65,7 @@ public class GameInstructionController {
 						displayGameView();
 					}
 				}
-				gameInstructions = EventDataController.getOutput();
+				gameInstructions = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException | InputException e) {
 			System.out.println("Invalid instruction:" + gameInstructions.get(instructionIndex));

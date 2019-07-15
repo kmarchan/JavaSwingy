@@ -1,7 +1,6 @@
 package Model;
 
 import Controller.EventDataController;
-import Controller.GameController;
 import Model.Characters.Hero;
 import lombok.Getter;
 import lombok.Setter;
@@ -55,7 +54,6 @@ public class GameModel {
 			mapEdgeReached(hero);
 		}
 		updateHeroPlacement(hero);
-		System.out.println(GameController.printMap());
 	}
 
 	public static void moveSouth(Hero hero) {
@@ -68,7 +66,6 @@ public class GameModel {
 			mapEdgeReached(hero);
 		}
 		updateHeroPlacement(hero);
-		System.out.println(GameController.printMap());
 	}
 	public static void moveEast(Hero hero) {
 		hero.setPreviousPosition(hero.getRow(), hero.getColumn());
@@ -80,7 +77,6 @@ public class GameModel {
 			mapEdgeReached(hero);
 		}
 		updateHeroPlacement(hero);
-		System.out.println(GameController.printMap());
 	}
 	public static void moveWest(Hero hero) {
 		hero.setPreviousPosition(hero.getRow(), hero.getColumn());
@@ -92,7 +88,6 @@ public class GameModel {
 			mapEdgeReached(hero);
 		}
 		updateHeroPlacement(hero);
-		System.out.println(GameController.printMap());
 	}
 	private static void mapEdgeReached(Hero hero){
 		Hero.gainExperience(hero, hero.getLevel() * 15);

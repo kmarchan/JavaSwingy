@@ -57,7 +57,7 @@ public class GameView extends BaseWindow {
 
             }
         });
-		gameMap.setText(GameController.printMap());
+		gameMap.setText(GameController.generateRound());
 
 		saveAndExitButton.addActionListener(new ActionListener() {
 			@Override

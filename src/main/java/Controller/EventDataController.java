@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Characters.Foe;
 import Model.Characters.Hero;
 import Utils.CharacterFactory;
 import lombok.Getter;
@@ -10,28 +11,12 @@ import java.util.Scanner;
 
 public class EventDataController {
 
-    @Getter
-    @Setter
-    private static Hero hero;
-	private static List<String> instructions = new ArrayList<String>();
-	private static Boolean isRunning;
-    @Setter
-    private static Boolean isProcessed;
-    @Getter
-	@Setter
-	private static String map;
-
-	public static List<String> getOutput() {
-		return instructions;
-	}
-
-	public static Boolean getIsRunning() {
-		return isRunning;
-	}
-
-	public static void setIsRunning(Boolean isRunning) {
-		EventDataController.isRunning = isRunning;
-	}
+    @Getter @Setter private static Hero hero;
+    @Getter @Setter private static Foe foe;
+	@Getter	@Setter	private static String map;
+	@Getter @Setter private static Boolean isRunning;
+	@Setter 		private static Boolean isProcessed;
+	@Getter 		private static List<String> instructions = new ArrayList<String>();
 
 	public static void readStdinAsync(){
 		new Thread(new Runnable() {
@@ -58,6 +43,7 @@ public class EventDataController {
 		}
 		else {
 			MenuInstructionController.instructionParse();
+			// TODO this comment??
 //			removeInstructions(input);
 		}
 	}

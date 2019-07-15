@@ -17,7 +17,7 @@ public class FightView extends BaseWindow {
 
 	public FightView() {
 		showStats(EventDataController.getHero(), heroStats);
-
+		showFoeStats(EventDataController.getFoe(), foeStats);
 
 		runButton.addActionListener(new ActionListener() {
 			@Override
