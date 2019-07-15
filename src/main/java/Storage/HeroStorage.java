@@ -39,33 +39,37 @@ public class HeroStorage {
                 // TODO -- remove sout
                 sc.useDelimiter(", ");
                 name = sc.next();
-//                System.out.println("name: " + name);
 				experience = sc.nextInt();
-//				System.out.println("experience: " + experience);
                 type = sc.next();
-//				System.out.println("type: " + type);
                 level = sc.nextInt();
-//                System.out.println("level: " + level);
                 currentHealth = sc.nextInt();
-//                System.out.println("currentHealth: " + currentHealth);
                 currentDefence = sc.nextInt();
-//                System.out.println("currentDefence: " + currentDefence);
                 weapon = sc.next();
-//                System.out.println("weapon: " + weapon);
                 armour = sc.next();
-//                System.out.println("armour: " + armour);
                 helm = sc.next();
-//                System.out.println("helm: " + helm);
                 sc.reset();
                 savedHeroes.add(CharacterFactory.recreateHero(type, name, experience, level, currentHealth, currentDefence, weapon, armour, helm));
             }
         }
     }
+
+//    public static String loadToString() {
+//		System.out.println("name: " + name);
+//		System.out.println("experience: " + hero.experience);
+//		System.out.println("type: " + type);
+//		System.out.println("level: " + level);
+//		System.out.println("currentHealth: " + currentHealth);
+//		System.out.println("currentDefence: " + currentDefence);
+//		System.out.println("weapon: " + weapon);
+//		System.out.println("armour: " + armour);
+//		System.out.println("helm: " + helm);
+//	}
+
     public static void saveGame(){
         Hero hero = EventDataController.getHero();
         try {
             FileWriter fr = new FileWriter("heroes.txt", true);
-            fr.write(hero.saveString() +"\n");
+            fr.write(hero.saveString());
             fr.close();
         } catch (IOException e){
             System.out.println("Cannot save game.");

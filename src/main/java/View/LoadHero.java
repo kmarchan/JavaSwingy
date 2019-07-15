@@ -21,7 +21,7 @@ public class LoadHero extends BaseWindow{
 
         selectHero.addItem("Please select a save");
         for (int i = 0; i < HeroStorage.savedHeroes.size(); i++) {
-            selectHero.addItem(HeroStorage.savedHeroes.get(i).getName());
+            selectHero.addItem(i + ". " + HeroStorage.savedHeroes.get(i).getName());
         }
         selectHeroButton.addActionListener(new ActionListener() {
             @Override
