@@ -20,7 +20,7 @@ public class GameController {
 		for (int i = 0; i < GameModel.getMapSize(); i++){
 			for (int x = 0; x < GameModel.getMapSize(); x++){
 				if (GameModel.getMap()[i][x] == 1) {
-					mapString += " @ ";
+					mapString += "@ ";
 				}
 				else if (GameModel.getMap()[i][x] == 8) {
 					mapString += " # ";
@@ -29,8 +29,9 @@ public class GameController {
 					mapString += " _ ";
 				}
 				else {
+					FightInstructionController.setFightRunning(true);
 					FightView.displayFightView();
-					System.out.println("FIGHT!");
+					FightInstructionController.fightInstructionParse();
 				}
 			}
 			mapString += "\n";

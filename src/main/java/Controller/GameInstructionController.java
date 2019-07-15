@@ -3,7 +3,6 @@ package Controller;
 import Exception.InputException;
 import Model.GameModel;
 import View.BaseWindow;
-
 import java.util.List;
 
 import static View.GameView.displayGameView;
@@ -30,7 +29,7 @@ public class GameInstructionController {
 		try {
 			gameInstructions = EventDataController.getOutput();
 
-			while (isGameRunning == true) {
+			while (isGameRunning) {
 				for (int i = 0; i < gameInstructions.size(); i++) {
 					instructionIndex = i;
 					/* IMPORTANT: remove instruction after use. */
@@ -66,8 +65,8 @@ public class GameInstructionController {
 								System.out.println("Invalid instruction:" + gameInstructions.get(i));
 							}
 						}
-						displayGameView();
 						removeGameInstructions(gameInstructions.get(i));
+						displayGameView();
 					}
 				}
 				gameInstructions = EventDataController.getOutput();
