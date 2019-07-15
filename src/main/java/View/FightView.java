@@ -18,13 +18,12 @@ public class FightView extends BaseWindow {
 	public FightView() {
 		showStats(EventDataController.getHero(), heroStats);
 		showFoeStats(EventDataController.getFoe(), foeStats);
-
+		fightBox.setText("You have encountered " + EventDataController.getFoe().getName());
 		runButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				FightInstructionController.addInstructions("fight");
 			}
-
 		});
 		runButton.addActionListener(new ActionListener() {
 			@Override
