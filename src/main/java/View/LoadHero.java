@@ -26,8 +26,9 @@ public class LoadHero extends BaseWindow{
         selectHeroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+				if (selectHero.getSelectedIndex() != 0) {
                 EventDataController.setHero(hero);
-                EventDataController.addInstructions("start");
+                EventDataController.addInstructions("start");}
             }
         });
         cancelButton.addActionListener(new ActionListener() {

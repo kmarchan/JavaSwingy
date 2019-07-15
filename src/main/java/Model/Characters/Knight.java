@@ -1,12 +1,13 @@
 package Model.Characters;
 
 import Model.Artifacts.Artifact;
+import lombok.Getter;
 
 public class Knight extends Hero {
 
-    private static int defence = 20;
-    private static int hitPoints = 36;
-    private static int attack = 15;
+	@Getter private static int defence = 20;
+	@Getter private static int hitPoints = 36;
+	@Getter private static int attack = 15;
 
     public Knight(String name) {
         super(name, 1, 0, hitPoints, attack, defence, new Artifact[3]);

@@ -4,8 +4,6 @@ import Model.Artifacts.Artifact;
 import lombok.Getter;
 import lombok.Setter;
 
-import static Model.Artifacts.Artifact.*;
-
 @Setter @Getter public class Character {
     protected String name;
     protected String type;
@@ -42,18 +40,18 @@ import static Model.Artifacts.Artifact.*;
 		this.level = level;
 		this.baseAttackPnts = baseAttackPnts;
 		attackPnts = baseAttackPnts;
-		if (equipped[WEAPON] != null)
-			attackPnts += equipped[WEAPON].getBuff();
+//		if (equipped[WEAPON] != null)
+//			attackPnts += equipped[WEAPON].getBuff();
 
 		this.baseDefencePnts = baseDefencePnts;
 		defencePnts = baseDefencePnts;
-		if (equipped[ARMOUR] != null)
-			defencePnts += equipped[ARMOUR].getBuff();
+//		if (equipped[ARMOUR] != null)
+//			defencePnts += equipped[ARMOUR].getBuff();
 
 		this.baseHitPnts = baseHitPnts;
 		hitPnts = baseHitPnts;
-		if (equipped[HELM] != null)
-			hitPnts += equipped[HELM].getBuff();
+//		if (equipped[HELM] != null)
+//			hitPnts += equipped[HELM].getBuff();
 
 //		this.experiencePnts -= baseExperiencePnts;
 		// Todo -- make sure you didnt brake anything commenting out above line

@@ -84,7 +84,7 @@ public class GameModel {
 		updateHeroPlacement(hero);
 		System.out.println(GameController.printMap());
 	}
-	private static void mapEdgeReached(Hero hero) {
+	private static void mapEdgeReached(Hero hero){
 		Hero.gainExperience(hero, hero.getLevel() * 15);
 		createMap(hero);
 	}

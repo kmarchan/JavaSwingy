@@ -1,7 +1,8 @@
 package Model.Characters;
 
 import Model.Artifacts.Artifact;
-import static Model.Artifacts.Artifact.*;
+
+import static Model.Artifacts.Artifact.WEAPON;
 
 public class Hero extends Character {
 
@@ -13,7 +14,7 @@ public class Hero extends Character {
         super(name, level, experiencePnts, baseHitPnts, baseAttackPnts, baseDefencePnts, equipped);
     }
 
-	public static void gainExperience(Hero hero, int gain){
+	public static void gainExperience(Hero hero, int gain) {
         hero.experiencePnts += gain;
 
         if (hero.experiencePnts >= hero.baseExperiencePnts) {
@@ -21,24 +22,50 @@ public class Hero extends Character {
         }
     }
 
-    public static void levelUp(Hero hero){
+    public static void levelUp(Hero hero) {
 
         hero.level++;
 
-        hero.baseAttackPnts += 2;
-        hero.attackPnts = hero.baseAttackPnts;
+		int attack = 15;
+		int defence = 15;
+		int hitPoints = 15;
+		switch (hero.getClass().getSimpleName()){
+			case "Orc":
+				attack = Orc.getAttack();
+				defence = Orc.getDefence();
+				hitPoints = Orc.getHitPoints();
+				break;
+			case "Elf":
+				attack = Elf.getAttack();
+				defence = Elf.getDefence();
+				hitPoints = Elf.getHitPoints();
+				break;
+			case "BlackMage":
+				attack = BlackMage.getAttack();
+				defence = BlackMage.getDefence();
+				hitPoints = BlackMage.getHitPoints();
+				break;
+			case "Knight":
+				attack = Knight.getAttack();
+				defence = Knight.getDefence();
+				hitPoints = Knight.getHitPoints();
+				break;
+		}
+
+		hero.baseAttackPnts = hero.level * attack;
+    	hero.attackPnts = hero.baseAttackPnts;
         if (hero.equipped[WEAPON] != null)
             hero.attackPnts += hero.equipped[WEAPON].getBuff();
 
-        hero.baseDefencePnts += 2;
+		hero.baseDefencePnts = hero.level * defence;
         hero.defencePnts = hero.baseDefencePnts;
-        if (hero.equipped[ARMOUR] != null)
-            hero.defencePnts += hero.equipped[ARMOUR].getBuff();
+//        if (hero.equipped[ARMOUR] != null)
+//            hero.defencePnts += hero.equipped[ARMOUR].getBuff();
 
-        hero.baseHitPnts += 2;
+		hero.baseHitPnts = hero.level * hitPoints;
         hero.hitPnts = hero.baseHitPnts;
-        if (hero.equipped[HELM] != null)
-            hero.hitPnts += hero.equipped[HELM].getBuff();
+//        if (hero.equipped[HELM] != null)
+//            hero.hitPnts += hero.equipped[HELM].getBuff();
 
         hero.experiencePnts -= hero.baseExperiencePnts;
         hero.baseExperiencePnts = hero.level * 1000 + (int)Math.pow(hero.level - 1, 2) * 450;

@@ -53,6 +53,7 @@ public class HeroStorage {
         }
     }
 
+    // TODO use or remove
 //    public static String loadToString() {
 //		System.out.println("name: " + name);
 //		System.out.println("experience: " + hero.experience);
@@ -67,12 +68,14 @@ public class HeroStorage {
 
     public static void saveGame(){
         Hero hero = EventDataController.getHero();
-        try {
-            FileWriter fr = new FileWriter("heroes.txt", true);
-            fr.write(hero.saveString());
-            fr.close();
-        } catch (IOException e){
-            System.out.println("Cannot save game.");
-        }
+        if (EventDataController.getHero() != null) {
+			try {
+				FileWriter fr = new FileWriter("heroes.txt", true);
+				fr.write(hero.saveString());
+				fr.close();
+			} catch (IOException e) {
+				System.out.println("Cannot save game.");
+			}
+		}
     }
 }
