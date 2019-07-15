@@ -28,7 +28,10 @@ public class GameController {
 				else if (GameModel.getMap()[i][x] == 0) {
 					mapString += " _ ";
 				}
-				else FightView.displayFightView();
+				else {
+					FightView.displayFightView();
+					System.out.println("FIGHT!");
+				}
 			}
 			mapString += "\n";
 		}

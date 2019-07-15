@@ -29,13 +29,13 @@ public class GameModel {
 	private static void setFoePlacement(int mapSize) {
 		Random rn = new Random();
 		for (int i = 0 ; i < mapSize; i++){
-			map[rn.nextInt(mapSize)][rn.nextInt(mapSize)] += 8;
+			map[rn.nextInt(mapSize)][rn.nextInt(mapSize)] = 1;
 		}
 	}
 
 	public static void updateHeroPlacement(Hero hero) {
 		map[hero.getPreviousPosition()[0]][hero.getPreviousPosition()[1]] = 0;
-		map[hero.getRow()][hero.getColumn()] = 8;
+		map[hero.getRow()][hero.getColumn()] += 8;
 	}
 
 	public static void resetHeroPlacement(Hero hero) {
