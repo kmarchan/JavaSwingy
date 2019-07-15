@@ -6,6 +6,8 @@ import Model.Characters.Hero;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Random;
+
 
 public class GameModel {
 	@Getter @Setter	private static int mapSize;
@@ -20,7 +22,15 @@ public class GameModel {
 				map[i][x] = 0;
 			}
 		}
+		setFoePlacement(mapSize);
 		updateHeroPlacement(EventDataController.getHero());
+	}
+
+	private static void setFoePlacement(int mapSize) {
+		Random rn = new Random();
+		for (int i = 0 ; i < mapSize; i++){
+			map[rn.nextInt(mapSize)][rn.nextInt(mapSize)] += 8;
+		}
 	}
 
 	public static void updateHeroPlacement(Hero hero) {

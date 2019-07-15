@@ -36,7 +36,6 @@ public class HeroStorage {
             String armour;
             String helm;
             while (sc.hasNext()) {
-                // TODO -- remove sout
                 sc.useDelimiter(", ");
                 name = sc.next();
 				experience = sc.nextInt();
@@ -53,7 +52,7 @@ public class HeroStorage {
         }
     }
 
-    // TODO use or remove
+//	 TODO use or remove
 //    public static String loadToString() {
 //		System.out.println("name: " + name);
 //		System.out.println("experience: " + hero.experience);
