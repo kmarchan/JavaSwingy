@@ -61,7 +61,7 @@
             <properties>
               <editable value="false"/>
               <enabled value="true"/>
-              <font size="20"/>
+              <font/>
               <margin top="20" left="20" bottom="0" right="20"/>
               <requestFocusEnabled value="false"/>
               <text value=""/>

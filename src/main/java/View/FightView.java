@@ -2,6 +2,7 @@ package View;
 
 import Controller.EventDataController;
 import Controller.FightInstructionController;
+import Controller.GameController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,7 +19,7 @@ public class FightView extends BaseWindow {
 	public FightView() {
 		showStats(EventDataController.getHero(), heroStats);
 		showFoeStats(EventDataController.getFoe(), foeStats);
-		fightBox.setText("		You have encountered\n		" + EventDataController.getFoe().getName() + "\n		Will you fight or run?");
+		fightBox.setText("		You have encountered\n		" + EventDataController.getFoe().getName() + "\n		Will you fight or run? \n" + GameController.setFightText());
 		fightButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) { FightInstructionController.addInstructions("fight");

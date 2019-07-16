@@ -32,11 +32,13 @@ public class FightInstructionController {
 							switch (FightInstructionController.Instructions.valueOf(fightInstructions.get(i).toLowerCase())) {
 								case fight: {
 									System.out.println("fight");
-									EventDataController.getHero().attack(EventDataController.getHero(), EventDataController.getFoe());
+									GameController.attack(EventDataController.getHero(), EventDataController.getFoe());
+									GameController.attack(EventDataController.getFoe(), EventDataController.getHero());
 									break;
 								}
 								case run:
 									System.out.println("run");
+									GameController.run();
 									break;
 								default: {
 									System.out.println("Invalid instruction:" + fightInstructions.get(i));

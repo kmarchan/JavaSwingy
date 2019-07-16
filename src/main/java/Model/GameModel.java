@@ -5,6 +5,7 @@ import Model.Characters.Hero;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -12,7 +13,7 @@ import java.util.Random;
 public class GameModel {
 	@Getter @Setter	private static int mapSize;
 	@Getter @Setter	private static int[][] map;
-	@Getter @Setter private static List<String> fightCommentary;
+	@Getter @Setter private static List<String> fightCommentary = new ArrayList<>();
 
 	public static void addFightCommentary(String commentary) {
 		fightCommentary.add(commentary);
@@ -98,5 +99,10 @@ public class GameModel {
 	private static void mapEdgeReached(Hero hero){
 		Hero.gainExperience(hero, hero.getLevel() * 15);
 		createMap(hero);
+	}
+
+	public static void runAway(Hero hero) {
+		hero.setRow(hero.getPreviousPosition()[0]);
+		hero.setColumn(hero.getPreviousPosition()[1]);
 	}
 }

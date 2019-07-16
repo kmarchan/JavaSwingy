@@ -65,11 +65,7 @@ import lombok.Setter;
 		this.previousPosition = new int[]{center, center};
 	}
 
-	public void attack(Character attacker, Character victim){
-		victim.takeDamage(victim, attacker.attackPnts - victim.defencePnts);
-		victim.defencePnts = victim.defencePnts <= attacker.attackPnts ? 0 : victim.defencePnts - attacker.attackPnts;
-		GameModel.addFightCommentary(attacker.name + " attacks " + victim.name + " and did " + attacker.attackPnts + " damage!");
-	}
+
 
 	public void takeDamage(Character victim, int damage){
 		if (victim.hitPnts > damage) {
