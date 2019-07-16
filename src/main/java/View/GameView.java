@@ -23,6 +23,7 @@ public class GameView extends BaseWindow {
 	public GameView() {
 
         showStats(EventDataController.getHero(), heroStats);
+        foeStats.setText("No foe in sight yet");
 
         northButton.addActionListener(new ActionListener() {
             @Override

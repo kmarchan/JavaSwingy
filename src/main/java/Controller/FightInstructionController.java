@@ -32,6 +32,7 @@ public class FightInstructionController {
 							switch (FightInstructionController.Instructions.valueOf(fightInstructions.get(i).toLowerCase())) {
 								case fight: {
 									System.out.println("fight");
+									EventDataController.getHero().attack(EventDataController.getHero(), EventDataController.getFoe());
 									break;
 								}
 								case run:

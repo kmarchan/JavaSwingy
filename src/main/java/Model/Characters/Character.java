@@ -64,11 +64,19 @@ import lombok.Setter;
 		this.previousPosition = new int[]{center, center};
 	}
 
-	public void attack(){}
+	public void attack(Character attacker, Character victim){
+		victim.takeDamage(victim, attacker.attackPnts - victim.defencePnts);
+		victim.defencePnts = victim.defencePnts <= attacker.attackPnts ? 0 : victim.defencePnts - attacker.attackPnts;
+	}
 
-	public void defend(){}
-
-	public void takeDamage(){}
+	public void takeDamage(Character victim, int damage){
+		if (victim.hitPnts > damage) {
+			victim.hitPnts -= damage;
+		}
+		else {
+			victim.hitPnts = 0;
+		}
+	}
 
 	public static int calculateExperiencePnts(int level) {
 		return level * 1000 + (int)Math.pow(level - 1, 2) * 450;
