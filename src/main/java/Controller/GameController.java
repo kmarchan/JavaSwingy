@@ -37,8 +37,6 @@ public class GameController {
 					FightInstructionController.setFightRunning(true);
 					EventDataController.setFoe(CharacterFactory.createFoe(EventDataController.getHero().getLevel()));
 					ApplicationController.status = FIGHT_LOOP;
-//					FightView.displayFightView();
-//					FightInstructionController.fightInstructionParse();
 				}
 			}
 			mapString += "\n";
@@ -47,8 +45,8 @@ public class GameController {
 	}
 	public static String setFightText(){ ;
 	String fightCom = new String();
-	for (int i = 0; i < GameModel.getFightCommentary().size(); i++ ){
-			fightCom += "\n" + GameModel.getFightCommentary().get(i);
+	for (int i = 0; i < FightInstructionController.getFightCommentary().size(); i++ ){
+			fightCom += "\n" + FightInstructionController.getFightCommentary().get(i);
 		}
 		return fightCom;
 	}

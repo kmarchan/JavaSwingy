@@ -1,22 +1,20 @@
 package Model;
 
 import Controller.EventDataController;
+import Controller.FightInstructionController;
 import Model.Characters.Hero;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 
 public class GameModel {
 	@Getter @Setter	private static int mapSize;
 	@Getter @Setter	private static int[][] map;
-	@Getter @Setter private static List<String> fightCommentary = new ArrayList<>();
 
 	public static void addFightCommentary(String commentary) {
-		fightCommentary.add(commentary);
+		FightInstructionController.getFightCommentary().add(commentary);
 	}
 
 	public static void createMap(Hero hero) {

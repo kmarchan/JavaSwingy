@@ -6,6 +6,7 @@ import View.FightView;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static Controller.ApplicationController.ART_LOOP;
@@ -15,9 +16,8 @@ public class FightInstructionController {
 
 		private static List<String> fightInstructions;
 		private static boolean isFightProcessed;
-		@Getter
-		@Setter
-		private static boolean isFightRunning = false;
+		@Getter	@Setter	private static boolean isFightRunning = false;
+		@Getter @Setter private static List<String> fightCommentary;
 
 		enum Instructions {
 			fight,
@@ -26,6 +26,7 @@ public class FightInstructionController {
 
 		public static void fightInstructionParse() {
 			int instructionIndex = 0;
+			setFightCommentary(new ArrayList<>());
 			try {
 				FightView.displayFightView();
 				fightInstructions = EventDataController.getInstructions();
@@ -82,11 +83,11 @@ public class FightInstructionController {
 	private static void searchForDrop() {
 		ArtifactPickupInstructionController.setArtifactView(true);
 		ApplicationController.status = ART_LOOP;
-//		ArtifactPickupInstructionController.ArtifactInstructionParse();
 	}
 
 	private static void fightWon() {
 		GameModel.removeFoe(EventDataController.getHero());
+
 		Hero.gainExperience(EventDataController.getHero(), EventDataController.getFoe().getLevel() * 20);
 		setFightRunning(false);
 	}
