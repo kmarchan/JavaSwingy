@@ -1,6 +1,5 @@
 package Controller;
 
-import Exception.InputException;
 import Model.Characters.Character;
 import Model.GameModel;
 import Utils.CharacterFactory;
@@ -13,7 +12,7 @@ import java.util.Random;
 public class GameController {
 
 
-	public static void startGame() throws InputException {
+	public static void startGame() {
 		GameModel.createMap(EventDataController.getHero());
 		GameModel.updateHeroPlacement(EventDataController.getHero());
 		GameView.displayGameView();

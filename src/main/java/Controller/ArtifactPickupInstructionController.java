@@ -1,6 +1,6 @@
 package Controller;
 
-import View.ArtifactPickupView;
+import View.GameView;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,17 +26,17 @@ public class ArtifactPickupInstructionController {
 					if (responseInstructions.get(i) != null) {
 						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.get(i).toLowerCase())) {
 							case y:
-								System.out.println("yes");;
+								System.out.println("yes");
 								break;
 							case n:
 								setArtifactView(false);
-								System.out.println("no");
+								GameView.displayGameView();
 								break;
+
 							default: {
 								System.out.println("Invalid instruction:" + responseInstructions.get(i));
 							}
 						}
-						ArtifactPickupView.displayArtifactPickupView();
 						removeResponseInstructions(responseInstructions.get(i));
 					}
 				}
@@ -55,9 +55,5 @@ public class ArtifactPickupInstructionController {
 
 	public static void removeResponseInstructions(String input) {
 		responseInstructions.remove(input);
-		ArtifactInstructionParse();
-		if (responseInstructions.size() != 0) {
-			removeResponseInstructions(input);
-		}
 	}
 }

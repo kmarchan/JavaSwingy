@@ -3,7 +3,6 @@ package View;
 import Controller.EventDataController;
 import Controller.GameController;
 import Controller.GameInstructionController;
-import Exception.InputException;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -69,7 +68,7 @@ public class GameView extends BaseWindow {
 	}
 
 
-	static public void displayGameView() throws InputException {
+	static public void displayGameView() {
 		frame.setContentPane(new GameView().gameView);
 		frame.pack();
 	}

@@ -37,7 +37,6 @@ public class FightInstructionController {
 									GameController.attack(EventDataController.getHero(), EventDataController.getFoe());
 									checkForDeath();
 									GameController.attack(EventDataController.getFoe(), EventDataController.getHero());
-									checkForDeath();
 								break;
 								}
 								case run:

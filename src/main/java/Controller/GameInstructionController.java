@@ -1,8 +1,8 @@
 package Controller;
 
-import Exception.InputException;
 import Model.GameModel;
 import View.BaseWindow;
+
 import java.util.List;
 
 import static View.GameView.displayGameView;
@@ -67,7 +67,7 @@ public class GameInstructionController {
 				}
 				gameInstructions = EventDataController.getInstructions();
 			}
-		} catch (IllegalArgumentException | InputException e) {
+		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid instruction:" + gameInstructions.get(instructionIndex));
 			removeGameInstructions(gameInstructions.get(instructionIndex));
 			gameInstructionParse();
