@@ -1,5 +1,6 @@
 package Controller;
 
+import View.ArtifactPickupView;
 import View.FightView;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,6 +50,7 @@ public class FightInstructionController {
 						}
 					}
 					fightInstructions = EventDataController.getInstructions();
+					checkForDeath();
 				}
 			} catch (IllegalArgumentException e) {
 				System.out.println("Invalid instruction:" + fightInstructions.get(instructionIndex));
@@ -57,7 +59,21 @@ public class FightInstructionController {
 			}
 		}
 
-		public static void addInstructions(String input) {
+	private static void checkForDeath() {
+		if (EventDataController.getHero().getHitPnts() == 0)
+		{
+			setFightRunning(false);
+			System.out.println("Game Over");
+		}
+		if (EventDataController.getFoe().getHitPnts() <= 0)
+		{
+			setFightRunning(false);
+			ArtifactPickupInstructionController.setArtifactView(true);
+			ArtifactPickupView.displayArtifactPickupView();
+		}
+	}
+
+	public static void addInstructions(String input) {
 			isProcessed = false;
 			fightInstructions.add(input);
 		}
