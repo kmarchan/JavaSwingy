@@ -5,12 +5,18 @@ import Model.Characters.Hero;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Random;
 
 
 public class GameModel {
 	@Getter @Setter	private static int mapSize;
 	@Getter @Setter	private static int[][] map;
+	@Getter @Setter private static List<String> fightCommentary;
+
+	public static void addFightCommentary(String commentary) {
+		fightCommentary.add(commentary);
+	}
 
 	public static void createMap(Hero hero) {
 		setMapSize((hero.getLevel()-1)*5+10-(hero.getLevel()%2));

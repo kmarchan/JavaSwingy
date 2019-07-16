@@ -1,6 +1,7 @@
 package Model.Characters;
 
 import Model.Artifacts.Artifact;
+import Model.GameModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -54,7 +55,7 @@ import lombok.Setter;
 //			hitPnts += equipped[HELM].getBuff();
 
 //		this.experiencePnts -= baseExperiencePnts;
-		// Todo -- make sure you didnt brake anything commenting out above line
+		// Todo -- make sure you didn't brake anything commenting out above line
 		this.experiencePnts = experiencePnts;
 		baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;
 		this.equipped = equipped;
@@ -67,6 +68,7 @@ import lombok.Setter;
 	public void attack(Character attacker, Character victim){
 		victim.takeDamage(victim, attacker.attackPnts - victim.defencePnts);
 		victim.defencePnts = victim.defencePnts <= attacker.attackPnts ? 0 : victim.defencePnts - attacker.attackPnts;
+		GameModel.addFightCommentary(attacker.name + " attacks " + victim.name + " and did " + attacker.attackPnts + " damage!");
 	}
 
 	public void takeDamage(Character victim, int damage){
