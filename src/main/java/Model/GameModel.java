@@ -105,4 +105,9 @@ public class GameModel {
 		hero.setRow(hero.getPreviousPosition()[0]);
 		hero.setColumn(hero.getPreviousPosition()[1]);
 	}
+
+	public static void removeFoe(Hero hero) {
+		map[hero.getPreviousPosition()[0]][hero.getPreviousPosition()[1]] = 0;
+		map[hero.getRow()][hero.getColumn()] = 8;
+	}
 }

@@ -1,7 +1,6 @@
 package Model.Characters;
 
 import Model.Artifacts.Artifact;
-import Model.GameModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +23,7 @@ import lombok.Setter;
 
 	public Character() {
 		this.name = "undefined";
-		this.level = 0;
+		this.level = 1;
 		this.attackPnts = 0;
 		this.defencePnts = 0;
 		this.hitPnts = 0;
@@ -54,7 +53,6 @@ import lombok.Setter;
 //		if (equipped[HELM] != null)
 //			hitPnts += equipped[HELM].getBuff();
 
-//		this.experiencePnts -= baseExperiencePnts;
 		// Todo -- make sure you didn't brake anything commenting out above line
 		this.experiencePnts = experiencePnts;
 		baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;
@@ -68,11 +66,12 @@ import lombok.Setter;
 
 
 	public void takeDamage(Character victim, int damage){
-		if (victim.hitPnts > damage) {
-			victim.hitPnts -= damage;
-		}
-		else {
-			victim.hitPnts = 0;
+		if (damage >= 0) {
+			if (victim.hitPnts > damage) {
+				victim.hitPnts -= damage;
+			} else {
+				victim.hitPnts = 0;
+			}
 		}
 	}
 

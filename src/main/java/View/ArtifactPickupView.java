@@ -31,7 +31,6 @@ public class ArtifactPickupView extends BaseWindow{
 	}
 
 	static public void displayArtifactPickupView() {
-		System.out.println("Artifact");
 		frame.setContentPane(new ArtifactPickupView().artifactView);
 		frame.pack();
 	}

@@ -71,11 +71,7 @@ public class Hero extends Character {
         hero.baseExperiencePnts = hero.level * 1000 + (int)Math.pow(hero.level - 1, 2) * 450;
     }
 
-    public void unequipArtifact(){}
-    public void lootEnemy(){}
     public void equipArtifact(){}
-    public void save(){}
-    public void load(){}
 
     @Override
     public String toString() {
@@ -111,5 +107,4 @@ public class Hero extends Character {
 				"Armour, " +
 				"Helm";
     }
-
 }

@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.Characters.Hero;
+import Model.GameModel;
 import View.ArtifactPickupView;
 import View.FightView;
 import lombok.Getter;
@@ -10,7 +12,7 @@ import java.util.List;
 public class FightInstructionController {
 
 		private static List<String> fightInstructions;
-		private static boolean isProcessed;
+		private static boolean isFightProcessed;
 		@Getter
 		@Setter
 		private static boolean isFightRunning = false;
@@ -29,16 +31,16 @@ public class FightInstructionController {
 						instructionIndex = i;
 						/* IMPORTANT: remove instruction after use. */
 						if (fightInstructions.get(i) != null) {
-							isProcessed = true;
+							isFightProcessed = true;
 							switch (FightInstructionController.Instructions.valueOf(fightInstructions.get(i).toLowerCase())) {
 								case fight: {
-									System.out.println("fight");
 									GameController.attack(EventDataController.getHero(), EventDataController.getFoe());
+									checkForDeath();
 									GameController.attack(EventDataController.getFoe(), EventDataController.getHero());
-									break;
+									checkForDeath();
+								break;
 								}
 								case run:
-									System.out.println("run");
 									GameController.run();
 									break;
 								default: {
@@ -46,7 +48,9 @@ public class FightInstructionController {
 								}
 							}
 							FightView.displayFightView();
-							removeFightInstructions(fightInstructions.get(i));
+							if (fightInstructions.size() != 0) {
+								removeFightInstructions(fightInstructions.get(i));
+							}
 						}
 					}
 					fightInstructions = EventDataController.getInstructions();
@@ -67,22 +71,32 @@ public class FightInstructionController {
 		}
 		if (EventDataController.getFoe().getHitPnts() <= 0)
 		{
-			setFightRunning(false);
-			ArtifactPickupInstructionController.setArtifactView(true);
-			ArtifactPickupInstructionController.ArtifactInstructionParse();
-			ArtifactPickupView.displayArtifactPickupView();
+			fightWon();
+			searchForDrop();
 		}
 	}
 
+	private static void searchForDrop() {
+		ArtifactPickupInstructionController.setArtifactView(true);
+		ArtifactPickupView.displayArtifactPickupView();
+		ArtifactPickupInstructionController.ArtifactInstructionParse();
+	}
+
+	private static void fightWon() {
+		GameModel.removeFoe(EventDataController.getHero());
+		Hero.gainExperience(EventDataController.getHero(), EventDataController.getFoe().getLevel() * 20);
+		setFightRunning(false);
+	}
+
 	public static void addInstructions(String input) {
-			isProcessed = false;
+			isFightProcessed = false;
 			fightInstructions.add(input);
 		}
 
 		public static void removeFightInstructions(String input) {
-			if (isProcessed) {
+			if (isFightProcessed) {
 				fightInstructions.remove(input);
-				isProcessed = false;
+				isFightProcessed = false;
 			} else {
 				fightInstructionParse();
 				if (fightInstructions.size() != 0) {

@@ -33,6 +33,7 @@ public class GameController {
 					mapString += " _ ";
 				}
 				else {
+					mapString += " # ";
 					FightInstructionController.setFightRunning(true);
 					EventDataController.setFoe(CharacterFactory.createFoe(EventDataController.getHero().getLevel()));
 					FightView.displayFightView();
@@ -52,7 +53,7 @@ public class GameController {
 	}
 
 	public static void attack(Character attacker, Character victim){
-		victim.takeDamage(victim, attacker.getAttackPnts() - victim.getAttackPnts());
+		victim.takeDamage(victim, attacker.getAttackPnts() - victim.getDefencePnts());
 		victim.setDefencePnts((victim.getDefencePnts() <= attacker.getAttackPnts()) ? 0 : (victim.getDefencePnts() - attacker.getAttackPnts()));
 		GameModel.addFightCommentary(attacker.getName() + " attacks " + victim.getName() + " and did " + attacker.getAttackPnts() + " damage!");
 	}

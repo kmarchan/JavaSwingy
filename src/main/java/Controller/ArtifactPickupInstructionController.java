@@ -8,7 +8,6 @@ import java.util.List;
 
 public class ArtifactPickupInstructionController {
 	private static List<String> responseInstructions;
-	private static boolean isProcessed;
 	@Getter	@Setter private static boolean artifactView = false;
 
 	enum response {
@@ -25,13 +24,12 @@ public class ArtifactPickupInstructionController {
 					instructionIndex = i;
 					/* IMPORTANT: remove instruction after use. */
 					if (responseInstructions.get(i) != null) {
-						isProcessed = true;
 						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.get(i).toLowerCase())) {
-							case y: {
+							case y:
 								System.out.println("yes");;
 								break;
-							}
 							case n:
+								setArtifactView(false);
 								System.out.println("no");
 								break;
 							default: {
@@ -52,19 +50,14 @@ public class ArtifactPickupInstructionController {
 	}
 
 	public static void addResponseInstructions(String input) {
-		isProcessed = false;
 		responseInstructions.add(input);
 	}
 
 	public static void removeResponseInstructions(String input) {
-		if (isProcessed) {
-			responseInstructions.remove(input);
-			isProcessed = false;
-		} else {
-			ArtifactInstructionParse();
-			if (responseInstructions.size() != 0) {
-				removeResponseInstructions(input);
-			}
+		responseInstructions.remove(input);
+		ArtifactInstructionParse();
+		if (responseInstructions.size() != 0) {
+			removeResponseInstructions(input);
 		}
 	}
 }

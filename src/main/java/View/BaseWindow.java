@@ -43,11 +43,11 @@ public class BaseWindow extends JFrame{
 
 	public void showFoeStats(Foe foe, JTextPane heroStats) {
 		heroStats.setText(
-				"Name:		" + foe.getName() + "\n" +
-						"Level:		" + foe.getLevel() + "\n" +
-						"Type:		" + foe.getType() + "\n" +
-						"Damage:		" + foe.getAttackPnts() + "\n" +
-						"Hit Points:		" + foe.getHitPnts() + "/" + foe.getBaseHitPnts() + "\n" +
-						"Defence Points:	" + foe.getDefencePnts() + "/" + foe.getBaseDefencePnts() + "\n");
+			"Name:		" + foe.getName() + "\n" +
+			"Level:		" + foe.getLevel() + "\n" +
+			"Type:		" + foe.getType() + "\n" +
+			"Damage:		" + foe.getAttackPnts() + "\n" +
+			"Hit Points:		" + foe.getHitPnts() + "/" + foe.getBaseHitPnts() + "\n" +
+			"Defence Points:	" + foe.getDefencePnts() + "/" + foe.getBaseDefencePnts() + "\n");
 	}
 }
