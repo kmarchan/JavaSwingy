@@ -5,6 +5,9 @@ import View.*;
 import Exception.InputException;
 import java.util.List;
 
+import static Controller.ApplicationController.GAME_LOOP;
+import static Controller.ApplicationController.MENU_LOOP;
+
 public class MenuInstructionController {
 	private static List<String> instructions;
 
@@ -23,7 +26,7 @@ public class MenuInstructionController {
 		try {
 			instructions = EventDataController.getInstructions();
 
-			while(EventDataController.getIsRunning()) {
+			while(EventDataController.getIsRunning() && ApplicationController.status == MENU_LOOP) {
 				for (int i=0; i < instructions.size(); i++) {
 					instructionIndex = i;
 					/* IMPORTANT: remove instruction after use. */
@@ -53,6 +56,7 @@ public class MenuInstructionController {
 								MainMenu.displayMainMenu();
 								break;
 							case start:
+								ApplicationController.status = GAME_LOOP;
 								GameController.startGame();
 								EventDataController.setIsRunning(false);
 								break;

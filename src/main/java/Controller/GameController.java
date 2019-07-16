@@ -3,10 +3,11 @@ package Controller;
 import Model.Characters.Character;
 import Model.GameModel;
 import Utils.CharacterFactory;
-import View.FightView;
 import View.GameView;
 
 import java.util.Random;
+
+import static Controller.ApplicationController.FIGHT_LOOP;
 
 
 public class GameController {
@@ -35,8 +36,9 @@ public class GameController {
 					mapString += " # ";
 					FightInstructionController.setFightRunning(true);
 					EventDataController.setFoe(CharacterFactory.createFoe(EventDataController.getHero().getLevel()));
-					FightView.displayFightView();
-					FightInstructionController.fightInstructionParse();
+					ApplicationController.status = FIGHT_LOOP;
+//					FightView.displayFightView();
+//					FightInstructionController.fightInstructionParse();
 				}
 			}
 			mapString += "\n";

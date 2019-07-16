@@ -1,10 +1,13 @@
 package Controller;
 
-import View.GameView;
+import View.ArtifactPickupView;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+
+import static Controller.ApplicationController.ART_LOOP;
+import static Controller.ApplicationController.GAME_LOOP;
 
 public class ArtifactPickupInstructionController {
 	private static List<String> responseInstructions;
@@ -18,8 +21,9 @@ public class ArtifactPickupInstructionController {
 	public static void ArtifactInstructionParse() {
 		int instructionIndex = 0;
 		try {
+			ArtifactPickupView.displayArtifactPickupView();
 			responseInstructions = EventDataController.getInstructions();
-			while (artifactView) {
+			while (ApplicationController.status == ART_LOOP) {
 				for (int i = 0; i < responseInstructions.size(); i++) {
 					instructionIndex = i;
 					/* IMPORTANT: remove instruction after use. */
@@ -30,7 +34,7 @@ public class ArtifactPickupInstructionController {
 								break;
 							case n:
 								setArtifactView(false);
-								GameView.displayGameView();
+								ApplicationController.status = GAME_LOOP;
 								break;
 
 							default: {

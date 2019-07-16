@@ -2,12 +2,14 @@ package Controller;
 
 import Model.Characters.Hero;
 import Model.GameModel;
-import View.ArtifactPickupView;
 import View.FightView;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+
+import static Controller.ApplicationController.ART_LOOP;
+import static Controller.ApplicationController.FIGHT_LOOP;
 
 public class FightInstructionController {
 
@@ -25,8 +27,9 @@ public class FightInstructionController {
 		public static void fightInstructionParse() {
 			int instructionIndex = 0;
 			try {
+				FightView.displayFightView();
 				fightInstructions = EventDataController.getInstructions();
-				while (isFightRunning) {
+				while (ApplicationController.status == FIGHT_LOOP) {
 					for (int i = 0; i < fightInstructions.size(); i++) {
 						instructionIndex = i;
 						/* IMPORTANT: remove instruction after use. */
@@ -66,6 +69,7 @@ public class FightInstructionController {
 		if (EventDataController.getHero().getHitPnts() == 0)
 		{
 			setFightRunning(false);
+			// TODO set Application status to dead
 			System.out.println("Game Over");
 		}
 		if (EventDataController.getFoe().getHitPnts() <= 0)
@@ -77,8 +81,8 @@ public class FightInstructionController {
 
 	private static void searchForDrop() {
 		ArtifactPickupInstructionController.setArtifactView(true);
-		ArtifactPickupView.displayArtifactPickupView();
-		ArtifactPickupInstructionController.ArtifactInstructionParse();
+		ApplicationController.status = ART_LOOP;
+//		ArtifactPickupInstructionController.ArtifactInstructionParse();
 	}
 
 	private static void fightWon() {

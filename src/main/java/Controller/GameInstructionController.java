@@ -5,6 +5,7 @@ import View.BaseWindow;
 
 import java.util.List;
 
+import static Controller.ApplicationController.GAME_LOOP;
 import static View.GameView.displayGameView;
 
 public class GameInstructionController {
@@ -28,8 +29,8 @@ public class GameInstructionController {
 		int instructionIndex = 0;
 		try {
 			gameInstructions = EventDataController.getInstructions();
-
-			while (isGameRunning) {
+			displayGameView();
+			while (isGameRunning && ApplicationController.status == GAME_LOOP) {
 				for (int i = 0; i < gameInstructions.size(); i++) {
 					instructionIndex = i;
 					/* IMPORTANT: remove instruction after use. */
