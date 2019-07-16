@@ -69,6 +69,7 @@ public class FightInstructionController {
 		{
 			setFightRunning(false);
 			ArtifactPickupInstructionController.setArtifactView(true);
+			ArtifactPickupInstructionController.ArtifactInstructionParse();
 			ArtifactPickupView.displayArtifactPickupView();
 		}
 	}
