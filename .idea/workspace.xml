@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b27ee3c-a07d-47f9-90d6-387382673282" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/FightInstructionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/FightInstructionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/FightView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/FightView.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,14 +42,14 @@
     <session id="-1738007397">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="291" />
-          <entry key="txt" value="42" />
+          <entry key="java" value="308" />
+          <entry key="txt" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="291" />
-          <entry key="PLAIN_TEXT" value="42" />
+          <entry key="JAVA" value="308" />
+          <entry key="PLAIN_TEXT" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -78,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/FightInstructionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+            <state relative-caret-position="665">
+              <caret line="108" column="40" lean-forward="true" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -503,7 +498,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="247" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563358944274" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563359838857" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -1017,11 +1012,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563352837881</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="need to exit game, implement terminal and add artifact logic">
+      <created>1563359038608</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1563359038608</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109332000" />
+    <option name="totallyTimeSpent" value="109988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1337" extended-state="0" />
@@ -1097,7 +1099,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="exit working on mac" />
     <MESSAGE value="add running file" />
     <MESSAGE value="add loadHero, NewGame, Control view not navigating" />
     <MESSAGE value="naviating to new views. {unreliable instruction input}" />
@@ -1122,7 +1123,8 @@
     <MESSAGE value="artifact pickup wip" />
     <MESSAGE value="artifact pickup instruction not working" />
     <MESSAGE value="Game over view added run not responding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Game over view added run not responding" />
+    <MESSAGE value="need to exit game, implement terminal and add artifact logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="need to exit game, implement terminal and add artifact logic" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Exception/InputException.java">
@@ -1459,8 +1461,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/FightInstructionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
+        <state relative-caret-position="665">
+          <caret line="108" column="40" lean-forward="true" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
