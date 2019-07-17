@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static Model.Artifacts.Artifact.*;
+
 public class HeroStorage {
 
     public static List<Hero> savedHeroes = new ArrayList<>();
@@ -51,19 +53,20 @@ public class HeroStorage {
             }
         }
     }
-
-//	  	TODO use or remove
-//    	public static String loadToString() {
-//		System.out.println("name: " + name);
-//		System.out.println("experience: " + hero.experience);
-//		System.out.println("type: " + type);
-//		System.out.println("level: " + level);
-//		System.out.println("currentHealth: " + currentHealth);
-//		System.out.println("currentDefence: " + currentDefence);
-//		System.out.println("weapon: " + weapon);
-//		System.out.println("armour: " + armour);
-//		System.out.println("helm: " + helm);
-//	}
+		// TODO use for terminal hero loader
+    	public static String loadToString(Hero hero) {
+			String ret;
+			ret = 	"name: " + hero.getName() +
+					" experience: " + hero.getExperiencePnts() +
+					" type: " + hero.getType() +
+					" level: " + hero.getLevel() +
+					" currentHealth: " + hero.getHitPnts() +
+					" currentDefence: " + hero.getDefencePnts() +
+					" weapon: " + hero.getEquipped()[WEAPON] +
+					" armour: " + hero.getEquipped()[ARMOUR] +
+					" helm: " + hero.getEquipped()[HELM];
+		return ret;
+    }
 
     public static void saveGame(){
         Hero hero = EventDataController.getHero();
