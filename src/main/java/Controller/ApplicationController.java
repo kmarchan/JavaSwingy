@@ -18,7 +18,7 @@ public class ApplicationController {
 	}
 
 	static public void closeApplication(){
-		BaseWindow.destoryWindow();
+		BaseWindow.destroyWindow();
 		HeroStorage.saveGame();
 		System.exit(0);
 	}

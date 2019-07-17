@@ -26,7 +26,6 @@ public class ArtifactPickupInstructionController {
 			while (ApplicationController.status == ART_LOOP) {
 				for (int i = 0; i < responseInstructions.size(); i++) {
 					instructionIndex = i;
-					/* IMPORTANT: remove instruction after use. */
 					if (responseInstructions.get(i) != null) {
 						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.get(i).toLowerCase())) {
 							case y:

@@ -29,7 +29,6 @@ public class MenuInstructionController {
 			while(EventDataController.getIsRunning() && ApplicationController.status == MENU_LOOP) {
 				for (int i=0; i < instructions.size(); i++) {
 					instructionIndex = i;
-					/* IMPORTANT: remove instruction after use. */
 					if (instructions.get(i) != null) {
 						EventDataController.setIsProcessed(true);
 						switch (Instruction.valueOf(instructions.get(i).toLowerCase())) {

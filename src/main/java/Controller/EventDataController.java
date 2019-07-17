@@ -43,8 +43,6 @@ public class EventDataController {
 		}
 		else {
 			MenuInstructionController.instructionParse();
-			// TODO this comment??
-//			removeInstructions(input);
 		}
 	}
 

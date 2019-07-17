@@ -20,7 +20,7 @@ public class BaseWindow extends JFrame{
 		frame.setVisible(true);
 		}
 
-	static public void destoryWindow(){
+	static public void destroyWindow(){
 		frame.dispose();
 		frame.setVisible(false);
 	}

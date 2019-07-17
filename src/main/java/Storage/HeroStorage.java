@@ -52,8 +52,8 @@ public class HeroStorage {
         }
     }
 
-//	 TODO use or remove
-//    public static String loadToString() {
+//	  	TODO use or remove
+//    	public static String loadToString() {
 //		System.out.println("name: " + name);
 //		System.out.println("experience: " + hero.experience);
 //		System.out.println("type: " + type);

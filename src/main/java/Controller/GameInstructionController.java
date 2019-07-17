@@ -33,7 +33,6 @@ public class GameInstructionController {
 			while (isGameRunning && ApplicationController.status == GAME_LOOP) {
 				for (int i = 0; i < gameInstructions.size(); i++) {
 					instructionIndex = i;
-					/* IMPORTANT: remove instruction after use. */
 					if (gameInstructions.get(i) != null) {
 						isProcessed = true;
 						switch (Instruction.valueOf(gameInstructions.get(i).toLowerCase())) {

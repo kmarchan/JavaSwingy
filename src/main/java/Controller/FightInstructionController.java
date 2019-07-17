@@ -34,7 +34,6 @@ public class FightInstructionController {
 				while (ApplicationController.status == FIGHT_LOOP) {
 					for (int i = 0; i < fightInstructions.size(); i++) {
 						instructionIndex = i;
-						/* IMPORTANT: remove instruction after use. */
 						if (fightInstructions.get(i) != null) {
 							isFightProcessed = true;
 							switch (FightInstructionController.Instructions.valueOf(fightInstructions.get(i).toLowerCase())) {
