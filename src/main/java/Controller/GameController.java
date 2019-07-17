@@ -8,6 +8,7 @@ import View.GameView;
 import java.util.Random;
 
 import static Controller.ApplicationController.FIGHT_LOOP;
+import static Controller.ApplicationController.GAME_LOOP;
 
 
 public class GameController {
@@ -62,6 +63,7 @@ public class GameController {
 		if (rn % 2 == 0) {
 			GameModel.runAway(EventDataController.getHero());
 			FightInstructionController.setFightRunning(false);
+			ApplicationController.status = GAME_LOOP;
 		}
 		else {
 			GameModel.addFightCommentary(EventDataController.getHero().getName() + " failed to run away");

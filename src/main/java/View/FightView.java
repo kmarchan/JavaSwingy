@@ -22,13 +22,16 @@ public class FightView extends BaseWindow {
 		fightBox.setText("		You have encountered\n		" + EventDataController.getFoe().getName() + "\n		Will you fight or run? \n" + GameController.setFightText());
 		fightButton.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) { FightInstructionController.addInstructions("fight");
+			public void actionPerformed(ActionEvent e) {
+				FightInstructionController.addInstructions("fight");
+				System.out.println("fight");
 			}
 		});
 		runButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent actionEvent) {
 				FightInstructionController.addInstructions("run");
+				System.out.println("RUN");
 			}
 		});
 	}

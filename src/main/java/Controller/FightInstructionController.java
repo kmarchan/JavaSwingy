@@ -40,10 +40,10 @@ public class FightInstructionController {
 							switch (FightInstructionController.Instructions.valueOf(fightInstructions.get(i).toLowerCase())) {
 								case fight: {
 									GameController.attack(EventDataController.getHero(), EventDataController.getFoe());
-									if (!checkForDeath()); {
-
-										GameController.attack(EventDataController.getFoe(), EventDataController.getHero());}
-								break;
+									if (!checkForDeath()) {
+										GameController.attack(EventDataController.getFoe(), EventDataController.getHero());
+									}
+									break;
 								}
 								case run:
 									GameController.run();
@@ -69,18 +69,17 @@ public class FightInstructionController {
 		}
 
 	private static boolean checkForDeath() {
-		if (EventDataController.getHero().getHitPnts() == 0)
-		{
-			setFightRunning(false);
-			StateManager.setGame(false);
-			GameOver.displayGameOver();
-			return true;
-		}
-		else if (EventDataController.getFoe().getHitPnts() <= 0)
+		if (EventDataController.getFoe().getHitPnts() <= 0)
 		{
 			fightWon();
 			searchForDrop();
 			return true;
+		}
+		else if (EventDataController.getHero().getHitPnts() <= 0)
+		{
+			setFightRunning(false);
+			StateManager.setGame(false);
+			GameOver.displayGameOver();
 		}
 		return false;
 	}

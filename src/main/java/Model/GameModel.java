@@ -100,8 +100,10 @@ public class GameModel {
 	}
 
 	public static void runAway(Hero hero) {
+		map[hero.getRow()][hero.getColumn()] = 1;
 		hero.setRow(hero.getPreviousPosition()[0]);
 		hero.setColumn(hero.getPreviousPosition()[1]);
+		updateHeroPlacement(hero);
 	}
 
 	public static void removeFoe(Hero hero) {
