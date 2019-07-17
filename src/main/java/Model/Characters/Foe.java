@@ -18,7 +18,6 @@ public class Foe extends Character {
 
 	private static int generateFoeLevel(int level) {
 		int rn = new Random().nextInt(3);
-		System.out.println(rn);
 		int[] levelRange = {level <= 1 ? 1 : level -1, level, level +1};
 		foeLevel = levelRange[rn];
 		return foeLevel;

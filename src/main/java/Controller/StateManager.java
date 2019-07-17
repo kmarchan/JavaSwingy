@@ -1,12 +1,17 @@
 package Controller;
 
+import lombok.Setter;
+
 import static Controller.ApplicationController.*;
 
 public class StateManager {
 
+	@Setter	private static boolean game = true;
+
 	public static void stateManager(){
 
-		while(true) {
+
+		while(game) {
 			if (ApplicationController.status == MENU_LOOP) {
 				MenuInstructionController.instructionParse();
 			} else if (ApplicationController.status == GAME_LOOP) {

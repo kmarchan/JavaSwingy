@@ -3,6 +3,7 @@ package Controller;
 import Model.Characters.Hero;
 import Model.GameModel;
 import View.FightView;
+import View.GameOver;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,8 +40,9 @@ public class FightInstructionController {
 							switch (FightInstructionController.Instructions.valueOf(fightInstructions.get(i).toLowerCase())) {
 								case fight: {
 									GameController.attack(EventDataController.getHero(), EventDataController.getFoe());
-									checkForDeath();
-									GameController.attack(EventDataController.getFoe(), EventDataController.getHero());
+									if (!checkForDeath()); {
+
+										GameController.attack(EventDataController.getFoe(), EventDataController.getHero());}
 								break;
 								}
 								case run:
@@ -66,18 +68,21 @@ public class FightInstructionController {
 			}
 		}
 
-	private static void checkForDeath() {
+	private static boolean checkForDeath() {
 		if (EventDataController.getHero().getHitPnts() == 0)
 		{
 			setFightRunning(false);
-			// TODO set Application status to dead
-			System.out.println("Game Over");
+			StateManager.setGame(false);
+			GameOver.displayGameOver();
+			return true;
 		}
-		if (EventDataController.getFoe().getHitPnts() <= 0)
+		else if (EventDataController.getFoe().getHitPnts() <= 0)
 		{
 			fightWon();
 			searchForDrop();
+			return true;
 		}
+		return false;
 	}
 
 	private static void searchForDrop() {
