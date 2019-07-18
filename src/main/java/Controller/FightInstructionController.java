@@ -3,7 +3,6 @@ package Controller;
 import Model.Characters.Hero;
 import Model.GameModel;
 import View.FightView;
-import View.GameOver;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +16,6 @@ public class FightInstructionController {
 
 		private static List<String> fightInstructions;
 		private static boolean isFightProcessed;
-		@Getter	@Setter	private static boolean isFightRunning = false;
 		@Getter @Setter private static List<String> fightCommentary;
 
 		enum Instructions {
@@ -76,10 +74,7 @@ public class FightInstructionController {
 		}
 		else if (EventDataController.getHero().getHitPnts() <= 0)
 		{
-			setFightRunning(false);
-			StateManager.setGame(false);
 			ApplicationController.status = END_LOOP;
-			GameOver.displayGameOver();
 		}
 		return false;
 	}
@@ -95,7 +90,6 @@ public class FightInstructionController {
 	private static void fightWon() {
 		GameModel.removeFoe(EventDataController.getHero());
 		Hero.gainExperience(EventDataController.getHero(), EventDataController.getFoe().getLevel() * 20);
-		setFightRunning(false);
 	}
 
 	public static void addInstructions(String input) {
