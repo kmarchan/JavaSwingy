@@ -24,14 +24,12 @@ public class FightView extends BaseWindow {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				FightInstructionController.addInstructions("fight");
-				System.out.println("fight");
 			}
 		});
 		runButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent actionEvent) {
 				FightInstructionController.addInstructions("run");
-				System.out.println("RUN");
 			}
 		});
 	}

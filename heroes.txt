@@ -1,1 +1,1 @@
-Spot, 0, Orc, 1, 36, 20, Weapon, Armour, Helm, Spot, 225, Orc, 1, 36, 0, Weapon, Armour, Helm, Spot, 265, Orc, 1, 16, 0, Weapon, Armour, Helm, Spot, 305, Orc, 1, 6, 0, Weapon, Armour, Helm, Spot, 10, Orc, 2, 72, 40, Weapon, Armour, Helm, Spot, 340, Orc, 2, 52, 0, Weapon, Armour, Helm
+Spot, 4020, Orc, 6, 18, 0, Weapon, Armour, Helm, Spot, 230, Orc, 4, 144, 30, Weapon, Armour, Helm, Spot, 390, Orc, 4, 134, 0, Weapon, Armour, Helm, hjkgflujhyfgl.jkhycf, 95, Black Mage, 1, 36, 0, Weapon, Armour, Helm

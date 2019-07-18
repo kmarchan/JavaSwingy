@@ -55,9 +55,10 @@
       </component>
       <component id="e6179" class="javax.swing.JTextPane" binding="foeStats">
         <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <minimum-size width="250" height="-1"/>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="250" height="500"/>
             <preferred-size width="200" height="50"/>
+            <maximum-size width="-1" height="500"/>
           </grid>
         </constraints>
         <properties>
@@ -96,9 +97,10 @@
       </component>
       <component id="449d7" class="javax.swing.JTextPane" binding="gameMap">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="2" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <minimum-size width="400" height="-1"/>
+          <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="2" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="400" height="500"/>
             <preferred-size width="150" height="50"/>
+            <maximum-size width="-1" height="500"/>
           </grid>
         </constraints>
         <properties>
@@ -111,9 +113,10 @@
       </component>
       <component id="ef2ad" class="javax.swing.JTextPane" binding="heroStats">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <minimum-size width="250" height="-1"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="1" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="250" height="500"/>
             <preferred-size width="200" height="50"/>
+            <maximum-size width="-1" height="500"/>
           </grid>
         </constraints>
         <properties>
