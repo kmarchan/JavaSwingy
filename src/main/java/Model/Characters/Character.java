@@ -7,9 +7,7 @@ import Model.Artifacts.Weapon;
 import lombok.Getter;
 import lombok.Setter;
 
-import static Model.Artifacts.Artifact.ARMOUR;
-import static Model.Artifacts.Artifact.HELM;
-import static Model.Artifacts.Artifact.WEAPON;
+import static Model.Artifacts.Artifact.*;
 
 @Setter @Getter public class Character {
     protected String name;
@@ -38,27 +36,30 @@ import static Model.Artifacts.Artifact.WEAPON;
 		this.column = 0;
 		this.row = 0;
 		this.previousPosition = new int[]{0, 0};
-		generateArtifacts(this);
 	}
 
 	public Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
 		int center = ((level-1)*5+10-(level%2)) / 2;
 		this.name = cleanNameInput(name);
 		this.level = level;
+
 		this.baseAttackPnts = baseAttackPnts;
 		attackPnts = baseAttackPnts;
-		if (equipped[WEAPON] != null)
+		if (equipped[WEAPON] != null) {
 			attackPnts += equipped[WEAPON].getBuff();
+			this.baseAttackPnts = baseAttackPnts; }
 
 		this.baseDefencePnts = baseDefencePnts;
 		defencePnts = baseDefencePnts;
-		if (equipped[ARMOUR] != null)
+		if (equipped[ARMOUR] != null) {
 			defencePnts += equipped[ARMOUR].getBuff();
+			this.baseDefencePnts = baseDefencePnts;}
 
 		this.baseHitPnts = baseHitPnts;
 		hitPnts = baseHitPnts;
-		if (equipped[HELM] != null)
+		if (equipped[HELM] != null) {
 			hitPnts += equipped[HELM].getBuff();
+			this.baseHitPnts = baseHitPnts;}
 
 		this.experiencePnts = experiencePnts;
 		baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;

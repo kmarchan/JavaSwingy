@@ -40,7 +40,7 @@ public class BaseWindow extends JFrame{
 		// TODO	change to damage with weapon adjustment getAttackPoints()
 			"Damage:		" + hero.getAttackPnts() + "\n" +
 			"Hit Points:		" + hero.getHitPnts() + "/" + hero.getBaseHitPnts() + "\n" +
-			"Defence Points:	" + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n" +
+			"Defence Points:	" + hero.getDefencePnts() + "/" + (hero.getBaseDefencePnts() + hero.getEquipped()[HELM].getBuff()) + "\n" +
 			"Weapon:		" + hero.getEquipped()[WEAPON].getName() +
 			"\nBuff:		" + hero.getEquipped()[WEAPON].getBuff() +
 			"\nArmour:		" + hero.getEquipped()[ARMOUR].getName() +

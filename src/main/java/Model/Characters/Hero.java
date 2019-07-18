@@ -85,6 +85,24 @@ public class Hero extends Character {
 				this.equipped[ARMOUR] = drop;
 				break;
 		}
+		addBuff(drop);
+	}
+
+	public void addBuff(Artifact item){
+		switch (item.getClass().getSimpleName()) {
+			case "Weapon":
+				this.attackPnts += item.getBuff();
+				this.baseAttackPnts += item.getBuff();
+				break;
+			case "Helm":
+				this.hitPnts += item.getBuff();
+				this.baseHitPnts += item.getBuff();
+				break;
+			case "Armour":
+				this.defencePnts += item.getBuff();
+				this.baseDefencePnts += item.getBuff();
+				break;
+		}
 	}
 
     @Override
