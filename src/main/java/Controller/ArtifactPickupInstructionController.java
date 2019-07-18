@@ -33,7 +33,6 @@ public class ArtifactPickupInstructionController {
 					if (responseInstructions.get(i) != null) {
 						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.get(i).toLowerCase())) {
 							case y:
-								System.out.println("yes");
 								EventDataController.getHero().equipArtifact(drop);
 								setArtifactView(false);
 								ApplicationController.status = GAME_LOOP;
@@ -67,7 +66,4 @@ public class ArtifactPickupInstructionController {
 		responseInstructions.remove(input);
 	}
 
-//	public static void generateArtifact() {
-//		drop = ArtifactFactory.createArtifact(EventDataController.getFoe().getLevel());
-//	}
 }

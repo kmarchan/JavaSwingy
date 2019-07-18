@@ -35,8 +35,11 @@ public class HeroStorage {
             int currentHealth;
             int currentDefence;
             String weapon;
+            int wBuff;
             String armour;
+            int aBuff;
             String helm;
+            int hBuff;
             while (sc.hasNext()) {
                 sc.useDelimiter(", ");
                 name = sc.next();
@@ -46,10 +49,13 @@ public class HeroStorage {
                 currentHealth = sc.nextInt();
                 currentDefence = sc.nextInt();
                 weapon = sc.next();
+                wBuff = sc.nextInt();
                 armour = sc.next();
+                aBuff = sc.nextInt();
                 helm = sc.next();
+                hBuff = sc.nextInt();
                 sc.reset();
-                savedHeroes.add(CharacterFactory.recreateHero(type, name, experience, level, currentHealth, currentDefence, weapon, armour, helm));
+                savedHeroes.add(CharacterFactory.recreateHero(type, name, experience, level, currentHealth, currentDefence, weapon, wBuff, armour, aBuff, helm, hBuff));
             }
         }
     }

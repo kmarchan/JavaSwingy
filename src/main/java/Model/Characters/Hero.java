@@ -100,8 +100,10 @@ public class Hero extends Character {
                 ", baseAttackPnts=" + baseAttackPnts +
                 ", baseDefencePnts=" + baseDefencePnts +
                 ", baseExperiencePnts=" + baseExperiencePnts +
-                ", equipped=" + equipped +
-                '}';
+                ", equipped=" + equipped[WEAPON].getName() + ":" + equipped[WEAPON].getBuff() + ", " +
+				equipped[ARMOUR].getName() + ":" + equipped[ARMOUR].getBuff() + ", " +
+				equipped[HELM].getName() + ":" + equipped[HELM].getBuff() +
+                "}";
     }
 
 	public void setPreviousPosition(int row, int column) {
@@ -116,9 +118,8 @@ public class Hero extends Character {
                 level + ", " +
                 hitPnts + ", " +
                 defencePnts + ", " +
-				// TODO add saving of weapon armour and helm
-                "Weapon, " +
-				"Armour, " +
-				"Helm";
+                equipped[WEAPON].getName() + ", " + equipped[WEAPON].getBuff() + ", " +
+				equipped[ARMOUR].getName() + ", " + equipped[ARMOUR].getBuff() + ", " +
+				equipped[HELM].getName() + ", " + equipped[HELM].getBuff();
     }
 }

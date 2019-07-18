@@ -1,7 +1,7 @@
 package Utils;
 
-import Model.Characters.*;
 import Exception.InputException;
+import Model.Characters.*;
 
 public class CharacterFactory {
 
@@ -20,16 +20,16 @@ public class CharacterFactory {
         }
     }
 
-    public static Hero recreateHero(String type,  String name, int experience, int level, int currentHealth, int currentDefence, String weapon, String armour, String helm) throws InputException{
+    public static Hero recreateHero(String type, String name, int experience, int level, int currentHealth, int currentDefence, String weapon, int wBuff, String armour, int aBuff, String helm, int hBuff) throws InputException {
         switch (type) {
             case "Orc" :
-                return new Orc(name, experience, level, currentHealth, currentDefence, weapon, armour, helm);
+                return new Orc(name, experience, level, currentHealth, currentDefence, weapon, wBuff, armour, aBuff, helm, hBuff);
             case "Black Mage":
-                return new BlackMage(name, experience, level, currentHealth, currentDefence, weapon, armour, helm);
+                return new BlackMage(name, experience, level, currentHealth, currentDefence, weapon, wBuff, armour, aBuff, helm, hBuff);
             case "Knight":
-                return new Knight(name, experience, level, currentHealth, currentDefence, weapon, armour, helm);
+                return new Knight(name, experience, level, currentHealth, currentDefence, weapon, wBuff, armour, aBuff, helm, hBuff);
             case "Elf":
-                return new Elf(name, experience, level, currentHealth, currentDefence, weapon, armour, helm);
+                return new Elf(name, experience, level, currentHealth, currentDefence, weapon, wBuff, armour, aBuff, helm, hBuff);
             default:
                 throw new InputException("Invalid hero type");
         }

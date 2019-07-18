@@ -13,4 +13,8 @@ public class Helm extends Artifact{
 	public Helm() {
 		super(helm[0], 0);
 	}
+
+	public Helm(String helm, int abilityBuff) {
+		super(helm, abilityBuff);
+	}
 }

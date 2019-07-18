@@ -1,1 +1,1 @@
-Spot, 4020, Orc, 6, 18, 0, Weapon, Armour, Helm, Spot, 230, Orc, 4, 144, 30, Weapon, Armour, Helm, Spot, 390, Orc, 4, 134, 0, Weapon, Armour, Helm, hjkgflujhyfgl.jkhycf, 95, Black Mage, 1, 36, 0, Weapon, Armour, Helm
+Spot, 200, Orc, 2, 18, 0, Weapon, 10, Armour, 10, Helm, 10, qwer, 160, Black Mage, 1, 16, 0, a Makeshift Axe, 10, a Loincloth, 0,  a Toupe, 10

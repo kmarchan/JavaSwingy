@@ -38,10 +38,10 @@ import static Model.Artifacts.Artifact.WEAPON;
 		this.column = 0;
 		this.row = 0;
 		this.previousPosition = new int[]{0, 0};
+		generateArtifacts(this);
 	}
 
 	public Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
-		generateArtifacts();
 		int center = ((level-1)*5+10-(level%2)) / 2;
 		this.name = cleanNameInput(name);
 		this.level = level;
@@ -69,11 +69,10 @@ import static Model.Artifacts.Artifact.WEAPON;
 		this.previousPosition = new int[]{center, center};
 	}
 
-	private void generateArtifacts() {
-		System.out.println("Artifact");
-		equipped[WEAPON] = new Weapon();
-		equipped[HELM] = new Helm();
-		equipped[ARMOUR] = new Armour();
+	protected void generateArtifacts(Character character) {
+		character.equipped[WEAPON] = new Weapon();
+		character.equipped[HELM] = new Helm();
+		character.equipped[ARMOUR] = new Armour();
 	}
 
 	public void takeDamage(Character victim, int damage){

@@ -12,4 +12,8 @@ public class Armour extends Artifact {
 	public Armour() {
 		super(armour[0], 0);
 	}
+
+	public Armour(String armour, int abilityBuff) {
+		super(armour, abilityBuff);
+	}
 }
