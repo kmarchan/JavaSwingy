@@ -56,51 +56,61 @@ public class Hero extends Character {
 
 		hero.baseAttackPnts = hero.level * attack;
     	hero.attackPnts = hero.baseAttackPnts;
-        if (hero.equipped[WEAPON] != null)
-            hero.attackPnts += hero.equipped[WEAPON].getBuff();
+//        if (hero.equipped[WEAPON] != null)
+//            hero.attackPnts += hero.equipped[WEAPON].getBuff();
 
 		hero.baseDefencePnts = hero.level * defence;
         hero.defencePnts = hero.baseDefencePnts;
-        if (hero.equipped[ARMOUR] != null)
-            hero.defencePnts += hero.equipped[ARMOUR].getBuff();
+//        if (hero.equipped[ARMOUR] != null)
+//            hero.defencePnts += hero.equipped[ARMOUR].getBuff();
 
 		hero.baseHitPnts = hero.level * hitPoints;
         hero.hitPnts = hero.baseHitPnts;
-        if (hero.equipped[HELM] != null)
-            hero.hitPnts += hero.equipped[HELM].getBuff();
-
+//        if (hero.equipped[HELM] != null)
+//            hero.hitPnts += hero.equipped[HELM].getBuff();
+		updateEquipped(hero);
         hero.experiencePnts -= hero.baseExperiencePnts;
         hero.baseExperiencePnts = hero.level * 1000 + (int)Math.pow(hero.level - 1, 2) * 450;
     }
 
-    public void equipArtifact(Artifact drop){
+    public void equipArtifact(Hero hero, Artifact drop){
     	switch (drop.getClass().getSimpleName()) {
 			case "Weapon":
 				this.equipped[WEAPON] = drop;
 				break;
 			case "Helm":
-				this.equipped[HELM] = drop;
+				hero.hitPnts -= hero.equipped[HELM].getBuff();
+				if (hero.hitPnts < 0) {
+					hero.hitPnts = 0;
+				}				this.equipped[HELM] = drop;
 				break;
 			case "Armour":
+				hero.defencePnts -= hero.equipped[ARMOUR].getBuff();
+				if (hero.defencePnts < 0) {
+					hero.defencePnts = 0;
+				}
 				this.equipped[ARMOUR] = drop;
 				break;
 		}
-		addBuff(drop);
+		addBuff(hero, drop);
 	}
 
-	public void addBuff(Artifact item){
+	public static void updateEquipped(Hero hero) {
+		for (int i = 0; i < hero.equipped.length; i++) {
+			addBuff(hero, hero.equipped[i]);
+		}
+	}
+
+	public static void addBuff(Hero hero, Artifact item){
 		switch (item.getClass().getSimpleName()) {
 			case "Weapon":
-				this.attackPnts += item.getBuff();
-				this.baseAttackPnts += item.getBuff();
+				hero.attackPnts =  hero.baseAttackPnts + item.getBuff();
 				break;
 			case "Helm":
-				this.hitPnts += item.getBuff();
-				this.baseHitPnts += item.getBuff();
+				hero.hitPnts += item.getBuff();
 				break;
 			case "Armour":
-				this.defencePnts += item.getBuff();
-				this.baseDefencePnts += item.getBuff();
+				hero.defencePnts += item.getBuff();
 				break;
 		}
 	}

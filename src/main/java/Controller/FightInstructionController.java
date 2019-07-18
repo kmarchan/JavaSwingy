@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static Controller.ApplicationController.ART_LOOP;
-import static Controller.ApplicationController.FIGHT_LOOP;
-import static Controller.ApplicationController.GAME_LOOP;
+import static Controller.ApplicationController.*;
 
 public class FightInstructionController {
 
@@ -80,6 +78,7 @@ public class FightInstructionController {
 		{
 			setFightRunning(false);
 			StateManager.setGame(false);
+			ApplicationController.status = END_LOOP;
 			GameOver.displayGameOver();
 		}
 		return false;

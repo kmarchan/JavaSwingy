@@ -9,17 +9,17 @@ public class StateManager {
 	@Setter	private static boolean game = true;
 
 	public static void stateManager(){
-
-
 		while(game) {
-			if (ApplicationController.status == MENU_LOOP) {
+			if (status == MENU_LOOP) {
 				MenuInstructionController.instructionParse();
-			} else if (ApplicationController.status == GAME_LOOP) {
+			} else if (status == GAME_LOOP) {
 				GameInstructionController.gameInstructionParse();
-			} else if (ApplicationController.status == FIGHT_LOOP) {
+			} else if (status == FIGHT_LOOP) {
 				FightInstructionController.fightInstructionParse();
-			} else 	if (ApplicationController.status == ART_LOOP) {
+			} else 	if (status == ART_LOOP) {
 				ArtifactPickupInstructionController.ArtifactInstructionParse();
+			} else if (status == END_LOOP) {
+				GameOverInstructionController.GameOverInstructionParse();
 			}
 		}
 	}

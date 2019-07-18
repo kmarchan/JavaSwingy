@@ -12,10 +12,17 @@ public class ArtifactPickupView extends BaseWindow{
 	private JButton yesButton;
 	private JButton noButton;
 	private JPanel artifactView;
+	private JTextPane heroStats;
 
 	public ArtifactPickupView() {
 		// TODO item info
-		artifactMessage.setText(EventDataController.getFoe().getName() + " was killed and has dropped " + ArtifactPickupInstructionController.getDrop().getName() + " (buff = " + ArtifactPickupInstructionController.getDrop().getBuff() + ")");
+		artifactMessage.setText(EventDataController.getFoe().getName() +
+				" was killed and has dropped " +
+				ArtifactPickupInstructionController.getDrop().getName() +
+				" (" + ArtifactPickupInstructionController.getDrop().getClass().getSimpleName() +
+				" buff = " + ArtifactPickupInstructionController.getDrop().getBuff() + ")"
+		);
+		showStats(EventDataController.getHero(), heroStats);
 		noButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
