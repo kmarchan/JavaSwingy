@@ -4,6 +4,10 @@ import Model.Artifacts.Artifact;
 import lombok.Getter;
 import lombok.Setter;
 
+import static Model.Artifacts.Artifact.ARMOUR;
+import static Model.Artifacts.Artifact.HELM;
+import static Model.Artifacts.Artifact.WEAPON;
+
 @Setter @Getter public class Character {
     protected String name;
     protected String type;
@@ -19,7 +23,7 @@ import lombok.Setter;
 	protected int row;
 	protected int column;
 	protected int[] previousPosition;
-	protected Artifact[] equipped = new Artifact[3];
+	protected Artifact[] equipped;
 
 	public Character() {
 		this.name = "undefined";
@@ -31,7 +35,7 @@ import lombok.Setter;
 		this.column = 0;
 		this.row = 0;
 		this.previousPosition = new int[]{0, 0};
-		this.equipped = null;
+		this.equipped = new Artifact[3];
 	}
 
 	public Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
@@ -40,30 +44,28 @@ import lombok.Setter;
 		this.level = level;
 		this.baseAttackPnts = baseAttackPnts;
 		attackPnts = baseAttackPnts;
-//		if (equipped[WEAPON] != null)
-//			attackPnts += equipped[WEAPON].getBuff();
+		if (equipped[WEAPON] != null)
+			attackPnts += equipped[WEAPON].getBuff();
 
 		this.baseDefencePnts = baseDefencePnts;
 		defencePnts = baseDefencePnts;
-//		if (equipped[ARMOUR] != null)
-//			defencePnts += equipped[ARMOUR].getBuff();
+		if (equipped[ARMOUR] != null)
+			defencePnts += equipped[ARMOUR].getBuff();
 
 		this.baseHitPnts = baseHitPnts;
 		hitPnts = baseHitPnts;
-//		if (equipped[HELM] != null)
-//			hitPnts += equipped[HELM].getBuff();
+		if (equipped[HELM] != null)
+			hitPnts += equipped[HELM].getBuff();
 
-		// Todo -- make sure you didn't brake anything commenting out above line
 		this.experiencePnts = experiencePnts;
 		baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;
+		this.equipped = new Artifact[]{};
 		this.equipped = equipped;
 
 		this.column = center;
 		this.row = center;
 		this.previousPosition = new int[]{center, center};
 	}
-
-
 
 	public void takeDamage(Character victim, int damage){
 		if (damage >= 0) {

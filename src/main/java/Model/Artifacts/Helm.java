@@ -1,19 +1,12 @@
 package Model.Artifacts;
 
+import java.util.Random;
+
 public class Helm extends Artifact{
 
-	enum helm {
-		oldboot,
-		toupe,
-		bucket,
-		judicialwig,
-		tophat,
-		scrumcap,
-		helmet,
-		drangonbonehelmet,
-	}
+	private static String[] helm  = new String[]{ "an Old Boot", " a Toupe", "a Bucket", "a Judicial Wig", "a Top hat", "a Scrum cap", "a Helmet", "a Dragon Bone Helmet" };
 
 	public Helm(int abilityBuff) {
-		super(abilityBuff);
+		super(helm[new Random().nextInt(7)], abilityBuff);
 	}
 }

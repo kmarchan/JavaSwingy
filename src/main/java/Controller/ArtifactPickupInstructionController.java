@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.Artifacts.Artifact;
+import Utils.ArtifactFactory;
 import View.ArtifactPickupView;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +14,7 @@ import static Controller.ApplicationController.GAME_LOOP;
 public class ArtifactPickupInstructionController {
 	private static List<String> responseInstructions;
 	@Getter	@Setter private static boolean artifactView = false;
+	@Getter private static Artifact drop;
 
 	enum response {
 		y,
@@ -21,6 +24,7 @@ public class ArtifactPickupInstructionController {
 	public static void ArtifactInstructionParse() {
 		int instructionIndex = 0;
 		try {
+			drop = ArtifactFactory.createArtifact(EventDataController.getFoe().getLevel());
 			ArtifactPickupView.displayArtifactPickupView();
 			responseInstructions = EventDataController.getInstructions();
 			while (ApplicationController.status == ART_LOOP) {
@@ -30,6 +34,9 @@ public class ArtifactPickupInstructionController {
 						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.get(i).toLowerCase())) {
 							case y:
 								System.out.println("yes");
+								EventDataController.getHero().equipArtifact(drop);
+								setArtifactView(false);
+								ApplicationController.status = GAME_LOOP;
 								break;
 							case n:
 								setArtifactView(false);
@@ -59,4 +66,8 @@ public class ArtifactPickupInstructionController {
 	public static void removeResponseInstructions(String input) {
 		responseInstructions.remove(input);
 	}
+
+//	public static void generateArtifact() {
+//		drop = ArtifactFactory.createArtifact(EventDataController.getFoe().getLevel());
+//	}
 }

@@ -9,9 +9,11 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static Controller.ApplicationController.ART_LOOP;
 import static Controller.ApplicationController.FIGHT_LOOP;
+import static Controller.ApplicationController.GAME_LOOP;
 
 public class FightInstructionController {
 
@@ -84,13 +86,15 @@ public class FightInstructionController {
 	}
 
 	private static void searchForDrop() {
-		ArtifactPickupInstructionController.setArtifactView(true);
-		ApplicationController.status = ART_LOOP;
+		if (new Random().nextInt() % 2 == 0) {
+			ArtifactPickupInstructionController.setArtifactView(true);
+			ApplicationController.status = ART_LOOP;
+		}
+		else ApplicationController.status = GAME_LOOP;
 	}
 
 	private static void fightWon() {
 		GameModel.removeFoe(EventDataController.getHero());
-
 		Hero.gainExperience(EventDataController.getHero(), EventDataController.getFoe().getLevel() * 20);
 		setFightRunning(false);
 	}

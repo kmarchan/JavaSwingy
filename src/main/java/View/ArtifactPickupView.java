@@ -15,7 +15,7 @@ public class ArtifactPickupView extends BaseWindow{
 
 	public ArtifactPickupView() {
 		// TODO item info
-		artifactMessage.setText(EventDataController.getFoe().getName() + " was killed and has dropped a ...");
+		artifactMessage.setText(EventDataController.getFoe().getName() + " was killed and has dropped " + ArtifactPickupInstructionController.getDrop().getName() + " (buff = " + ArtifactPickupInstructionController.getDrop().getBuff() + ")");
 		noButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

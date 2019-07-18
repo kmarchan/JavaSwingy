@@ -5,7 +5,7 @@ import Model.Artifacts.Artifact;
 import java.util.Random;
 
 public class Foe extends Character {
-	private static int hitPoints = 13;
+	private static int hitPoints = 8;
 	private static int attack = 10;
 	private static int defence = 8;
 	private static int foeLevel;

@@ -6,6 +6,8 @@ import Model.Characters.Hero;
 import javax.swing.*;
 import java.awt.*;
 
+import static Model.Artifacts.Artifact.*;
+
 public class BaseWindow extends JFrame{
 	static public JFrame frame ;
 
@@ -38,7 +40,15 @@ public class BaseWindow extends JFrame{
 		// TODO	change to damage with weapon adjustment getAttackPoints()
 			"Damage:		" + hero.getAttackPnts() + "\n" +
 			"Hit Points:		" + hero.getHitPnts() + "/" + hero.getBaseHitPnts() + "\n" +
-			"Defence Points:	" + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n");
+			"Defence Points:	" + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n" +
+			(hero.getEquipped() != null ? "Equipped: \n" +
+			"Weapon:	" + hero.getEquipped()[WEAPON].getName() +
+			"\nBuff:	" + hero.getEquipped()[WEAPON].getBuff() +
+			"\nArmour:	" + hero.getEquipped()[ARMOUR].getName() +
+			"\nBuff:	" + hero.getEquipped()[ARMOUR].getBuff() +
+			"\nHelm:	" + hero.getEquipped()[HELM].getName() +
+			"\nBuff:	" + hero.getEquipped()[HELM].getBuff() : "Nothing Equipped" )
+		);
 	}
 
 	public void showFoeStats(Foe foe, JTextPane heroStats) {
