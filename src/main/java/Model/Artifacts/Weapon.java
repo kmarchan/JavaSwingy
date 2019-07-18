@@ -9,4 +9,8 @@ public class Weapon extends Artifact {
 	public Weapon(int abilityBuff) {
 		super(weapon[new Random().nextInt(9)], abilityBuff);
 	}
+
+	public Weapon() {
+		super(weapon[0], 0);
+	}
 }

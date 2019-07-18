@@ -1,6 +1,9 @@
 package Model.Characters;
 
+import Model.Artifacts.Armour;
 import Model.Artifacts.Artifact;
+import Model.Artifacts.Helm;
+import Model.Artifacts.Weapon;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +26,7 @@ import static Model.Artifacts.Artifact.WEAPON;
 	protected int row;
 	protected int column;
 	protected int[] previousPosition;
-	protected Artifact[] equipped;
+	protected Artifact[] equipped = new Artifact[3];
 
 	public Character() {
 		this.name = "undefined";
@@ -35,10 +38,10 @@ import static Model.Artifacts.Artifact.WEAPON;
 		this.column = 0;
 		this.row = 0;
 		this.previousPosition = new int[]{0, 0};
-		this.equipped = new Artifact[3];
 	}
 
 	public Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
+		generateArtifacts();
 		int center = ((level-1)*5+10-(level%2)) / 2;
 		this.name = cleanNameInput(name);
 		this.level = level;
@@ -59,12 +62,18 @@ import static Model.Artifacts.Artifact.WEAPON;
 
 		this.experiencePnts = experiencePnts;
 		baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;
-		this.equipped = new Artifact[]{};
 		this.equipped = equipped;
 
 		this.column = center;
 		this.row = center;
 		this.previousPosition = new int[]{center, center};
+	}
+
+	private void generateArtifacts() {
+		System.out.println("Artifact");
+		equipped[WEAPON] = new Weapon();
+		equipped[HELM] = new Helm();
+		equipped[ARMOUR] = new Armour();
 	}
 
 	public void takeDamage(Character victim, int damage){

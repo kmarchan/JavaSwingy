@@ -14,11 +14,6 @@ public class Artifact {
     	this.abilityBuff = abilityBuff;
     }
 
-    public Artifact() {
-		this.name = "Nothing Equipped";
-		this.abilityBuff = 0;
-	}
-
     public int getBuff() {
         return this.abilityBuff;
     }

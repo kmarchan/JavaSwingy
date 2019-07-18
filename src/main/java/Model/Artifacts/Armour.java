@@ -9,4 +9,7 @@ public class Armour extends Artifact {
 		super(armour[new Random().nextInt(7)], abilityBuff);
 	}
 
+	public Armour() {
+		super(armour[0], 0);
+	}
 }

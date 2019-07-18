@@ -9,4 +9,8 @@ public class Helm extends Artifact{
 	public Helm(int abilityBuff) {
 		super(helm[new Random().nextInt(7)], abilityBuff);
 	}
+
+	public Helm() {
+		super(helm[0], 0);
+	}
 }

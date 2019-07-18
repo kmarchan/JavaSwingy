@@ -41,13 +41,12 @@ public class BaseWindow extends JFrame{
 			"Damage:		" + hero.getAttackPnts() + "\n" +
 			"Hit Points:		" + hero.getHitPnts() + "/" + hero.getBaseHitPnts() + "\n" +
 			"Defence Points:	" + hero.getDefencePnts() + "/" + hero.getBaseDefencePnts() + "\n" +
-			(hero.getEquipped() != null ? "Equipped: \n" +
 			"Weapon:	" + hero.getEquipped()[WEAPON].getName() +
 			"\nBuff:	" + hero.getEquipped()[WEAPON].getBuff() +
 			"\nArmour:	" + hero.getEquipped()[ARMOUR].getName() +
 			"\nBuff:	" + hero.getEquipped()[ARMOUR].getBuff() +
 			"\nHelm:	" + hero.getEquipped()[HELM].getName() +
-			"\nBuff:	" + hero.getEquipped()[HELM].getBuff() : "Nothing Equipped" )
+			"\nBuff:	" + hero.getEquipped()[HELM].getBuff()
 		);
 	}
 
