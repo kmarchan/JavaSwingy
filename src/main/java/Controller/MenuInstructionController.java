@@ -14,9 +14,7 @@ public class MenuInstructionController {
 		loadgame,
 		exit,
 		newgame,
-        start,
 		controls,
-//		menu,
 		gui,
 	}
 
@@ -43,27 +41,16 @@ public class MenuInstructionController {
 							case newgame:
 								ApplicationController.status = CREATE_LOOP;
 								break;
-							case controls:
-								Controls.displayControls();
-								break;
 							case loadgame:
 								ApplicationController.status = LOAD_LOOP;
 								HeroStorage.getSavedHeroes();
 								break;
-//							case menu:
-//								MainMenu.displayMainMenu();
-//								break;
-							case start:
-								ApplicationController.status = GAME_LOOP;
-								GameController.startGame();
-								EventDataController.setIsRunning(false);
-								break;
+
 							default: {
 								System.out.println("Invalid Menu Instruction:" + instructions.get(i));
 							}
 						}
 						EventDataController.removeInstructions(instructions.get(i));
-
 					}
 				}
 				instructions = EventDataController.getInstructions();

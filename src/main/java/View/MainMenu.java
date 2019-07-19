@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 public class MainMenu extends BaseWindow{
 	private JButton newGameButton;
 	private JPanel panel1;
-	private JButton controlsButton;
 	private JButton loadGameButton;
 	private JButton exitButton;
 
@@ -18,11 +17,6 @@ public class MainMenu extends BaseWindow{
 		newGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent actionEvent) {
 				EventDataController.addInstructions("newgame");
-			}
-		});
-		controlsButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				EventDataController.addInstructions("controls");
 			}
 		});
 		loadGameButton.addActionListener(new ActionListener() {

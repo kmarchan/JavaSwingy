@@ -6,6 +6,7 @@ import View.NewGame;
 import java.util.List;
 
 import static Controller.ApplicationController.CREATE_LOOP;
+import static Controller.ApplicationController.GAME_LOOP;
 import static Controller.ApplicationController.MENU_LOOP;
 
 public class CreateInstructionController {
@@ -13,6 +14,7 @@ public class CreateInstructionController {
 
     enum instruction{
         menu,
+        start,
         gui,
         blackmage,
         orc,
@@ -44,6 +46,9 @@ public class CreateInstructionController {
                             case gui:
                                 BaseWindow.showBaseWindow();
                                 break;
+                            case start:
+                                ApplicationController.status = GAME_LOOP;
+                                GameController.startGame();
                             default: {
                                 System.out.println("Invalid Create Instruction:" + createInstructions.get(i));
                             }

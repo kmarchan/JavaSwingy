@@ -65,6 +65,6 @@ public class GameController {
 		else {
 			GameModel.addFightCommentary(EventDataController.getHero().getName() + " failed to run away");
 			attack(EventDataController.getFoe(), EventDataController.getHero());
-		};
+		}
 	}
 }

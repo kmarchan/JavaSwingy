@@ -5,6 +5,7 @@ import View.LoadHero;
 
 import java.util.List;
 
+import static Controller.ApplicationController.GAME_LOOP;
 import static Controller.ApplicationController.LOAD_LOOP;
 import static Controller.ApplicationController.MENU_LOOP;
 
@@ -14,6 +15,7 @@ public class LoadInstructionController {
     enum instruction{
         menu,
         gui,
+        start,
     }
 
     public static void loadInstructionParse() {
@@ -29,6 +31,9 @@ public class LoadInstructionController {
                             case menu:
                                 ApplicationController.status = MENU_LOOP;
                                 break;
+                            case start:
+                                ApplicationController.status = GAME_LOOP;
+                                GameController.startGame();
                             case gui:
                                 BaseWindow.showBaseWindow();
                                 break;

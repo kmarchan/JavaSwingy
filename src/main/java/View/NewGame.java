@@ -34,7 +34,6 @@ public class NewGame extends BaseWindow{
                     heroTypeSelectorLabel.setForeground(Color.RED);
                 }
                 if ((!heroNameInput.getText().isEmpty()) && heroTypeSelector.getSelectedIndex() != 0) {
-//                    EventDataController.setHero(Utils.CharacterFactory.createHero(heroNameInput.getText(), heroType[heroTypeSelector.getSelectedIndex()]));
                     EventDataController.addInstructions("start");
                 }
             }
