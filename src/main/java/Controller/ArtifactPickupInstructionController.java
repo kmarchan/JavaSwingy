@@ -43,7 +43,7 @@ public class ArtifactPickupInstructionController {
 								break;
 
 							default: {
-								System.out.println("Invalid instruction:" + responseInstructions.get(i));
+								System.out.println("Invalid Artifact Instruction:" + responseInstructions.get(i));
 							}
 						}
 						removeResponseInstructions(responseInstructions.get(i));

@@ -1,5 +1,6 @@
 package View;
 
+import Controller.CreateInstructionController;
 import Controller.EventDataController;
 
 import javax.swing.*;
@@ -41,7 +42,7 @@ public class NewGame extends BaseWindow{
         cancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                EventDataController.addInstructions("menu");
+                CreateInstructionController.addCreateInstructions("menu");
             }
         });
         heroTypeSelector.addActionListener(new ActionListener() {

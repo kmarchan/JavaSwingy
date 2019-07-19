@@ -5,9 +5,8 @@ import View.*;
 import Exception.InputException;
 import java.util.List;
 
-import static Controller.ApplicationController.GAME_LOOP;
-import static Controller.ApplicationController.MENU_LOOP;
-
+import static Controller.ApplicationController.*;
+// TODO remove comments
 public class MenuInstructionController {
 	private static List<String> instructions;
 
@@ -17,15 +16,15 @@ public class MenuInstructionController {
 		newgame,
         start,
 		controls,
-		menu,
+//		menu,
 		gui,
 	}
 
 	public static void instructionParse() {
 		int instructionIndex = 0;
 		try {
+			MainMenu.displayMainMenu();
 			instructions = EventDataController.getInstructions();
-
 			while(EventDataController.getIsRunning() && ApplicationController.status == MENU_LOOP) {
 				for (int i=0; i < instructions.size(); i++) {
 					instructionIndex = i;
@@ -42,34 +41,35 @@ public class MenuInstructionController {
 								BaseWindow.showBaseWindow();
 								break;
 							case newgame:
-								NewGame.displayNewGame();
+								ApplicationController.status = CREATE_LOOP;
 								break;
 							case controls:
 								Controls.displayControls();
 								break;
 							case loadgame:
+								ApplicationController.status = LOAD_LOOP;
 								HeroStorage.getSavedHeroes();
-								LoadHero.displayLoadHero();
 								break;
-							case menu:
-								MainMenu.displayMainMenu();
-								break;
+//							case menu:
+//								MainMenu.displayMainMenu();
+//								break;
 							case start:
 								ApplicationController.status = GAME_LOOP;
 								GameController.startGame();
 								EventDataController.setIsRunning(false);
 								break;
 							default: {
-								System.out.println("Invalid instruction:" + instructions.get(i));
+								System.out.println("Invalid Menu Instruction:" + instructions.get(i));
 							}
 						}
+						EventDataController.removeInstructions(instructions.get(i));
+
 					}
-					EventDataController.removeInstructions(instructions.get(i));
 				}
 				instructions = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException e){
-			System.out.println("Invalid instruction:"+instructions.get(instructionIndex));
+			System.out.println("Invalid Menu instruction:"+instructions.get(instructionIndex));
 			EventDataController.removeInstructions(instructions.get(instructionIndex));
 			instructionParse();
 		}

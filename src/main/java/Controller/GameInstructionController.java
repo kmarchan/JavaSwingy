@@ -58,7 +58,7 @@ public class GameInstructionController {
 								GameModel.moveEast(EventDataController.getHero());
 								break;
 							default: {
-								System.out.println("Invalid instruction:" + gameInstructions.get(i));
+								System.out.println("Invalid Game Instruction:" + gameInstructions.get(i));
 							}
 						}
 						removeGameInstructions(gameInstructions.get(i));

@@ -40,7 +40,7 @@ public class GameOverInstructionController {
 				Instruction = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException e) {
-			System.out.println("Invalid instruction:" + Instruction.get(instructionIndex));
+			System.out.println("Invalid Over Instruction:" + Instruction.get(instructionIndex));
 			removeEndInstructions(Instruction.get(instructionIndex));
 			GameOverInstructionParse();
 		}

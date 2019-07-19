@@ -1,5 +1,6 @@
 package Controller;
 
+import View.BaseWindow;
 import View.NewGame;
 
 import java.util.List;
@@ -11,7 +12,12 @@ public class CreateInstructionController {
     private static List<String> createInstructions;
 
     enum instruction{
-        cancel,
+        menu,
+        gui,
+        blackmage,
+        orc,
+        elf,
+        knight,
     }
 
     public static void createInstructionParse() {
@@ -24,11 +30,22 @@ public class CreateInstructionController {
                     instructionIndex = i;
                     if (createInstructions.get(i) != null) {
                         switch (instruction.valueOf(createInstructions.get(i).toLowerCase())) {
-                            case cancel:
+                            case menu:
                                 ApplicationController.status = MENU_LOOP;
                                 break;
+                            case blackmage:
+                                break;
+                            case orc:
+                                break;
+                            case elf:
+                                break;
+                            case knight:
+                                break;
+                            case gui:
+                                BaseWindow.showBaseWindow();
+                                break;
                             default: {
-                                System.out.println("Invalid instruction:" + createInstructions.get(i));
+                                System.out.println("Invalid Create Instruction:" + createInstructions.get(i));
                             }
                         }
                         removeCreateInstructions(createInstructions.get(i));
@@ -37,7 +54,7 @@ public class CreateInstructionController {
                 createInstructions = EventDataController.getInstructions();
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("Invalid instruction:" + createInstructions.get(instructionIndex));
+            System.out.println("Invalid Create instruction:" + createInstructions.get(instructionIndex));
             removeCreateInstructions(createInstructions.get(instructionIndex));
             createInstructionParse();
         }

@@ -1,5 +1,6 @@
 package Controller;
 
+import View.BaseWindow;
 import View.LoadHero;
 
 import java.util.List;
@@ -11,7 +12,8 @@ public class LoadInstructionController {
     private static List<String> loadInstructions;
 
     enum instruction{
-        cancel,
+        menu,
+        gui,
     }
 
     public static void loadInstructionParse() {
@@ -24,11 +26,14 @@ public class LoadInstructionController {
                     instructionIndex = i;
                     if (loadInstructions.get(i) != null) {
                         switch (instruction.valueOf(loadInstructions.get(i).toLowerCase())) {
-                            case cancel:
+                            case menu:
                                 ApplicationController.status = MENU_LOOP;
                                 break;
+                            case gui:
+                                BaseWindow.showBaseWindow();
+                                break;
                             default: {
-                                System.out.println("Invalid instruction:" + loadInstructions.get(i));
+                                System.out.println("Invalid Load instruction:" + loadInstructions.get(i));
                             }
                         }
                         removeLoadInstructions(loadInstructions.get(i));
@@ -37,7 +42,7 @@ public class LoadInstructionController {
                 loadInstructions = EventDataController.getInstructions();
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("Invalid instruction:" + loadInstructions.get(instructionIndex));
+            System.out.println("Invalid Load Instruction:" + loadInstructions.get(instructionIndex));
             removeLoadInstructions(loadInstructions.get(instructionIndex));
             loadInstructionParse();
         }

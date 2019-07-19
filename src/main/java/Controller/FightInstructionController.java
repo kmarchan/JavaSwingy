@@ -46,7 +46,7 @@ public class FightInstructionController {
 								GameController.run();
 								break;
 							default: {
-								System.out.println("Invalid instruction:" + fightInstructions.get(i));
+								System.out.println("Invalid Fight Instruction:" + fightInstructions.get(i));
 							}
 						}
 						FightView.displayFightView();
