@@ -11,13 +11,13 @@ import java.awt.event.ActionListener;
 
 public class LoadHero extends BaseWindow{
     private JTextPane heroStats;
-    private JComboBox selectHero;
+    private JComboBox<String> selectHero;
     private JButton selectHeroButton;
     private JButton cancelButton;
     private JPanel loadHeroPane;
     private Hero hero;
 
-    public LoadHero() {
+    private LoadHero() {
 
         selectHero.addItem("Please select a save");
         for (int i = 0; i < HeroStorage.savedHeroes.size(); i++) {
