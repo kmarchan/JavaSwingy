@@ -13,7 +13,6 @@ import static Controller.ApplicationController.GAME_LOOP;
 
 public class GameController {
 
-
 	public static void startGame() {
 		GameModel.createMap(EventDataController.getHero());
 		GameModel.updateHeroPlacement(EventDataController.getHero());
@@ -35,7 +34,6 @@ public class GameController {
 				}
 				else {
 					mapString += " # ";
-					FightInstructionController.setFightRunning(true);
 					EventDataController.setFoe(CharacterFactory.createFoe(EventDataController.getHero().getLevel()));
 					ApplicationController.status = FIGHT_LOOP;
 				}
@@ -62,7 +60,6 @@ public class GameController {
 		int rn = new Random().nextInt(100);
 		if (rn % 2 == 0) {
 			GameModel.runAway(EventDataController.getHero());
-			FightInstructionController.setFightRunning(false);
 			ApplicationController.status = GAME_LOOP;
 		}
 		else {

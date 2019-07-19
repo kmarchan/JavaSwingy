@@ -1,7 +1,6 @@
 package View;
 
 import Controller.EventDataController;
-import Exception.InputException;
 import Model.Characters.Hero;
 import Storage.HeroStorage;
 
@@ -17,7 +16,7 @@ public class LoadHero extends BaseWindow{
     private JPanel loadHeroPane;
     private Hero hero;
 
-    public LoadHero() throws InputException {
+    public LoadHero() {
 
         selectHero.addItem("Please select a save");
         for (int i = 0; i < HeroStorage.savedHeroes.size(); i++) {
@@ -49,7 +48,7 @@ public class LoadHero extends BaseWindow{
         });
     }
 
-    static public void displayLoadHero() throws InputException {
+    static public void displayLoadHero() {
         frame.setContentPane(new LoadHero().loadHeroPane);
         frame.pack();
     }

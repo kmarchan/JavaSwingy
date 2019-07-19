@@ -12,7 +12,11 @@ public class StateManager {
 		while(game) {
 			if (status == MENU_LOOP) {
 				MenuInstructionController.instructionParse();
-			} else if (status == GAME_LOOP) {
+			} else if (status == LOAD_LOOP) {
+				LoadInstructionController.loadInstructionParse();
+			} else if (status == CREATE_LOOP) {
+				CreateInstructionController.createInstructionParse();
+			}else if (status == GAME_LOOP) {
 				GameInstructionController.gameInstructionParse();
 			} else if (status == FIGHT_LOOP) {
 				FightInstructionController.fightInstructionParse();
