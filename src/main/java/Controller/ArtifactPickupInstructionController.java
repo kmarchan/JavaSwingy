@@ -21,7 +21,7 @@ public class ArtifactPickupInstructionController {
 		n,
 	}
 
-	public static void ArtifactInstructionParse() {
+	static void ArtifactInstructionParse() {
 		int instructionIndex = 0;
 		try {
 			drop = ArtifactFactory.createArtifact(EventDataController.getFoe().getLevel());
@@ -62,7 +62,7 @@ public class ArtifactPickupInstructionController {
 		responseInstructions.add(input);
 	}
 
-	public static void removeResponseInstructions(String input) {
+	private static void removeResponseInstructions(String input) {
 		responseInstructions.remove(input);
 	}
 

@@ -18,7 +18,7 @@ public class LoadInstructionController {
         start,
     }
 
-    public static void loadInstructionParse() {
+    static void loadInstructionParse() {
         int instructionIndex = 0;
         try {
             LoadHero.displayLoadHero();
@@ -56,7 +56,7 @@ public class LoadInstructionController {
         loadInstructions.add(input);
     }
 
-    public static void removeLoadInstructions(String input) {
+    private static void removeLoadInstructions(String input) {
         loadInstructions.remove(input);
     }
 }

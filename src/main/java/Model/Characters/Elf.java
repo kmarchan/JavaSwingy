@@ -22,7 +22,6 @@ public class Elf extends Hero {
 		this.type = "Elf";
     }
 
-    // TODO -- Artifact array needs to be done. String conversion to Artifact
     public Elf(String name, int experience, int level, int currentHealth, int currentDefence, String weapon, int wbuff, String armour, int aBuff, String helm, int hBuff) {
         super(name, level, Character.calculateExperiencePnts(level), level * hitPoints, level * attack, level * defence, new Artifact[3]);
         this.type = "Elf";

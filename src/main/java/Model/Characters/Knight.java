@@ -22,7 +22,6 @@ public class Knight extends Hero {
 		this.type = "Knight";
     }
 
-    // TODO -- Artifact array needs to be done. String conversion to Artifact
     public Knight(String name, int experience, int level, int currentHealth, int currentDefence, String weapon, int wbuff, String armour, int aBuff, String helm, int hBuff) {
         super(name, level, Character.calculateExperiencePnts(level), level * hitPoints, level * attack, level * defence, new Artifact[3]);
 		this.experiencePnts = experience;

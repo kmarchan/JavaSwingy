@@ -22,7 +22,7 @@ public class CreateInstructionController {
         knight,
     }
 
-    public static void createInstructionParse() {
+    static void createInstructionParse() {
         int instructionIndex = 0;
         try {
             NewGame.displayNewGame();
@@ -69,7 +69,7 @@ public class CreateInstructionController {
         createInstructions.add(input);
     }
 
-    public static void removeCreateInstructions(String input) {
+    private static void removeCreateInstructions(String input) {
         createInstructions.remove(input);
     }
 }

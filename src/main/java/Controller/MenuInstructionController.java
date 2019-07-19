@@ -6,19 +6,18 @@ import Exception.InputException;
 import java.util.List;
 
 import static Controller.ApplicationController.*;
-// TODO remove comments
-public class MenuInstructionController {
+
+class MenuInstructionController {
 	private static List<String> instructions;
 
 	enum Instruction {
 		loadgame,
 		exit,
 		newgame,
-		controls,
 		gui,
 	}
 
-	public static void instructionParse() {
+	static void instructionParse() {
 		int instructionIndex = 0;
 		try {
 			MainMenu.displayMainMenu();

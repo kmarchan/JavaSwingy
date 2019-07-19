@@ -24,7 +24,7 @@ public class Hero extends Character {
         }
     }
 
-    public static void levelUp(Hero hero) {
+    private static void levelUp(Hero hero) {
 
         hero.level++;
 
@@ -95,13 +95,13 @@ public class Hero extends Character {
 		addBuff(hero, drop);
 	}
 
-	public static void updateEquipped(Hero hero) {
+	private static void updateEquipped(Hero hero) {
 		for (int i = 0; i < hero.equipped.length; i++) {
 			addBuff(hero, hero.equipped[i]);
 		}
 	}
 
-	public static void addBuff(Hero hero, Artifact item){
+	private static void addBuff(Hero hero, Artifact item){
 		switch (item.getClass().getSimpleName()) {
 			case "Weapon":
 				hero.attackPnts =  hero.baseAttackPnts + item.getBuff();

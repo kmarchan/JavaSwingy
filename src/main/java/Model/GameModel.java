@@ -42,7 +42,7 @@ public class GameModel {
 		map[hero.getRow()][hero.getColumn()] += 8;
 	}
 
-	public static void resetHeroPlacement(Hero hero) {
+	private static void resetHeroPlacement(Hero hero) {
 		int center = mapSize / 2;
 		hero.setRow(center);
 		hero.setColumn(center);

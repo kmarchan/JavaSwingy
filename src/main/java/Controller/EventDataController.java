@@ -16,7 +16,7 @@ public class EventDataController {
 	@Getter	@Setter	private static String map;
 	@Getter @Setter private static Boolean isRunning;
 	@Setter 		private static Boolean isProcessed;
-	@Getter 		private static List<String> instructions = new ArrayList<String>();
+	@Getter 		private static List<String> instructions = new ArrayList<>();
 
 	public static void readStdinAsync(){
 		new Thread(new Runnable() {
@@ -36,7 +36,7 @@ public class EventDataController {
 		instructions.add(input);
 	}
 
-	public static void removeInstructions(String input) {
+	static void removeInstructions(String input) {
 		if (isProcessed) {
 			instructions.remove(input);
 			isProcessed = false;
@@ -46,7 +46,8 @@ public class EventDataController {
 		}
 	}
 
-    public static void createHeroPreview(String type, String name) {
+    public static void createHeroPreview(String type, String name)
+	{
         setHero(CharacterFactory.createHero(name, type));
     }
 }

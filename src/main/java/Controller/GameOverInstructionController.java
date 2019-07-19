@@ -16,7 +16,7 @@ public class GameOverInstructionController {
 		exit,
 	}
 
-	public static void GameOverInstructionParse() {
+	static void GameOverInstructionParse() {
 		int instructionIndex = 0;
 		try {
 			GameOver.displayGameOver();
@@ -50,7 +50,7 @@ public class GameOverInstructionController {
 		Instruction.add(input);
 	}
 
-	public static void removeEndInstructions(String input) {
+	private static void removeEndInstructions(String input) {
 		Instruction.remove(input);
 	}
 }

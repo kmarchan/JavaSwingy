@@ -23,7 +23,7 @@ public class FightInstructionController {
 		run,
 	}
 
-	public static void fightInstructionParse() {
+	static void fightInstructionParse() {
 		int instructionIndex = 0;
 		setFightCommentary(new ArrayList<>());
 		try {
@@ -97,7 +97,7 @@ public class FightInstructionController {
 			fightInstructions.add(input);
 	}
 
-	public static void removeFightInstructions(String input) {
+	private static void removeFightInstructions(String input) {
 		if (isFightProcessed) {
 			fightInstructions.remove(input);
 			isFightProcessed = false;

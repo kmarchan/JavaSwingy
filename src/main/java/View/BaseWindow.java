@@ -9,7 +9,7 @@ import java.awt.*;
 import static Model.Artifacts.Artifact.*;
 
 public class BaseWindow extends JFrame{
-	static public JFrame frame ;
+	static JFrame frame ;
 
 	static public void createBaseWindow(){
 		frame = new JFrame("Swingy");
@@ -31,13 +31,12 @@ public class BaseWindow extends JFrame{
 		frame.setVisible(true);
 	}
 
-	public void showStats(Hero hero, JTextPane heroStats) {
+	void showStats(Hero hero, JTextPane heroStats) {
 		heroStats.setText(
 			"Name:		" + hero.getName() + "\n" +
 			"Level:		" + hero.getLevel() + "\n" +
 			"Experience Points:	" + hero.getExperiencePnts() + "/" + hero.getBaseExperiencePnts() + "\n" +
 			"Type:		" + hero.getType() + "\n" +
-		// TODO	change to damage with weapon adjustment getAttackPoints()
 			"Damage:		" + hero.getAttackPnts() + "\n" +
 			"Hit Points:		" + hero.getHitPnts() + "/" + (hero.getBaseHitPnts()+ hero.getEquipped()[HELM].getBuff()) + "\n" +
 			"Defence Points:	" + hero.getDefencePnts() + "/" + (hero.getBaseDefencePnts() + hero.getEquipped()[ARMOUR].getBuff()) + "\n" +
@@ -50,7 +49,7 @@ public class BaseWindow extends JFrame{
 		);
 	}
 
-	public void showFoeStats(Foe foe, JTextPane heroStats) {
+	void showFoeStats(Foe foe, JTextPane heroStats) {
 		heroStats.setText(
 			"Name:		" + foe.getName() + "\n" +
 			"Level:		" + foe.getLevel() + "\n" +

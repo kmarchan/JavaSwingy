@@ -26,7 +26,7 @@ import static Model.Artifacts.Artifact.*;
 	protected int[] previousPosition;
 	protected Artifact[] equipped = new Artifact[3];
 
-	public Character() {
+	Character() {
 		this.name = "undefined";
 		this.level = 1;
 		this.attackPnts = 0;
@@ -38,7 +38,7 @@ import static Model.Artifacts.Artifact.*;
 		this.previousPosition = new int[]{0, 0};
 	}
 
-	public Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
+	Character(String name, int level, int experiencePnts, int baseHitPnts, int baseAttackPnts, int baseDefencePnts, Artifact[] equipped) {
 		int center = ((level-1)*5+10-(level%2)) / 2;
 		this.name = cleanNameInput(name);
 		this.level = level;
@@ -70,7 +70,7 @@ import static Model.Artifacts.Artifact.*;
 		this.previousPosition = new int[]{center, center};
 	}
 
-	protected void generateArtifacts(Character character) {
+	void generateArtifacts(Character character) {
 		character.equipped[WEAPON] = new Weapon();
 		character.equipped[HELM] = new Helm();
 		character.equipped[ARMOUR] = new Armour();
@@ -86,7 +86,7 @@ import static Model.Artifacts.Artifact.*;
 		}
 	}
 
-	public static int calculateExperiencePnts(int level) {
+	static int calculateExperiencePnts(int level) {
 		return level * 1000 + (int)Math.pow(level - 1, 2) * 450;
 	}
 

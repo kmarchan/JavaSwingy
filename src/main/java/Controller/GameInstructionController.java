@@ -25,7 +25,8 @@ public class GameInstructionController {
 	public static void setIsGameRunning(boolean isGameRunning) {
 		GameInstructionController.isGameRunning = isGameRunning;
 	}
-	public static void gameInstructionParse() {
+
+	static void gameInstructionParse() {
 		int instructionIndex = 0;
 		try {
 			gameInstructions = EventDataController.getInstructions();
@@ -79,7 +80,7 @@ public class GameInstructionController {
 		gameInstructions.add(input);
 	}
 
-	public static void removeGameInstructions(String input) {
+	private static void removeGameInstructions(String input) {
 		if (isProcessed) {
 			gameInstructions.remove(input);
 			isProcessed = false;
