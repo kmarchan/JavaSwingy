@@ -62,15 +62,15 @@ public class HeroStorage {
 		// TODO use for terminal hero loader
     	public static String loadToString(Hero hero) {
 			String ret;
-			ret = 	"name: " + hero.getName() +
-					" experience: " + hero.getExperiencePnts() +
-					" type: " + hero.getType() +
-					" level: " + hero.getLevel() +
-					" currentHealth: " + hero.getHitPnts() +
-					" currentDefence: " + hero.getDefencePnts() +
-					" weapon: " + hero.getEquipped()[WEAPON] +
-					" armour: " + hero.getEquipped()[ARMOUR] +
-					" helm: " + hero.getEquipped()[HELM];
+			ret = 	"Name: " + hero.getName() +
+					", Experience: " + hero.getExperiencePnts() +
+					", Type: " + hero.getType() +
+					", Level: " + hero.getLevel() +
+					", Current Health: " + hero.getHitPnts() +
+					", Current Defence: " + hero.getDefencePnts() +
+					", Weapon: " + hero.getEquipped()[WEAPON].getName() +
+					", Armour: " + hero.getEquipped()[ARMOUR].getName() +
+					", Helm: " + hero.getEquipped()[HELM].getName();
 		return ret;
     }
 

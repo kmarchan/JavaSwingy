@@ -45,21 +45,12 @@ import static Model.Artifacts.Artifact.*;
 
 		this.baseAttackPnts = baseAttackPnts;
 		attackPnts = baseAttackPnts;
-//		if (equipped[WEAPON] != null) {
-//			attackPnts += equipped[WEAPON].getBuff();
-//			this.baseAttackPnts = baseAttackPnts; }
 
 		this.baseDefencePnts = baseDefencePnts;
 		defencePnts = baseDefencePnts;
-//		if (equipped[ARMOUR] != null) {
-//			defencePnts += equipped[ARMOUR].getBuff();
-//			this.baseDefencePnts = baseDefencePnts;}
 
 		this.baseHitPnts = baseHitPnts;
 		hitPnts = baseHitPnts;
-//		if (equipped[HELM] != null) {
-//			hitPnts += equipped[HELM].getBuff();
-//			this.baseHitPnts = baseHitPnts;}
 
 		this.experiencePnts = experiencePnts;
 		baseExperiencePnts = level * 1000 + (int)Math.pow(level - 1, 2) * 450;

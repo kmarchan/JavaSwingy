@@ -1,5 +1,6 @@
 package Controller;
 
+import Storage.HeroStorage;
 import View.BaseWindow;
 import View.LoadHero;
 
@@ -31,9 +32,9 @@ public class LoadInstructionController {
                             case menu:
                                 ApplicationController.status = MENU_LOOP;
                                 break;
-                            case start:
-                                ApplicationController.status = GAME_LOOP;
-                                GameController.startGame();
+//                            case start:
+//                                ApplicationController.status = GAME_LOOP;
+//                                GameController.startGame();
                             case gui:
                                 BaseWindow.showBaseWindow();
                                 break;
@@ -47,9 +48,23 @@ public class LoadInstructionController {
                 loadInstructions = EventDataController.getInstructions();
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("Invalid Load Instruction:" + loadInstructions.get(instructionIndex));
-            removeLoadInstructions(loadInstructions.get(instructionIndex));
-            loadInstructionParse();
+            int in;
+            try {
+//                removeLoadInstructions(loadInstructions.get(instructionIndex));
+                in = Integer.parseInt(loadInstructions.get(instructionIndex));
+                EventDataController.setHero(HeroStorage.savedHeroes.get(in));
+                ApplicationController.status = GAME_LOOP;
+                GameController.startGame();
+                System.out.println("start");
+            } catch (NumberFormatException ex) {
+                ex.printStackTrace();
+                System.out.println("Invalid Load Instruction:" + loadInstructions.get(instructionIndex));
+                removeLoadInstructions(loadInstructions.get(instructionIndex));
+                loadInstructionParse();
+            }
+//            System.out.println("Invalid Load Instruction:" + loadInstructions.get(instructionIndex));
+//            removeLoadInstructions(loadInstructions.get(instructionIndex));
+//            loadInstructionParse();
         }
     }
     public static void addLoadInstructions(String input) {
