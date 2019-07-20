@@ -59,7 +59,7 @@ public class FightInstructionController {
 				checkForDeath();
 			}
 		} catch (IllegalArgumentException e) {
-			System.out.println("Invalid instruction:" + fightInstructions.get(instructionIndex));
+			System.out.println("Invalid instruction:" + fightInstructions.get(instructionIndex) + "\nYour options are [fight/run]");
 			removeFightInstructions(fightInstructions.get(instructionIndex));
 			fightInstructionParse();
 		}

@@ -49,6 +49,7 @@ public class CreateInstructionController {
                             case start:
                                 ApplicationController.status = GAME_LOOP;
                                 GameController.startGame();
+                                break;
                             default: {
                                 System.out.println("Invalid Create Instruction:" + createInstructions.get(i));
                             }

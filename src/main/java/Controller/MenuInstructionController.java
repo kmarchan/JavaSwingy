@@ -19,6 +19,7 @@ class MenuInstructionController {
 
 	static void instructionParse() {
 		int instructionIndex = 0;
+
 		try {
 			MainMenu.displayMainMenu();
 			instructions = EventDataController.getInstructions();
@@ -30,7 +31,6 @@ class MenuInstructionController {
 						switch (Instruction.valueOf(instructions.get(i).toLowerCase())) {
 							case exit: {
 								EventDataController.setIsRunning(false);
-								System.out.println("killing program");
 								ApplicationController.closeApplication();
 								break;
 							}
@@ -44,9 +44,8 @@ class MenuInstructionController {
 								ApplicationController.status = LOAD_LOOP;
 								HeroStorage.getSavedHeroes();
 								break;
-
 							default: {
-								System.out.println("Invalid Menu Instruction:" + instructions.get(i));
+								System.out.println("Invalid Menu Instruction: " + instructions.get(i));
 							}
 						}
 						EventDataController.removeInstructions(instructions.get(i));
@@ -55,7 +54,7 @@ class MenuInstructionController {
 				instructions = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException e){
-			System.out.println("Invalid Menu instruction:"+instructions.get(instructionIndex));
+			System.out.println("Invalid Menu Instruction: " + instructions.get(instructionIndex) + "\nYour options are [exit, newgame, loadgame and gui]");
 			EventDataController.removeInstructions(instructions.get(instructionIndex));
 			instructionParse();
 		}

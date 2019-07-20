@@ -52,7 +52,7 @@ public class ArtifactPickupInstructionController {
 				responseInstructions = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException e) {
-			System.out.println("Invalid instruction:" + responseInstructions.get(instructionIndex));
+			System.out.println("Invalid instruction:" + responseInstructions.get(instructionIndex) + "\nYour options are [y/n]");
 			removeResponseInstructions(responseInstructions.get(instructionIndex));
 			ArtifactInstructionParse();
 		}
