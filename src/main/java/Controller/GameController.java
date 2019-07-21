@@ -40,6 +40,7 @@ public class GameController {
 			}
 			mapString.append("\n");
 		}
+		System.out.println(mapString.toString());
 		return mapString.toString();
 	}
 	public static String setFightText() {

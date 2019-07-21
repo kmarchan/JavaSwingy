@@ -19,7 +19,7 @@ class MenuInstructionController {
 
 	static void instructionParse() {
 		int instructionIndex = 0;
-
+		System.out.println( "\nMain Menu\nYour options are [exit, newgame, loadgame and gui]");
 		try {
 			MainMenu.displayMainMenu();
 			instructions = EventDataController.getInstructions();
@@ -54,7 +54,7 @@ class MenuInstructionController {
 				instructions = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException e){
-			System.out.println("Invalid Menu Instruction: " + instructions.get(instructionIndex) + "\nYour options are [exit, newgame, loadgame and gui]");
+			System.out.println("Invalid Menu Instruction: " + instructions.get(instructionIndex));
 			EventDataController.removeInstructions(instructions.get(instructionIndex));
 			instructionParse();
 		}

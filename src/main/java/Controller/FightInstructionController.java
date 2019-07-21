@@ -25,6 +25,7 @@ public class FightInstructionController {
 
 	static void fightInstructionParse() {
 		int instructionIndex = 0;
+		System.out.println("You have encountered: " + EventDataController.getFoe().getName() + "\nWill you: [fight] or [run?] \n");
 		setFightCommentary(new ArrayList<>());
 		try {
 			FightView.displayFightView();

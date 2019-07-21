@@ -110,4 +110,6 @@ public class GameModel {
 		map[hero.getPreviousPosition()[0]][hero.getPreviousPosition()[1]] = 0;
 		map[hero.getRow()][hero.getColumn()] = 8;
 	}
+
 }
+

@@ -20,6 +20,10 @@ public class LoadInstructionController {
 
     static void loadInstructionParse() {
         int instructionIndex = 0;
+        System.out.println("\nTo select your previous save please enter the index of the correct hero listed below:");
+        for (int h = 0; h < HeroStorage.savedHeroes.size(); h ++) {
+            System.out.println(h + ": " + HeroStorage.loadToString(HeroStorage.savedHeroes.get(h)));
+        }
         try {
             LoadHero.displayLoadHero();
             loadInstructions = EventDataController.getInstructions();
@@ -50,6 +54,7 @@ public class LoadInstructionController {
                 if (in >= 0 && in < HeroStorage.savedHeroes.size()) {
                     EventDataController.setHero(HeroStorage.savedHeroes.get(in));
                     ApplicationController.status = GAME_LOOP;
+                    System.out.println("\nGame Started");
                     GameController.startGame();
                 } else {
                     System.out.println("index " + in + " invalid: enter a number from 0 to " + HeroStorage.savedHeroes.size());
@@ -60,6 +65,7 @@ public class LoadInstructionController {
         }
         removeLoadInstructions(loadInstructions.get(instructionIndex));
     }
+
     public static void addLoadInstructions(String input) {
         loadInstructions.add(input);
     }
