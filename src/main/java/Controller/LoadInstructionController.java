@@ -16,7 +16,6 @@ public class LoadInstructionController {
     enum instruction{
         menu,
         gui,
-        start,
     }
 
     static void loadInstructionParse() {
@@ -32,9 +31,6 @@ public class LoadInstructionController {
                             case menu:
                                 ApplicationController.status = MENU_LOOP;
                                 break;
-//                            case start:
-//                                ApplicationController.status = GAME_LOOP;
-//                                GameController.startGame();
                             case gui:
                                 BaseWindow.showBaseWindow();
                                 break;
@@ -48,24 +44,21 @@ public class LoadInstructionController {
                 loadInstructions = EventDataController.getInstructions();
             }
         } catch (IllegalArgumentException e) {
-            int in;
+
             try {
-//                removeLoadInstructions(loadInstructions.get(instructionIndex));
-                in = Integer.parseInt(loadInstructions.get(instructionIndex));
-                EventDataController.setHero(HeroStorage.savedHeroes.get(in));
-                ApplicationController.status = GAME_LOOP;
-                GameController.startGame();
-                System.out.println("start");
+                int in = Integer.parseInt(loadInstructions.get(instructionIndex));
+                if (in >= 0 && in < HeroStorage.savedHeroes.size()) {
+                    EventDataController.setHero(HeroStorage.savedHeroes.get(in));
+                    ApplicationController.status = GAME_LOOP;
+                    GameController.startGame();
+                } else {
+                    System.out.println("index " + in + " invalid: enter a number from 0 to " + HeroStorage.savedHeroes.size());
+                }
             } catch (NumberFormatException ex) {
-                ex.printStackTrace();
-                System.out.println("Invalid Load Instruction:" + loadInstructions.get(instructionIndex));
-                removeLoadInstructions(loadInstructions.get(instructionIndex));
-                loadInstructionParse();
+                System.out.println("Please select hero by index");
             }
-//            System.out.println("Invalid Load Instruction:" + loadInstructions.get(instructionIndex));
-//            removeLoadInstructions(loadInstructions.get(instructionIndex));
-//            loadInstructionParse();
         }
+        removeLoadInstructions(loadInstructions.get(instructionIndex));
     }
     public static void addLoadInstructions(String input) {
         loadInstructions.add(input);
