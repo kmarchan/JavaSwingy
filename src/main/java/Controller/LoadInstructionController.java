@@ -8,6 +8,7 @@ import java.util.List;
 
 import static Controller.ApplicationController.GAME_LOOP;
 import static Controller.ApplicationController.LOAD_LOOP;
+import static Controller.ApplicationController.MENU_LOOP;
 
 public class LoadInstructionController {
     private static List<String> loadInstructions;
@@ -32,7 +33,7 @@ public class LoadInstructionController {
                     if (loadInstructions.get(i) != null) {
                         switch (instruction.valueOf(loadInstructions.get(i).toLowerCase())) {
                             case menu:
-//                                ApplicationController.status = MENU_LOOP;
+                                ApplicationController.status = MENU_LOOP;
                                 break;
                             case gui:
                                 BaseWindow.showBaseWindow();
