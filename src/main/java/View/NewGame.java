@@ -19,11 +19,19 @@ public class NewGame extends BaseWindow{
     private JTextPane heroStats;
     private JLabel heroNameLabel;
     private JLabel heroTypeSelectorLabel;
-    private String[] heroType = {"select type", "Black Mage", "Elf", "Knight", "Orc"};
+    public static final String[] heroType = {"select type", "Black Mage", "Elf", "Knight", "Orc"};
 
     public NewGame() {
 
-        System.out.println(heroType[heroTypeSelector.getSelectedIndex()]);
+    	if (CreateInstructionController.getName() != null){
+    		heroNameInput.setText(CreateInstructionController.getName());
+    	}
+		heroTypeSelector.setSelectedIndex(CreateInstructionController.getType());
+		if (CreateInstructionController.getType() != 0 && CreateInstructionController.getName() != null) {
+			EventDataController.createHeroPreview(heroType[CreateInstructionController.getType()], CreateInstructionController.getName());
+			showStats(EventDataController.getHero(), heroStats);
+		}
+
         createHero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,6 +56,7 @@ public class NewGame extends BaseWindow{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (heroTypeSelector.getSelectedIndex() != 0) {
+                	CreateInstructionController.setType(heroTypeSelector.getSelectedIndex());
                     heroStats.setText(heroType[heroTypeSelector.getSelectedIndex()]);
                     heroTypeSelectorLabel.setForeground(Color.BLACK);
                     EventDataController.createHeroPreview(heroType[heroTypeSelector.getSelectedIndex()], heroNameInput.getText().isEmpty() ? "The Unnamed One" : heroNameInput.getText());
@@ -62,6 +71,7 @@ public class NewGame extends BaseWindow{
             @Override
             public void keyTyped(KeyEvent e) {
                 super.keyTyped(e);
+                CreateInstructionController.setName(heroNameInput.getText());
                 heroNameLabel.setForeground(Color.BLACK);
                 if (heroTypeSelector.getSelectedIndex() != 0) {
                     heroStats.setText(heroType[heroTypeSelector.getSelectedIndex()]);

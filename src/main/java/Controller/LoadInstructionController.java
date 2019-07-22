@@ -48,7 +48,6 @@ public class LoadInstructionController {
                 loadInstructions = EventDataController.getInstructions();
             }
         } catch (IllegalArgumentException e) {
-
             try {
                 int in = Integer.parseInt(loadInstructions.get(instructionIndex));
                 if (in >= 0 && in < HeroStorage.savedHeroes.size()) {

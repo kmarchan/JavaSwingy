@@ -1,7 +1,10 @@
 package Controller;
 
+import Storage.HeroStorage;
 import View.BaseWindow;
 import View.NewGame;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -11,19 +14,25 @@ import static Controller.ApplicationController.MENU_LOOP;
 
 public class CreateInstructionController {
     private static List<String> createInstructions;
+    @Getter @Setter
+	private static int type = 0;
+	@Getter @Setter
+    private static String name;
 
     enum instruction{
         menu,
         start,
         gui,
-        blackmage,
-        orc,
-        elf,
-        knight,
     }
 
     static void createInstructionParse() {
         int instructionIndex = 0;
+        if (name != null && type != 0)
+		{
+			EventDataController.createHeroPreview(NewGame.heroType[type], name);
+			System.out.println(HeroStorage.loadToString(EventDataController.getHero()));
+			System.out.println("[start] to create begin game");
+		}
         try {
             NewGame.displayNewGame();
             createInstructions = EventDataController.getInstructions();
@@ -35,20 +44,20 @@ public class CreateInstructionController {
                             case menu:
                                 ApplicationController.status = MENU_LOOP;
                                 break;
-                            case blackmage:
-                                break;
-                            case orc:
-                                break;
-                            case elf:
-                                break;
-                            case knight:
-                                break;
                             case gui:
                                 BaseWindow.showBaseWindow();
                                 break;
                             case start:
-                                ApplicationController.status = GAME_LOOP;
-                                GameController.startGame();
+                            	if (name == null) {	System.out.println("Please input name"); }
+								else if (type == 0) {
+									System.out.println("Please select type:");
+								}
+								else if (name != null)
+								{
+									System.out.println(HeroStorage.loadToString(EventDataController.getHero()));
+									ApplicationController.status = GAME_LOOP;
+									GameController.startGame();
+								}
                                 break;
                             default: {
                                 System.out.println("Invalid Create Instruction:" + createInstructions.get(i));
@@ -60,7 +69,16 @@ public class CreateInstructionController {
                 createInstructions = EventDataController.getInstructions();
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("Invalid Create instruction:" + createInstructions.get(instructionIndex));
+			try {
+				int in = Integer.parseInt(createInstructions.get(instructionIndex));
+				if (in > 0 && in <= 4) {
+					setType(in);
+				} else {
+					System.out.println("index " + in + " invalid: enter a number from 1 to 4");
+				}
+			} catch (NumberFormatException ex) {
+				setName(createInstructions.get(instructionIndex));
+			}
             removeCreateInstructions(createInstructions.get(instructionIndex));
             createInstructionParse();
         }
