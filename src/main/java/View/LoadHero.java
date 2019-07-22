@@ -1,6 +1,5 @@
 package View;
 
-import Controller.EventDataController;
 import Controller.LoadInstructionController;
 import Model.Characters.Hero;
 import Storage.HeroStorage;
@@ -27,8 +26,8 @@ public class LoadHero extends BaseWindow{
             @Override
             public void actionPerformed(ActionEvent e) {
 				if (selectHero.getSelectedIndex() != 0) {
-                EventDataController.setHero(hero);
-                EventDataController.addInstructions("start");}
+				 LoadInstructionController.addLoadInstructions(String.valueOf(selectHero.getSelectedIndex() - 1));
+ 				}
             }
         });
         cancelButton.addActionListener(new ActionListener() {

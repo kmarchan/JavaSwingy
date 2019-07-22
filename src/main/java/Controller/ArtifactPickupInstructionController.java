@@ -24,9 +24,15 @@ public class ArtifactPickupInstructionController {
 	static void ArtifactInstructionParse() {
 		int instructionIndex = 0;
 		try {
+
 			drop = ArtifactFactory.createArtifact(EventDataController.getFoe().getLevel());
 			ArtifactPickupView.displayArtifactPickupView();
 			responseInstructions = EventDataController.getInstructions();
+			System.out.println(EventDataController.getFoe().getName() +
+					" was killed and has dropped " +
+					ArtifactPickupInstructionController.getDrop().getName() +
+					" (" + ArtifactPickupInstructionController.getDrop().getClass().getSimpleName() +
+					" buff = " + ArtifactPickupInstructionController.getDrop().getBuff() + ")\nWould you like to equip it? [y/n] ");
 			while (ApplicationController.status == ART_LOOP) {
 				for (int i = 0; i < responseInstructions.size(); i++) {
 					instructionIndex = i;

@@ -30,6 +30,12 @@ public class FightInstructionController {
 		try {
 			FightView.displayFightView();
 			fightInstructions = EventDataController.getInstructions();
+			if (fightCommentary.size() > 0)
+			{
+				for(int i = 0; i < fightCommentary.size(); i++) {
+					System.out.println(fightCommentary.get(i));
+				}
+			}
 			while (ApplicationController.status == FIGHT_LOOP) {
 				for (int i = 0; i < fightInstructions.size(); i++) {
 					instructionIndex = i;
@@ -51,6 +57,12 @@ public class FightInstructionController {
 							}
 						}
 						FightView.displayFightView();
+						if (fightCommentary.size() > 0)
+						{
+							for(int e = fightCommentary.size() -2; e < fightCommentary.size(); e++) {
+								System.out.println(fightCommentary.get(e));
+							}
+						}
 						if (fightInstructions.size() != 0) {
 							removeFightInstructions(fightInstructions.get(i));
 						}

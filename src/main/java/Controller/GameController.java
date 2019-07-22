@@ -3,7 +3,6 @@ package Controller;
 import Model.Characters.Character;
 import Model.GameModel;
 import Utils.CharacterFactory;
-import View.GameView;
 
 import java.util.Random;
 
@@ -16,7 +15,7 @@ public class GameController {
 	static void startGame() {
 		GameModel.createMap(EventDataController.getHero());
 		GameModel.updateHeroPlacement(EventDataController.getHero());
-		GameView.displayGameView();
+//		GameView.displayGameView();
 	}
 
 	public static String generateRound() {
@@ -24,7 +23,7 @@ public class GameController {
 		for (int i = 0; i < GameModel.getMapSize(); i++) {
 			for (int x = 0; x < GameModel.getMapSize(); x++) {
 				if (GameModel.getMap()[i][x] == 1) {
-					mapString.append("@ ");
+					mapString.append(" @ ");
 				}
 				else if (GameModel.getMap()[i][x] == 8) {
 					mapString.append(" # ");

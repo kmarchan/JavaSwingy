@@ -56,18 +56,13 @@ public class Hero extends Character {
 
 		hero.baseAttackPnts = hero.level * attack;
     	hero.attackPnts = hero.baseAttackPnts;
-//        if (hero.equipped[WEAPON] != null)
-//            hero.attackPnts += hero.equipped[WEAPON].getBuff();
 
 		hero.baseDefencePnts = hero.level * defence;
         hero.defencePnts = hero.baseDefencePnts;
-//        if (hero.equipped[ARMOUR] != null)
-//            hero.defencePnts += hero.equipped[ARMOUR].getBuff();
 
 		hero.baseHitPnts = hero.level * hitPoints;
         hero.hitPnts = hero.baseHitPnts;
-//        if (hero.equipped[HELM] != null)
-//            hero.hitPnts += hero.equipped[HELM].getBuff();
+
 		updateEquipped(hero);
         hero.experiencePnts -= hero.baseExperiencePnts;
         hero.baseExperiencePnts = hero.level * 1000 + (int)Math.pow(hero.level - 1, 2) * 450;

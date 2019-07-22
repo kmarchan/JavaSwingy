@@ -59,7 +59,7 @@ public class HeroStorage {
             }
         }
     }
-		// TODO use for terminal hero loader
+
     	public static String loadToString(Hero hero) {
 			String ret;
 			ret = 	"Name: " + hero.getName() +

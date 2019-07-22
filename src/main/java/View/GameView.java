@@ -23,8 +23,9 @@ public class GameView extends BaseWindow {
 
         showStats(EventDataController.getHero(), heroStats);
         foeStats.setText("No foe in sight yet");
+		gameMap.setText(GameController.generateRound());
 
-        northButton.addActionListener(new ActionListener() {
+		northButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 				GameInstructionController.addInstructions("north");
@@ -57,7 +58,6 @@ public class GameView extends BaseWindow {
 
             }
         });
-		gameMap.setText(GameController.generateRound());
 
 		saveAndExitButton.addActionListener(new ActionListener() {
 			@Override

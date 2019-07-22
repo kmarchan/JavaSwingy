@@ -11,6 +11,7 @@ public class GameOver extends BaseWindow{
 	private JButton exitButton;
 
 	public GameOver() {
+		System.out.println("\nYou Have Died!\n[exit] is your only option.");
 		exitButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent actionEvent) {

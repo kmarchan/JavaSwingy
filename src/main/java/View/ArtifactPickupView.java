@@ -15,7 +15,6 @@ public class ArtifactPickupView extends BaseWindow{
 	private JTextPane heroStats;
 
 	private ArtifactPickupView() {
-		// TODO item info
 		artifactMessage.setText(EventDataController.getFoe().getName() +
 				" was killed and has dropped " +
 				ArtifactPickupInstructionController.getDrop().getName() +
