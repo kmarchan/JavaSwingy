@@ -27,13 +27,13 @@ public class LoadInstructionController {
         try {
             LoadHero.displayLoadHero();
             loadInstructions = EventDataController.getInstructions();
-            while (ApplicationController.status == LOAD_LOOP) {
+            while (StateManager.status == LOAD_LOOP) {
                 for (int i = 0; i < loadInstructions.size(); i++) {
                     instructionIndex = i;
                     if (loadInstructions.get(i) != null) {
                         switch (instruction.valueOf(loadInstructions.get(i).toLowerCase())) {
                             case menu:
-                                ApplicationController.status = MENU_LOOP;
+                                StateManager.status = MENU_LOOP;
                                 break;
                             case gui:
                                 BaseWindow.showBaseWindow();
@@ -52,7 +52,7 @@ public class LoadInstructionController {
                 int in = Integer.parseInt(loadInstructions.get(instructionIndex));
                 if (in >= 0 && in < HeroStorage.savedHeroes.size()) {
                     EventDataController.setHero(HeroStorage.savedHeroes.get(in));
-                    ApplicationController.status = GAME_LOOP;
+                    StateManager.status = GAME_LOOP;
                     System.out.println("\nGame Started");
                     GameController.startGame();
                 } else {

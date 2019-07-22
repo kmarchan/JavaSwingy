@@ -21,7 +21,7 @@ public class GameOverInstructionController {
 		try {
 			GameOver.displayGameOver();
 			Instruction = EventDataController.getInstructions();
-			while (ApplicationController.status == END_LOOP) {
+			while (StateManager.status == END_LOOP) {
 				for (int i = 0; i < Instruction.size(); i++) {
 					instructionIndex = i;
 					if (Instruction.get(i) != null) {

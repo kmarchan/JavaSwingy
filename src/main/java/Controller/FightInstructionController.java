@@ -29,7 +29,7 @@ public class FightInstructionController {
 		try {
 			FightView.displayFightView();
 			fightInstructions = EventDataController.getInstructions();
-			while (ApplicationController.status == FIGHT_LOOP) {
+			while (StateManager.status == FIGHT_LOOP) {
 				for (int i = 0; i < fightInstructions.size(); i++) {
 					instructionIndex = i;
 					if (fightInstructions.get(i) != null) {
@@ -80,7 +80,7 @@ public class FightInstructionController {
 		}
 		else if (EventDataController.getHero().getHitPnts() <= 0)
 		{
-			ApplicationController.status = END_LOOP;
+			StateManager.status = END_LOOP;
 		}
 		return false;
 	}
@@ -88,9 +88,9 @@ public class FightInstructionController {
 	private static void searchForDrop() {
 		if (new Random().nextInt() % 2 == 0) {
 			ArtifactPickupInstructionController.setArtifactView(true);
-			ApplicationController.status = ART_LOOP;
+			StateManager.status = ART_LOOP;
 		}
-		else ApplicationController.status = GAME_LOOP;
+		else StateManager.status = GAME_LOOP;
 	}
 
 	private static void fightWon() {

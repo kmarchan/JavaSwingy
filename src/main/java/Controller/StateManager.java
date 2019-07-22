@@ -1,12 +1,14 @@
 package Controller;
 
+import lombok.Getter;
 import lombok.Setter;
 
 import static Controller.ApplicationController.*;
 
 public class StateManager {
+	public static int status;
 
-	@Setter	private static boolean game = true;
+	@Setter	@Getter private static boolean game = true;
 
 	public static void stateManager(){
 		while(game) {

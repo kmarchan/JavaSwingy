@@ -14,8 +14,6 @@ public class EventDataController {
     @Getter @Setter private static Hero hero;
     @Getter @Setter private static Foe foe;
 	@Getter	@Setter	private static String map;
-	@Getter @Setter private static Boolean isRunning;
-	@Setter 		private static Boolean isProcessed;
 	@Getter 		private static List<String> instructions = new ArrayList<>();
 
 	public static void readStdinAsync(){
@@ -23,7 +21,7 @@ public class EventDataController {
 			Scanner input = new Scanner(System.in);
 
 			public void run() {
-					while (isRunning && input.hasNext()) {
+					while (StateManager.isGame() && input.hasNext()) {
 						addInstructions(input.nextLine());
 					}
 					System.out.println("ended stdin");
@@ -37,13 +35,7 @@ public class EventDataController {
 	}
 
 	static void removeInstructions(String input) {
-		if (isProcessed) {
 			instructions.remove(input);
-			isProcessed = false;
-		}
-		else {
-			MenuInstructionController.instructionParse();
-		}
 	}
 
     public static void createHeroPreview(String type, String name)

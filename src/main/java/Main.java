@@ -6,8 +6,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		ApplicationController.createWindow();
+//		EventDataController.setIsRunning(true);
 		EventDataController.readStdinAsync();
-		ApplicationController.status = 0;
+		StateManager.status = 0;
 		StateManager.stateManager();
 	}
 }

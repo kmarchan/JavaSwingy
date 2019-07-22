@@ -42,7 +42,7 @@ public class CreateInstructionController {
         try {
             NewGame.displayNewGame();
             createInstructions = EventDataController.getInstructions();
-            while (ApplicationController.status == CREATE_LOOP) {
+            while (StateManager.status == CREATE_LOOP) {
                 for (int i = 0; i < createInstructions.size(); i++) {
                     instructionIndex = i;
                     if (createInstructions.get(i) != null) {
@@ -50,7 +50,7 @@ public class CreateInstructionController {
                             case menu:
                             	setName(null);
                             	setType(0);
-                                ApplicationController.status = MENU_LOOP;
+								StateManager.status = MENU_LOOP;
                                 break;
                             case gui:
                                 BaseWindow.showBaseWindow();
@@ -68,7 +68,7 @@ public class CreateInstructionController {
 								else if (name != null)
 								{
 									System.out.println(HeroStorage.loadToString(EventDataController.getHero()));
-									ApplicationController.status = GAME_LOOP;
+									StateManager.status = GAME_LOOP;
 									GameController.startGame();
 								}
                                 break;

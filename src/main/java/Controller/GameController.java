@@ -33,7 +33,7 @@ public class GameController {
 				else {
 					mapString.append(" # ");
 					EventDataController.setFoe(CharacterFactory.createFoe(EventDataController.getHero().getLevel()));
-					ApplicationController.status = FIGHT_LOOP;
+					StateManager.status = FIGHT_LOOP;
 				}
 			}
 			mapString.append("\n");
@@ -59,7 +59,7 @@ public class GameController {
 		int rn = new Random().nextInt(100);
 		if (rn % 2 == 0) {
 			GameModel.runAway(EventDataController.getHero());
-			ApplicationController.status = GAME_LOOP;
+			StateManager.status = GAME_LOOP;
 		}
 		else {
 			GameModel.addFightCommentary(EventDataController.getHero().getName() + " failed to run away");

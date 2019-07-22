@@ -33,7 +33,7 @@ public class ArtifactPickupInstructionController {
 					ArtifactPickupInstructionController.getDrop().getName() +
 					" (" + ArtifactPickupInstructionController.getDrop().getClass().getSimpleName() +
 					" buff = " + ArtifactPickupInstructionController.getDrop().getBuff() + ")\nWould you like to equip it? [y/n] ");
-			while (ApplicationController.status == ART_LOOP) {
+			while (StateManager.status == ART_LOOP) {
 				for (int i = 0; i < responseInstructions.size(); i++) {
 					instructionIndex = i;
 					if (responseInstructions.get(i) != null) {
@@ -41,11 +41,11 @@ public class ArtifactPickupInstructionController {
 							case y:
 								EventDataController.getHero().equipArtifact(EventDataController.getHero(), drop);
 								setArtifactView(false);
-								ApplicationController.status = GAME_LOOP;
+								StateManager.status = GAME_LOOP;
 								break;
 							case n:
 								setArtifactView(false);
-								ApplicationController.status = GAME_LOOP;
+								StateManager.status = GAME_LOOP;
 								break;
 
 							default: {

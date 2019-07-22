@@ -11,12 +11,11 @@ public class ApplicationController {
 	static final int END_LOOP = 4;
 	static final int LOAD_LOOP = 5;
 	static final int CREATE_LOOP = 6;
-	public static int status;
 
 	static public void createWindow(){
 		BaseWindow.createBaseWindow();
 //		MainMenu.displayMainMenu();
-		EventDataController.setIsRunning(true);
+//		EventDataController.setIsRunning(true);
 	}
 
 	static void closeApplication(){

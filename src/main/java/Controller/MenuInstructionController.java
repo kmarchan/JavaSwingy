@@ -23,14 +23,13 @@ class MenuInstructionController {
 		try {
 			MainMenu.displayMainMenu();
 			instructions = EventDataController.getInstructions();
-			while(ApplicationController.status == MENU_LOOP) {
+			while(StateManager.status == MENU_LOOP) {
 				for (int i=0; i < instructions.size(); i++) {
 					instructionIndex = i;
 					if (instructions.get(i) != null) {
-						EventDataController.setIsProcessed(true);
 						switch (Instruction.valueOf(instructions.get(i).toLowerCase())) {
 							case exit: {
-								EventDataController.setIsRunning(false);
+//								EventDataController.setIsRunning(false);
 								ApplicationController.closeApplication();
 								break;
 							}
@@ -38,10 +37,10 @@ class MenuInstructionController {
 								BaseWindow.showBaseWindow();
 								break;
 							case newgame:
-								ApplicationController.status = CREATE_LOOP;
+								StateManager.status = CREATE_LOOP;
 								break;
 							case loadgame:
-								ApplicationController.status = LOAD_LOOP;
+								StateManager.status = LOAD_LOOP;
 								HeroStorage.getSavedHeroes();
 								break;
 							default: {
@@ -60,8 +59,6 @@ class MenuInstructionController {
 		}
 		catch (InputException e) {
 			e.printStackTrace();
-		} finally {
-			instructions = EventDataController.getInstructions();
 		}
 	}
 }
