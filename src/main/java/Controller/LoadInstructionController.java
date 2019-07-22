@@ -61,8 +61,8 @@ public class LoadInstructionController {
             } catch (NumberFormatException ex) {
                 System.out.println("Please select hero by index");
             }
-        }
         removeLoadInstructions(loadInstructions.get(instructionIndex));
+        }
     }
 
     public static void addLoadInstructions(String input) {

@@ -27,11 +27,17 @@ public class CreateInstructionController {
 
     static void createInstructionParse() {
         int instructionIndex = 0;
+		if (name == null && type ==  0)System.out.println("\nPlease select a hero type by index and enter name:" +
+				"\nHero Types: " +
+				"\n[1] Black Mage, " +
+				"\n[2] Elf," +
+				"\n[3] Knight," +
+				"\n[4] Orc");
         if (name != null && type != 0)
 		{
 			EventDataController.createHeroPreview(NewGame.heroType[type], name);
 			System.out.println(HeroStorage.loadToString(EventDataController.getHero()));
-			System.out.println("[start] to create begin game");
+			System.out.println("[start] to begin game or change name / type");
 		}
         try {
             NewGame.displayNewGame();
@@ -50,7 +56,11 @@ public class CreateInstructionController {
                             case start:
                             	if (name == null) {	System.out.println("Please input name"); }
 								else if (type == 0) {
-									System.out.println("Please select type:");
+									System.out.println("Please select type index:" + 				"\nHero Types: " +
+											"\n[1] Black Mage, " +
+											"\n[2] Elf," +
+											"\n[3] Knight," +
+											"\n[4] Orc");
 								}
 								else if (name != null)
 								{
