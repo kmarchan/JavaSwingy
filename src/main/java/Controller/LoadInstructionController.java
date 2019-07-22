@@ -10,7 +10,7 @@ import static Controller.ApplicationController.GAME_LOOP;
 import static Controller.ApplicationController.LOAD_LOOP;
 import static Controller.ApplicationController.MENU_LOOP;
 
-public class LoadInstructionController {
+class LoadInstructionController {
     private static List<String> loadInstructions;
 
     enum instruction{
@@ -63,7 +63,9 @@ public class LoadInstructionController {
             }
 
         } finally {
-			EventDataController.removeInstructions(loadInstructions.get(instructionIndex));
+            if (loadInstructions.size() != 0) {
+                EventDataController.removeInstructions(loadInstructions.get(instructionIndex));
+            }
 			loadInstructions = EventDataController.getInstructions();
 		}
     }

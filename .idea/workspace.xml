@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b27ee3c-a07d-47f9-90d6-387382673282" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/heroes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ArtifactPickupInstructionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ArtifactPickupInstructionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CreateInstructionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CreateInstructionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/EventDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/EventDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/FightInstructionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/FightInstructionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameInstructionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameInstructionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GameOverInstructionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GameOverInstructionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LoadInstructionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LoadInstructionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/MenuInstructionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/MenuInstructionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,6 +41,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LoadInstructionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/EventDataController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -70,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/StateManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+            <state relative-caret-position="349">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CreateInstructionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="47" column="60" lean-forward="true" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+            <state relative-caret-position="663">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
             </state>
           </provider>
         </entry>
@@ -205,18 +204,18 @@
         <option value="$PROJECT_DIR$/src/main/java/View/GameOver.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/LoadHero.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/NewGame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/StateManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/CreateInstructionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ArtifactPickupInstructionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/FightInstructionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/GameController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/GameOverInstructionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/LoadInstructionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ApplicationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/MenuInstructionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/EventDataController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/GameInstructionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/CreateInstructionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/StateManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/LoadInstructionController.java" />
       </list>
     </option>
   </component>
@@ -625,20 +624,6 @@
       <workItem from="1563525662762" duration="246000" />
       <workItem from="1563525936296" duration="9160000" />
     </task>
-    <task id="LOCAL-00010" summary="add loadHero, NewGame, Control view not navigating">
-      <created>1562232561690</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1562232561690</updated>
-    </task>
-    <task id="LOCAL-00011" summary="naviating to new views. {unreliable instruction input}">
-      <created>1562234411953</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1562234411953</updated>
-    </task>
     <task id="LOCAL-00012" summary="{unreliable instruction input}">
       <created>1562237022456</created>
       <option name="number" value="00012" />
@@ -968,7 +953,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563796349165</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="new character broken">
+      <created>1563802070609</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1563802070610</updated>
+    </task>
+    <task id="LOCAL-00060" summary="need cleanup">
+      <created>1563802271567</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1563802271567</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -985,7 +984,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1350" y="27" width="1850" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info x="1055" y="466" width="450" height="451" id="UI Designer" order="1" type="FLOATING" />
@@ -994,13 +992,13 @@
       <window_info id="Image Layers" order="4" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24889135" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49944568" visible="true" weight="0.13849509" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.49944568" visible="true" weight="0.4154853" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5005543" side_tool="true" weight="0.3565976" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.34538153" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49944568" weight="0.14830971" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49944568" weight="0.32824427" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.2082879" />
       <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49944568" weight="0.1908397" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -1057,8 +1055,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="attack" />
-    <MESSAGE value="attack message WIP" />
     <MESSAGE value="run WIP" />
     <MESSAGE value="artifact pickup wip" />
     <MESSAGE value="artifact pickup instruction not working" />
@@ -1082,7 +1078,9 @@
     <MESSAGE value="testing" />
     <MESSAGE value="instructions occasionally stop working" />
     <MESSAGE value="broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="broken" />
+    <MESSAGE value="new character broken" />
+    <MESSAGE value="need cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="need cleanup" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
@@ -1301,16 +1299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LoadInstructionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
@@ -1366,16 +1354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/StateManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ApplicationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1413,8 +1391,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CreateInstructionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="47" column="60" lean-forward="true" selection-start-line="47" selection-start-column="60" selection-end-line="47" selection-end-column="60" />
+        <state relative-caret-position="663">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/StateManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/LoadInstructionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
