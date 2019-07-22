@@ -48,6 +48,8 @@ public class CreateInstructionController {
                     if (createInstructions.get(i) != null) {
                         switch (instruction.valueOf(createInstructions.get(i).toLowerCase())) {
                             case menu:
+                            	setName(null);
+                            	setType(0);
                                 ApplicationController.status = MENU_LOOP;
                                 break;
                             case gui:
@@ -56,7 +58,8 @@ public class CreateInstructionController {
                             case start:
                             	if (name == null) {	System.out.println("Please input name"); }
 								else if (type == 0) {
-									System.out.println("Please select type index:" + 				"\nHero Types: " +
+									System.out.println("Please select type index:" +
+											"\nHero Types: " +
 											"\n[1] Black Mage, " +
 											"\n[2] Elf," +
 											"\n[3] Knight," +
@@ -90,7 +93,6 @@ public class CreateInstructionController {
 				setName(createInstructions.get(instructionIndex));
 			}
             removeCreateInstructions(createInstructions.get(instructionIndex));
-            createInstructionParse();
         }
     }
 
