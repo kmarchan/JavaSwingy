@@ -79,7 +79,9 @@ public class CreateInstructionController {
                         EventDataController.removeInstructions(createInstructions.get(i));
                     }
                 }
-            }
+				createInstructions = EventDataController.getInstructions();
+
+			}
         } catch (IllegalArgumentException e) {
 			try {
 				int in = Integer.parseInt(createInstructions.get(instructionIndex));
