@@ -25,13 +25,13 @@ public class ArtifactPickupView extends BaseWindow{
 		noButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ArtifactPickupInstructionController.addResponseInstructions("n");
+				EventDataController.addInstructions("n");
 			}
 		});
 		yesButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ArtifactPickupInstructionController.addResponseInstructions("y");
+				EventDataController.addInstructions("y");
 			}
 		});
 	}

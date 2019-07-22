@@ -2,7 +2,6 @@ package Controller;
 
 import Storage.HeroStorage;
 import View.BaseWindow;
-import View.MainMenu;
 
 public class ApplicationController {
 	static final int MENU_LOOP = 0;
@@ -12,11 +11,11 @@ public class ApplicationController {
 	static final int END_LOOP = 4;
 	static final int LOAD_LOOP = 5;
 	static final int CREATE_LOOP = 6;
-	public static int status = 0;
+	public static int status;
 
 	static public void createWindow(){
 		BaseWindow.createBaseWindow();
-		MainMenu.displayMainMenu();
+//		MainMenu.displayMainMenu();
 		EventDataController.setIsRunning(true);
 	}
 

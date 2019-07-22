@@ -76,10 +76,9 @@ public class CreateInstructionController {
                                 System.out.println("Invalid Create Instruction:" + createInstructions.get(i));
                             }
                         }
-                        removeCreateInstructions(createInstructions.get(i));
+                        EventDataController.removeInstructions(createInstructions.get(i));
                     }
                 }
-                createInstructions = EventDataController.getInstructions();
             }
         } catch (IllegalArgumentException e) {
 			try {
@@ -92,15 +91,7 @@ public class CreateInstructionController {
 			} catch (NumberFormatException ex) {
 				setName(createInstructions.get(instructionIndex));
 			}
-            removeCreateInstructions(createInstructions.get(instructionIndex));
+            EventDataController.removeInstructions(createInstructions.get(instructionIndex));
         }
-    }
-
-    public static void addCreateInstructions(String input) {
-        createInstructions.add(input);
-    }
-
-    private static void removeCreateInstructions(String input) {
-        createInstructions.remove(input);
     }
 }

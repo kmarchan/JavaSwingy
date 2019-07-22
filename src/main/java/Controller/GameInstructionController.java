@@ -10,8 +10,6 @@ import static View.GameView.displayGameView;
 
 public class GameInstructionController {
 	private static List<String> gameInstructions;
-	private static boolean isProcessed;
-	private static boolean isGameRunning;
 
 	enum Instruction {
 		north,
@@ -22,20 +20,15 @@ public class GameInstructionController {
 		gui,
 	}
 
-	public static void setIsGameRunning(boolean isGameRunning) {
-		GameInstructionController.isGameRunning = isGameRunning;
-	}
-
 	static void gameInstructionParse() {
 		int instructionIndex = 0;
 		try {
 			gameInstructions = EventDataController.getInstructions();
 			displayGameView();
-			while (isGameRunning && ApplicationController.status == GAME_LOOP) {
+			while (ApplicationController.status == GAME_LOOP) {
 				for (int i = 0; i < gameInstructions.size(); i++) {
 					instructionIndex = i;
 					if (gameInstructions.get(i) != null) {
-						isProcessed = true;
 						switch (Instruction.valueOf(gameInstructions.get(i).toLowerCase())) {
 							case exit: {
 								EventDataController.setIsRunning(false);
@@ -62,33 +55,18 @@ public class GameInstructionController {
 								System.out.println("Invalid Game Instruction:" + gameInstructions.get(i));
 							}
 						}
-						removeGameInstructions(gameInstructions.get(i));
-						displayGameView();
+						EventDataController.removeInstructions(gameInstructions.get(i));
 					}
 				}
 				gameInstructions = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid instruction:" + gameInstructions.get(instructionIndex)+ "\nYour options are [north, south, east, west and exit]");
-			removeGameInstructions(gameInstructions.get(instructionIndex));
+			EventDataController.removeInstructions(gameInstructions.get(instructionIndex));
 			gameInstructionParse();
-		}
-	}
-
-	public static void addInstructions(String input) {
-		isProcessed = false;
-		gameInstructions.add(input);
-	}
-
-	private static void removeGameInstructions(String input) {
-		if (isProcessed) {
-			gameInstructions.remove(input);
-			isProcessed = false;
-		} else {
-			gameInstructionParse();
-			if (gameInstructions.size() != 0) {
-				removeGameInstructions(input);
-			}
+		} finally {
+			EventDataController.removeInstructions(gameInstructions.get(instructionIndex));
+			gameInstructions = EventDataController.getInstructions();
 		}
 	}
 }

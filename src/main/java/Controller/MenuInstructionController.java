@@ -23,7 +23,7 @@ class MenuInstructionController {
 		try {
 			MainMenu.displayMainMenu();
 			instructions = EventDataController.getInstructions();
-			while(EventDataController.getIsRunning() && ApplicationController.status == MENU_LOOP) {
+			while(ApplicationController.status == MENU_LOOP) {
 				for (int i=0; i < instructions.size(); i++) {
 					instructionIndex = i;
 					if (instructions.get(i) != null) {
@@ -60,6 +60,8 @@ class MenuInstructionController {
 		}
 		catch (InputException e) {
 			e.printStackTrace();
+		} finally {
+			instructions = EventDataController.getInstructions();
 		}
 	}
 }

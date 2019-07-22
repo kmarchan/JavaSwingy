@@ -49,7 +49,7 @@ public class NewGame extends BaseWindow{
         cancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CreateInstructionController.addCreateInstructions("menu");
+                EventDataController.addInstructions("menu");
             }
         });
         heroTypeSelector.addActionListener(new ActionListener() {

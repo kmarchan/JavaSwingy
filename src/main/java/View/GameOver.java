@@ -1,6 +1,6 @@
 package View;
 
-import Controller.GameOverInstructionController;
+import Controller.EventDataController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +15,7 @@ public class GameOver extends BaseWindow{
 		exitButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent actionEvent) {
-				GameOverInstructionController.addEndInstructions("exit");
+				EventDataController.addInstructions("exit");
 			}
 		});
 	}

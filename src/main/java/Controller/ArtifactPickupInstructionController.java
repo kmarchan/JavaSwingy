@@ -52,24 +52,15 @@ public class ArtifactPickupInstructionController {
 								System.out.println("Invalid Artifact Instruction:" + responseInstructions.get(i));
 							}
 						}
-						removeResponseInstructions(responseInstructions.get(i));
+						EventDataController.removeInstructions(responseInstructions.get(i));
 					}
 				}
 				responseInstructions = EventDataController.getInstructions();
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid instruction:" + responseInstructions.get(instructionIndex) + "\nYour options are [y/n]");
-			removeResponseInstructions(responseInstructions.get(instructionIndex));
+			EventDataController.removeInstructions(responseInstructions.get(instructionIndex));
 			ArtifactInstructionParse();
 		}
 	}
-
-	public static void addResponseInstructions(String input) {
-		responseInstructions.add(input);
-	}
-
-	private static void removeResponseInstructions(String input) {
-		responseInstructions.remove(input);
-	}
-
 }

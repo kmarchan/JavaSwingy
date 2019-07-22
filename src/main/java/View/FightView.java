@@ -1,7 +1,6 @@
 package View;
 
 import Controller.EventDataController;
-import Controller.FightInstructionController;
 import Controller.GameController;
 
 import javax.swing.*;
@@ -23,13 +22,13 @@ public class FightView extends BaseWindow {
 		fightButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				FightInstructionController.addInstructions("fight");
+				EventDataController.addInstructions("fight");
 			}
 		});
 		runButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent actionEvent) {
-				FightInstructionController.addInstructions("run");
+				EventDataController.addInstructions("run");
 			}
 		});
 	}

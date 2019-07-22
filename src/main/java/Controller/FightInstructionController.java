@@ -15,7 +15,6 @@ import static Controller.ApplicationController.*;
 public class FightInstructionController {
 
 	private static List<String> fightInstructions;
-	private static boolean isFightProcessed;
 	@Getter @Setter private static List<String> fightCommentary;
 
 	enum Instructions {
@@ -30,17 +29,10 @@ public class FightInstructionController {
 		try {
 			FightView.displayFightView();
 			fightInstructions = EventDataController.getInstructions();
-//			if (fightCommentary.size() > 0)
-//			{
-//				for (String aFightCommentary : fightCommentary) {
-//					System.out.println(aFightCommentary);
-//				}
-//			}
 			while (ApplicationController.status == FIGHT_LOOP) {
 				for (int i = 0; i < fightInstructions.size(); i++) {
 					instructionIndex = i;
 					if (fightInstructions.get(i) != null) {
-						isFightProcessed = true;
 						switch (FightInstructionController.Instructions.valueOf(fightInstructions.get(i).toLowerCase())) {
 							case fight: {
 								GameController.attack(EventDataController.getHero(), EventDataController.getFoe());
@@ -65,7 +57,7 @@ public class FightInstructionController {
 							}
 						}
 						if (fightInstructions.size() != 0) {
-							removeFightInstructions(fightInstructions.get(i));
+							EventDataController.removeInstructions(fightInstructions.get(i));
 						}
 					}
 				}
@@ -74,7 +66,7 @@ public class FightInstructionController {
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid instruction:" + fightInstructions.get(instructionIndex) + "\nYour options are [fight/run]");
-			removeFightInstructions(fightInstructions.get(instructionIndex));
+			EventDataController.removeInstructions(fightInstructions.get(instructionIndex));
 			fightInstructionParse();
 		}
 	}
@@ -104,22 +96,5 @@ public class FightInstructionController {
 	private static void fightWon() {
 		GameModel.removeFoe(EventDataController.getHero());
 		Hero.gainExperience(EventDataController.getHero(), EventDataController.getFoe().getLevel() * 20);
-	}
-
-	public static void addInstructions(String input) {
-			isFightProcessed = false;
-			fightInstructions.add(input);
-	}
-
-	private static void removeFightInstructions(String input) {
-		if (isFightProcessed) {
-			fightInstructions.remove(input);
-			isFightProcessed = false;
-		} else {
-			fightInstructionParse();
-			if (fightInstructions.size() != 0) {
-				removeFightInstructions(input);
-			}
-		}
 	}
 }

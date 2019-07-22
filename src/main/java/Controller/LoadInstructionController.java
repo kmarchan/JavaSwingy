@@ -8,7 +8,6 @@ import java.util.List;
 
 import static Controller.ApplicationController.GAME_LOOP;
 import static Controller.ApplicationController.LOAD_LOOP;
-import static Controller.ApplicationController.MENU_LOOP;
 
 public class LoadInstructionController {
     private static List<String> loadInstructions;
@@ -33,7 +32,7 @@ public class LoadInstructionController {
                     if (loadInstructions.get(i) != null) {
                         switch (instruction.valueOf(loadInstructions.get(i).toLowerCase())) {
                             case menu:
-                                ApplicationController.status = MENU_LOOP;
+//                                ApplicationController.status = MENU_LOOP;
                                 break;
                             case gui:
                                 BaseWindow.showBaseWindow();
@@ -42,8 +41,8 @@ public class LoadInstructionController {
                                 System.out.println("Invalid Load instruction:" + loadInstructions.get(i));
                             }
                         }
-                        removeLoadInstructions(loadInstructions.get(i));
                     }
+					EventDataController.removeInstructions(loadInstructions.get(i));
                 }
                 loadInstructions = EventDataController.getInstructions();
             }
@@ -61,15 +60,10 @@ public class LoadInstructionController {
             } catch (NumberFormatException ex) {
                 System.out.println("Please select hero by index");
             }
-        removeLoadInstructions(loadInstructions.get(instructionIndex));
-        }
-    }
 
-    public static void addLoadInstructions(String input) {
-        loadInstructions.add(input);
-    }
-
-    private static void removeLoadInstructions(String input) {
-        loadInstructions.remove(input);
+        } finally {
+			EventDataController.removeInstructions(loadInstructions.get(instructionIndex));
+			loadInstructions = EventDataController.getInstructions();
+		}
     }
 }

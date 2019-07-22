@@ -2,7 +2,6 @@ package View;
 
 import Controller.EventDataController;
 import Controller.GameController;
-import Controller.GameInstructionController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -28,27 +27,27 @@ public class GameView extends BaseWindow {
 		northButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-				GameInstructionController.addInstructions("north");
+				EventDataController.addInstructions("north");
 			}
         });
         eastButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-				GameInstructionController.addInstructions("east");
+				EventDataController.addInstructions("east");
 			}
         });
         southButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-				GameInstructionController.addInstructions("south");
+				EventDataController.addInstructions("south");
 			}
         });
         westButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-            	GameInstructionController.addInstructions("west");
+				EventDataController.addInstructions("west");
 
 			}
         });
@@ -62,7 +61,7 @@ public class GameView extends BaseWindow {
 		saveAndExitButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent actionEvent) {
-				GameInstructionController.addInstructions("exit");
+				EventDataController.addInstructions("exit");
 			}
 		});
 	}
