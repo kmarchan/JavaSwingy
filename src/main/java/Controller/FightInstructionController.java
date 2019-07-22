@@ -32,8 +32,8 @@ public class FightInstructionController {
 			fightInstructions = EventDataController.getInstructions();
 			if (fightCommentary.size() > 0)
 			{
-				for(int i = 0; i < fightCommentary.size(); i++) {
-					System.out.println(fightCommentary.get(i));
+				for (String aFightCommentary : fightCommentary) {
+					System.out.println(aFightCommentary);
 				}
 			}
 			while (ApplicationController.status == FIGHT_LOOP) {

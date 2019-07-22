@@ -15,7 +15,6 @@ public class GameController {
 	static void startGame() {
 		GameModel.createMap(EventDataController.getHero());
 		GameModel.updateHeroPlacement(EventDataController.getHero());
-//		GameView.displayGameView();
 	}
 
 	public static String generateRound() {
