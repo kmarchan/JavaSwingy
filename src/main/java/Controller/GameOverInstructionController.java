@@ -28,13 +28,13 @@ public class GameOverInstructionController {
 								System.out.println("Invalid instruction:" + Instruction);
 							}
 						}
-						EventDataController.removeInstructions(Instruction);
+						EventDataController.removeInstructions();
 					}
 					Instruction = EventDataController.getInstruction();
 				}
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid Over Instruction:" + Instruction + "\n[exit] is your only option");
-			EventDataController.removeInstructions(Instruction);
+			EventDataController.removeInstructions();
 			GameOverInstructionParse();
 		}
 	}

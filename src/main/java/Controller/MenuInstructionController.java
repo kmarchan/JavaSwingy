@@ -17,12 +17,10 @@ class MenuInstructionController {
 		gui,
 	}
 
-	static void instructionParse() throws InputException {
+	static void instructionParse() {
 		System.out.println( "\nMain Menu\nYour options are [exit, newgame, loadgame and gui]");
 		try {
-			System.out.println("Dispklay maidn menu");
 			MainMenu.displayMainMenu();
-			System.out.println(StateManager.status);
 			instructions = EventDataController.getInstruction();
 			System.out.println(EventDataController.getInstruction());
 			while(StateManager.status == MENU_LOOP) {
@@ -46,13 +44,13 @@ class MenuInstructionController {
 								System.out.println("Invalid Menu Instruction: " + EventDataController.getInstruction());
 							}
 						}
-						EventDataController.removeInstructions("MenuInstructionController");
+						EventDataController.removeInstructions();
 					}
-				instructions = EventDataController.getInstruction();
+					instructions = EventDataController.getInstruction();
 			}
 		} catch (IllegalArgumentException | InputException e){
 			System.out.println("Invalid Menu Instruction: " + EventDataController.getInstruction());
-			EventDataController.removeInstructions("MenuInstructionController");
+			EventDataController.removeInstructions();
 			instructionParse();
 		}
 	}

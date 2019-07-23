@@ -20,7 +20,6 @@ public class EventDataController {
 			Scanner input = new Scanner(System.in);
 
 			public void run() {
-				System.out.println("kadsjhfkdjsa");
 					while (input.hasNext()) {
 						addInstructions(input.nextLine());
 					}
@@ -31,13 +30,11 @@ public class EventDataController {
 	}
 
 	public static void addInstructions(String input) {
-		instruction = input;
-		System.out.println("[INSTRUCTION IN: " + instruction + "]");
+			instruction = input;
 	}
 
-	static void removeInstructions(String input) {
+	static void removeInstructions() {
 		instruction = "";
-		System.out.println("input " + input + " removed");
 	}
 
     public static void createHeroPreview(String type, String name)

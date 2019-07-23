@@ -35,7 +35,7 @@ class LoadInstructionController {
                                 System.out.println("Invalid Load instruction:" + loadInstructions);
                             }
                         }
-                        EventDataController.removeInstructions(loadInstructions);
+                        EventDataController.removeInstructions();
                     }
                     loadInstructions = EventDataController.getInstruction();
                 }
@@ -56,7 +56,7 @@ class LoadInstructionController {
 
         } finally {
             if (loadInstructions != "") {
-                EventDataController.removeInstructions(loadInstructions);
+                EventDataController.removeInstructions();
             }
 			loadInstructions = EventDataController.getInstruction();
 		}

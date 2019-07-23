@@ -36,16 +36,16 @@ public class FightInstructionController {
 								if (!checkForDeath()) {
 									GameController.attack(EventDataController.getFoe(), EventDataController.getHero());
 								}
-								EventDataController.removeInstructions(fightInstructions);
+								EventDataController.removeInstructions();
 								break;
 							}
 							case run:
 								GameController.run();
-								EventDataController.removeInstructions(fightInstructions);
+								EventDataController.removeInstructions();
 								break;
 							default:
 								System.out.println("Invalid Fight Instruction:" + fightInstructions);
-								EventDataController.removeInstructions(fightInstructions);
+								EventDataController.removeInstructions();
 								break;
 						}
 						FightView.displayFightView();
@@ -55,7 +55,7 @@ public class FightInstructionController {
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid instruction:" + fightInstructions + "\nYour options are [fight/run]");
-			EventDataController.removeInstructions(fightInstructions);
+			EventDataController.removeInstructions();
 			fightInstructionParse();
 		}
 	}
