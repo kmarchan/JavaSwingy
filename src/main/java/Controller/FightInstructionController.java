@@ -50,9 +50,9 @@ public class FightInstructionController {
 						}
 						FightView.displayFightView();
 					}
-				}
 				fightInstructions = EventDataController.getInstruction();
 				checkForDeath();
+			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid instruction:" + fightInstructions + "\nYour options are [fight/run]");
 			EventDataController.removeInstructions(fightInstructions);

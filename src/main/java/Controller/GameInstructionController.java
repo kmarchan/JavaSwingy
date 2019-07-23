@@ -53,8 +53,7 @@ public class GameInstructionController {
 						EventDataController.removeInstructions(gameInstructions);
 						displayGameView();
 					}
-				gameInstructions = EventDataController.getInstruction();
-
+					gameInstructions = EventDataController.getInstruction();
 			}
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid instruction:" + gameInstructions+ "\nYour options are [north, south, east, west and exit]");

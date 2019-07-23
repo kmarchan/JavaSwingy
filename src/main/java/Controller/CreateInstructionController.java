@@ -69,10 +69,10 @@ public class CreateInstructionController {
                                 System.out.println("Invalid Create Instruction:" + createInstructions);
                             }
                         }
-                        EventDataController.removeInstructions(createInstructions);
+                        EventDataController.removeInstructions("CreateInstructionController");
                     }
-                }
 				createInstructions = EventDataController.getInstruction();
+			}
         } catch (IllegalArgumentException e) {
 			try {
 				int in = Integer.parseInt(createInstructions);
@@ -84,7 +84,7 @@ public class CreateInstructionController {
 			} catch (NumberFormatException ex) {
 				setName(createInstructions);
 			}
-            EventDataController.removeInstructions(createInstructions);
+            EventDataController.removeInstructions("CreateInstructionController");
         }
     }
 }

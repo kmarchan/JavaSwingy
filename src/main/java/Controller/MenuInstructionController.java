@@ -46,13 +46,13 @@ class MenuInstructionController {
 								System.out.println("Invalid Menu Instruction: " + EventDataController.getInstruction());
 							}
 						}
-						EventDataController.removeInstructions(EventDataController.getInstruction());
+						EventDataController.removeInstructions("MenuInstructionController");
 					}
 				instructions = EventDataController.getInstruction();
 			}
 		} catch (IllegalArgumentException | InputException e){
 			System.out.println("Invalid Menu Instruction: " + EventDataController.getInstruction());
-			EventDataController.removeInstructions(EventDataController.getInstruction());
+			EventDataController.removeInstructions("MenuInstructionController");
 			instructionParse();
 		}
 	}

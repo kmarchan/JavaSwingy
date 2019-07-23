@@ -44,8 +44,8 @@ public class ArtifactPickupInstructionController {
 						}
 						EventDataController.removeInstructions(responseInstructions);
 					}
+					responseInstructions = EventDataController.getInstruction();
 				}
-				responseInstructions = EventDataController.getInstruction();
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid instruction:" + responseInstructions + "\nYour options are [y/n]");
 			EventDataController.removeInstructions(responseInstructions);

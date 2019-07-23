@@ -35,10 +35,10 @@ class LoadInstructionController {
                                 System.out.println("Invalid Load instruction:" + loadInstructions);
                             }
                         }
+                        EventDataController.removeInstructions(loadInstructions);
                     }
-					EventDataController.removeInstructions(loadInstructions);
+                    loadInstructions = EventDataController.getInstruction();
                 }
-                loadInstructions = EventDataController.getInstruction();
         } catch (IllegalArgumentException e) {
             try {
                 int in = Integer.parseInt(loadInstructions);

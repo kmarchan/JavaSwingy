@@ -19,7 +19,7 @@ public class GameOverInstructionController {
 			GameOver.displayGameOver();
 			Instruction = EventDataController.getInstruction();
 			while (StateManager.status == END_LOOP) {
-					if (Instruction != null) {
+					if (Instruction != "") {
 						switch (instruction.valueOf(Instruction.toLowerCase())) {
 							case exit:
 								System.exit(0);
@@ -30,8 +30,8 @@ public class GameOverInstructionController {
 						}
 						EventDataController.removeInstructions(Instruction);
 					}
+					Instruction = EventDataController.getInstruction();
 				}
-				Instruction = EventDataController.getInstruction();
 		} catch (IllegalArgumentException e) {
 			System.out.println("Invalid Over Instruction:" + Instruction + "\n[exit] is your only option");
 			EventDataController.removeInstructions(Instruction);
