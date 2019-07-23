@@ -53,16 +53,20 @@ public class GameController {
 		victim.takeDamage(victim, attacker.getAttackPnts() - victim.getDefencePnts());
 		victim.setDefencePnts((victim.getDefencePnts() <= attacker.getAttackPnts()) ? 0 : (victim.getDefencePnts() - attacker.getAttackPnts()));
 		GameModel.addFightCommentary(attacker.getName() + " attacks " + victim.getName() + " and did " + attacker.getAttackPnts() + " damage!");
+		System.out.println(attacker.getName() + " attacks " + victim.getName() + " and did " + attacker.getAttackPnts() + " damage!");
 	}
 
 	static void run(){
 		int rn = new Random().nextInt(100);
+		// TODO remove test print
+		System.out.println(rn);
 		if (rn % 2 == 0) {
 			GameModel.runAway(EventDataController.getHero());
 			StateManager.status = GAME_LOOP;
 		}
 		else {
 			GameModel.addFightCommentary(EventDataController.getHero().getName() + " failed to run away");
+			System.out.println(EventDataController.getHero().getName() + " failed to run away");
 			attack(EventDataController.getFoe(), EventDataController.getHero());
 		}
 	}

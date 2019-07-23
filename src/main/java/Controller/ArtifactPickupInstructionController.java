@@ -4,7 +4,6 @@ import Model.Artifacts.Artifact;
 import Utils.ArtifactFactory;
 import View.ArtifactPickupView;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
@@ -13,7 +12,6 @@ import static Controller.ApplicationController.GAME_LOOP;
 
 public class ArtifactPickupInstructionController {
 	private static List<String> responseInstructions;
-	@Getter	@Setter private static boolean artifactView = false;
 	@Getter private static Artifact drop;
 
 	enum response {
@@ -40,11 +38,11 @@ public class ArtifactPickupInstructionController {
 						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.get(i).toLowerCase())) {
 							case y:
 								EventDataController.getHero().equipArtifact(EventDataController.getHero(), drop);
-								setArtifactView(false);
+//								setArtifactView(false);
 								StateManager.status = GAME_LOOP;
 								break;
 							case n:
-								setArtifactView(false);
+//								setArtifactView(false);
 								StateManager.status = GAME_LOOP;
 								break;
 

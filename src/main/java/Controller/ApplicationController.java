@@ -14,8 +14,6 @@ public class ApplicationController {
 
 	static public void createWindow(){
 		BaseWindow.createBaseWindow();
-//		MainMenu.displayMainMenu();
-//		EventDataController.setIsRunning(true);
 	}
 
 	static void closeApplication(){
