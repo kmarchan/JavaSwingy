@@ -4,14 +4,10 @@ import Storage.HeroStorage;
 import View.BaseWindow;
 import View.LoadHero;
 
-import java.util.List;
-
-import static Controller.ApplicationController.GAME_LOOP;
-import static Controller.ApplicationController.LOAD_LOOP;
-import static Controller.ApplicationController.MENU_LOOP;
+import static Controller.ApplicationController.*;
 
 class LoadInstructionController {
-    private static List<String> loadInstructions;
+    private static String loadInstructions;
 
     enum instruction{
         menu,
@@ -19,19 +15,16 @@ class LoadInstructionController {
     }
 
     static void loadInstructionParse() {
-        int instructionIndex = 0;
-        System.out.println("\nTo select your previous save please enter the index of the correct hero listed below:");
+		System.out.println("\nTo select your previous save please enter the index of the correct hero listed below:");
         for (int h = 0; h < HeroStorage.savedHeroes.size(); h ++) {
             System.out.println(h + ": " + HeroStorage.loadToString(HeroStorage.savedHeroes.get(h)));
         }
         try {
             LoadHero.displayLoadHero();
-            loadInstructions = EventDataController.getInstructions();
+            loadInstructions = EventDataController.getInstruction();
             while (StateManager.status == LOAD_LOOP) {
-                for (int i = 0; i < loadInstructions.size(); i++) {
-                    instructionIndex = i;
-                    if (loadInstructions.get(i) != null) {
-                        switch (instruction.valueOf(loadInstructions.get(i).toLowerCase())) {
+                    if (loadInstructions != "") {
+                        switch (instruction.valueOf(loadInstructions.toLowerCase())) {
                             case menu:
                                 StateManager.status = MENU_LOOP;
                                 break;
@@ -39,17 +32,16 @@ class LoadInstructionController {
                                 BaseWindow.showBaseWindow();
                                 break;
                             default: {
-                                System.out.println("Invalid Load instruction:" + loadInstructions.get(i));
+                                System.out.println("Invalid Load instruction:" + loadInstructions);
                             }
                         }
                     }
-					EventDataController.removeInstructions(loadInstructions.get(i));
+					EventDataController.removeInstructions(loadInstructions);
                 }
-                loadInstructions = EventDataController.getInstructions();
-            }
+                loadInstructions = EventDataController.getInstruction();
         } catch (IllegalArgumentException e) {
             try {
-                int in = Integer.parseInt(loadInstructions.get(instructionIndex));
+                int in = Integer.parseInt(loadInstructions);
                 if (in >= 0 && in < HeroStorage.savedHeroes.size()) {
                     EventDataController.setHero(HeroStorage.savedHeroes.get(in));
                     StateManager.status = GAME_LOOP;
@@ -63,10 +55,10 @@ class LoadInstructionController {
             }
 
         } finally {
-            if (loadInstructions.size() != 0) {
-                EventDataController.removeInstructions(loadInstructions.get(instructionIndex));
+            if (loadInstructions != "") {
+                EventDataController.removeInstructions(loadInstructions);
             }
-			loadInstructions = EventDataController.getInstructions();
+			loadInstructions = EventDataController.getInstruction();
 		}
     }
 }

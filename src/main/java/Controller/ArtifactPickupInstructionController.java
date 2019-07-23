@@ -5,13 +5,11 @@ import Utils.ArtifactFactory;
 import View.ArtifactPickupView;
 import lombok.Getter;
 
-import java.util.List;
-
 import static Controller.ApplicationController.ART_LOOP;
 import static Controller.ApplicationController.GAME_LOOP;
 
 public class ArtifactPickupInstructionController {
-	private static List<String> responseInstructions;
+	private static String responseInstructions;
 	@Getter private static Artifact drop;
 
 	enum response {
@@ -20,44 +18,37 @@ public class ArtifactPickupInstructionController {
 	}
 
 	static void ArtifactInstructionParse() {
-		int instructionIndex = 0;
 		try {
-
 			drop = ArtifactFactory.createArtifact(EventDataController.getFoe().getLevel());
 			ArtifactPickupView.displayArtifactPickupView();
-			responseInstructions = EventDataController.getInstructions();
+			responseInstructions = EventDataController.getInstruction();
 			System.out.println(EventDataController.getFoe().getName() +
 					" was killed and has dropped " +
 					ArtifactPickupInstructionController.getDrop().getName() +
 					" (" + ArtifactPickupInstructionController.getDrop().getClass().getSimpleName() +
 					" buff = " + ArtifactPickupInstructionController.getDrop().getBuff() + ")\nWould you like to equip it? [y/n] ");
 			while (StateManager.status == ART_LOOP) {
-				for (int i = 0; i < responseInstructions.size(); i++) {
-					instructionIndex = i;
-					if (responseInstructions.get(i) != null) {
-						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.get(i).toLowerCase())) {
+					if (responseInstructions != "") {
+						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.toLowerCase())) {
 							case y:
 								EventDataController.getHero().equipArtifact(EventDataController.getHero(), drop);
-//								setArtifactView(false);
 								StateManager.status = GAME_LOOP;
 								break;
 							case n:
-//								setArtifactView(false);
 								StateManager.status = GAME_LOOP;
 								break;
 
 							default: {
-								System.out.println("Invalid Artifact Instruction:" + responseInstructions.get(i));
+								System.out.println("Invalid Artifact Instruction:" + responseInstructions);
 							}
 						}
-						EventDataController.removeInstructions(responseInstructions.get(i));
+						EventDataController.removeInstructions(responseInstructions);
 					}
 				}
-				responseInstructions = EventDataController.getInstructions();
-			}
+				responseInstructions = EventDataController.getInstruction();
 		} catch (IllegalArgumentException e) {
-			System.out.println("Invalid instruction:" + responseInstructions.get(instructionIndex) + "\nYour options are [y/n]");
-			EventDataController.removeInstructions(responseInstructions.get(instructionIndex));
+			System.out.println("Invalid instruction:" + responseInstructions + "\nYour options are [y/n]");
+			EventDataController.removeInstructions(responseInstructions);
 			ArtifactInstructionParse();
 		}
 	}
