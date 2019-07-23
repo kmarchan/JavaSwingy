@@ -6,8 +6,7 @@ import java.util.Random;
 
 public class Foe extends Character {
 	private static int hitPoints = 8;
-	// TODO CHANGE ATTACK back to 7
-	private static int attack = 0;
+	private static int attack = 7;
 	private static int defence = 8;
 	private static int foeLevel;
 	private static String [] foeName = { "Billy the Bad", "Stan of Sternness", "Frightening Freddie", "Malicious Mike", "Salivating Steve", "Tyrone the Tyrant", "Melvin the Moody", "Antagonizing Antony"};

@@ -58,8 +58,6 @@ public class GameController {
 
 	static void run(){
 		int rn = new Random().nextInt(100);
-		// TODO remove test print
-		System.out.println(rn);
 		if (rn % 2 == 0) {
 			GameModel.runAway(EventDataController.getHero());
 			StateManager.status = GAME_LOOP;
