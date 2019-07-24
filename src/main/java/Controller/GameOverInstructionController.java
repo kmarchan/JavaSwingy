@@ -7,7 +7,7 @@ import lombok.Setter;
 import static Controller.ApplicationController.END_LOOP;
 import static Controller.ApplicationController.SLEEP_TIME;
 
-public class GameOverInstructionController {
+class GameOverInstructionController {
 	@Getter
 	@Setter
 	private static String Instruction;
@@ -16,12 +16,13 @@ public class GameOverInstructionController {
 	}
 
 	static void GameOverInstructionParse() {
+		System.out.println("You have died!\n[exit] is your only option");
 		try {
 			GameOver.displayGameOver();
 			Instruction = EventDataController.getInstruction();
 			while (StateManager.status == END_LOOP) {
 				Thread.sleep( SLEEP_TIME);
-					if (Instruction != "") {
+					if (!Instruction.equals("")) {
 						switch (instruction.valueOf(Instruction.toLowerCase())) {
 							case exit:
 								System.exit(0);

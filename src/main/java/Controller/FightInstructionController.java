@@ -30,7 +30,7 @@ public class FightInstructionController {
 			fightInstructions = EventDataController.getInstruction();
 			while (StateManager.status == FIGHT_LOOP) {
 				Thread.sleep( SLEEP_TIME);
-					if (fightInstructions != "") {
+					if (!fightInstructions.equals("")) {
 						switch (Instructions.valueOf(fightInstructions.toLowerCase())) {
 							case fight: {
 								GameController.attack(EventDataController.getHero(), EventDataController.getFoe());
@@ -55,7 +55,9 @@ public class FightInstructionController {
 				checkForDeath();
 			}
 		} catch (IllegalArgumentException | InterruptedException e) {
-			System.out.println("Invalid instruction:" + fightInstructions + "\nYour options are [fight/run]");
+			if (!fightInstructions.equals("h") && !fightInstructions.equals("help")) {
+				System.out.println("Invalid instruction:" + fightInstructions);
+			}
 			EventDataController.removeInstructions();
 			fightInstructionParse();
 		}

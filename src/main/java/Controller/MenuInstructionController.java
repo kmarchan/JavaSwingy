@@ -25,7 +25,7 @@ class MenuInstructionController {
 			while(StateManager.status == MENU_LOOP) {
 				Thread.sleep( SLEEP_TIME);
 
-				if (instructions != "") {
+				if (!instructions.equals("")) {
 						System.out.println(instructions);
 
 						switch (Instruction.valueOf(instructions.toLowerCase())) {
@@ -52,7 +52,9 @@ class MenuInstructionController {
 					instructions = EventDataController.getInstruction();
 			}
 		} catch (IllegalArgumentException | InputException | InterruptedException e){
-			System.out.println("Invalid Menu Instruction: " + EventDataController.getInstruction());
+			if (!instructions.equals("h") && !instructions.equals("help")) {
+				System.out.println("Invalid Menu Instruction: " + instructions);
+			}
 			EventDataController.removeInstructions();
 			instructionParse();
 		}

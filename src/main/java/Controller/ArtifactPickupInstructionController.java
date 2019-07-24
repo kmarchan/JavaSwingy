@@ -28,7 +28,7 @@ public class ArtifactPickupInstructionController {
 					" buff = " + ArtifactPickupInstructionController.getDrop().getBuff() + ")\nWould you like to equip it? [y/n] ");
 			while (StateManager.status == ART_LOOP) {
 				Thread.sleep( SLEEP_TIME);
-					if (responseInstructions != "") {
+					if (!responseInstructions.equals("")) {
 						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.toLowerCase())) {
 							case y:
 								EventDataController.getHero().equipArtifact(EventDataController.getHero(), drop);
@@ -47,7 +47,10 @@ public class ArtifactPickupInstructionController {
 					responseInstructions = EventDataController.getInstruction();
 				}
 		} catch (IllegalArgumentException | InterruptedException e) {
-			System.out.println("Invalid instruction:" + responseInstructions + "\nYour options are [y/n]");
+			if (!responseInstructions.equals("h") && !responseInstructions.equals("help")) {
+				System.out.println("Invalid instruction:" + responseInstructions);
+			}
+			System.out.println("\nYour options are [y/n]");
 			EventDataController.removeInstructions();
 			ArtifactInstructionParse();
 		}

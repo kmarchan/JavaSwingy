@@ -7,7 +7,7 @@ import static Controller.ApplicationController.GAME_LOOP;
 import static Controller.ApplicationController.SLEEP_TIME;
 import static View.GameView.displayGameView;
 
-public class GameInstructionController {
+class GameInstructionController {
 	private static String gameInstructions;
 
 	enum Instruction {
@@ -21,12 +21,13 @@ public class GameInstructionController {
 
 
 	static void gameInstructionParse() {
+		System.out.println("\nYour options are [north, south, east, west and exit]");
 		try {
 			gameInstructions = EventDataController.getInstruction();
 			displayGameView();
 			while ( StateManager.status == GAME_LOOP) {
 				Thread.sleep( SLEEP_TIME);
-					if (gameInstructions != "") {
+					if (!gameInstructions.equals("")) {
 						switch (Instruction.valueOf(gameInstructions.toLowerCase())) {
 							case exit: {
 								System.out.println("killing program");
@@ -58,7 +59,9 @@ public class GameInstructionController {
 					gameInstructions = EventDataController.getInstruction();
 			}
 		} catch (IllegalArgumentException | InterruptedException e) {
-			System.out.println("Invalid instruction:" + gameInstructions+ "\nYour options are [north, south, east, west and exit]");
+			if (!gameInstructions.equals("h") && !gameInstructions.equals("help")) {
+				System.out.println("Invalid instruction:" + gameInstructions);
+			}
 			EventDataController.removeInstructions();
 			gameInstructionParse();
 		}
