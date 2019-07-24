@@ -32,6 +32,7 @@ public class GameController {
 				}
 				else {
 					mapString.append(" # ");
+					System.out.println("we should fight now.");
 					EventDataController.setFoe(CharacterFactory.createFoe(EventDataController.getHero().getLevel()));
 					StateManager.status = FIGHT_LOOP;
 				}

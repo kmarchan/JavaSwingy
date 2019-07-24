@@ -1,14 +1,14 @@
 package Controller;
 
-import Storage.HeroStorage;
-import View.*;
 import Exception.InputException;
-import java.util.List;
+import Storage.HeroStorage;
+import View.BaseWindow;
+import View.MainMenu;
 
 import static Controller.ApplicationController.*;
 
 class MenuInstructionController {
-	private static List<String> instructions;
+	private static String instructions;
 
 	enum Instruction {
 		loadgame,
@@ -18,18 +18,18 @@ class MenuInstructionController {
 	}
 
 	static void instructionParse() {
-		int instructionIndex = 0;
 		System.out.println( "\nMain Menu\nYour options are [exit, newgame, loadgame and gui]");
 		try {
 			MainMenu.displayMainMenu();
-			instructions = EventDataController.getInstructions();
+			instructions = EventDataController.getInstruction();
 			while(StateManager.status == MENU_LOOP) {
-				for (int i=0; i < instructions.size(); i++) {
-					instructionIndex = i;
-					if (instructions.get(i) != null) {
-						switch (Instruction.valueOf(instructions.get(i).toLowerCase())) {
+				Thread.sleep( SLEEP_TIME);
+
+				if (!instructions.equals("")) {
+						System.out.println(instructions);
+
+						switch (Instruction.valueOf(instructions.toLowerCase())) {
 							case exit: {
-//								EventDataController.setIsRunning(false);
 								ApplicationController.closeApplication();
 								break;
 							}
@@ -44,21 +44,19 @@ class MenuInstructionController {
 								HeroStorage.getSavedHeroes();
 								break;
 							default: {
-								System.out.println("Invalid Menu Instruction: " + instructions.get(i));
+								System.out.println("Invalid Menu Instruction: " + instructions);
 							}
 						}
-						EventDataController.removeInstructions(instructions.get(i));
+						EventDataController.removeInstructions();
 					}
-				}
-				instructions = EventDataController.getInstructions();
+					instructions = EventDataController.getInstruction();
 			}
-		} catch (IllegalArgumentException e){
-			System.out.println("Invalid Menu Instruction: " + instructions.get(instructionIndex));
-			EventDataController.removeInstructions(instructions.get(instructionIndex));
+		} catch (IllegalArgumentException | InputException | InterruptedException e){
+			if (!instructions.equals("h") && !instructions.equals("help")) {
+				System.out.println("Invalid Menu Instruction: " + instructions);
+			}
+			EventDataController.removeInstructions();
 			instructionParse();
-		}
-		catch (InputException e) {
-			e.printStackTrace();
 		}
 	}
 }

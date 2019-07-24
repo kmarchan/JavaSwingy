@@ -145,4 +145,17 @@ public class Hero extends Character {
 				equipped[ARMOUR].getName() + ", " + equipped[ARMOUR].getBuff() + ", " +
 				equipped[HELM].getName() + ", " + equipped[HELM].getBuff();
     }
+
+
+	public String saveStringFirst(){
+		return  name + ", " +
+				experiencePnts + ", " +
+				type + ", " +
+				level + ", " +
+				hitPnts + ", " +
+				defencePnts + ", " +
+				equipped[WEAPON].getName() + ", " + equipped[WEAPON].getBuff() + ", " +
+				equipped[ARMOUR].getName() + ", " + equipped[ARMOUR].getBuff() + ", " +
+				equipped[HELM].getName() + ", " + equipped[HELM].getBuff();
+	}
 }

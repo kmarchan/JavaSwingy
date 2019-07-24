@@ -1,17 +1,13 @@
 package Controller;
 
-import lombok.Getter;
-import lombok.Setter;
-
+import Exception.InputException;
 import static Controller.ApplicationController.*;
 
 public class StateManager {
 	public static int status;
 
-	@Setter	@Getter private static boolean game = true;
-
-	public static void stateManager(){
-		while(game) {
+	public static void stateManager() throws InputException {
+		while(true) {
 			if (status == GAME_LOOP) {
 				GameInstructionController.gameInstructionParse();
 			} else if (status == MENU_LOOP) {
@@ -20,7 +16,7 @@ public class StateManager {
 				LoadInstructionController.loadInstructionParse();
 			} else if (status == CREATE_LOOP) {
 				CreateInstructionController.createInstructionParse();
-			}else if (status == FIGHT_LOOP) {
+			} else if (status == FIGHT_LOOP) {
 				FightInstructionController.fightInstructionParse();
 			} else 	if (status == ART_LOOP) {
 				ArtifactPickupInstructionController.ArtifactInstructionParse();

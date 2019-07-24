@@ -5,8 +5,7 @@ import Model.Characters.Hero;
 import Utils.CharacterFactory;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class EventDataController {
@@ -14,14 +13,14 @@ public class EventDataController {
     @Getter @Setter private static Hero hero;
     @Getter @Setter private static Foe foe;
 	@Getter	@Setter	private static String map;
-	@Getter 		private static List<String> instructions = new ArrayList<>();
+	@Getter private static String instruction = "";
 
 	public static void readStdinAsync(){
 		new Thread(new Runnable() {
 			Scanner input = new Scanner(System.in);
 
 			public void run() {
-					while (StateManager.isGame() && input.hasNext()) {
+					while (input.hasNext()) {
 						addInstructions(input.nextLine());
 					}
 					System.out.println("ended stdin");
@@ -31,11 +30,11 @@ public class EventDataController {
 	}
 
 	public static void addInstructions(String input) {
-		instructions.add(input);
+			instruction = input;
 	}
 
-	static void removeInstructions(String input) {
-			instructions.remove(input);
+	static void removeInstructions() {
+		instruction = "";
 	}
 
     public static void createHeroPreview(String type, String name)

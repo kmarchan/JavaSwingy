@@ -3,13 +3,12 @@ package Controller;
 import Model.GameModel;
 import View.BaseWindow;
 
-import java.util.List;
-
 import static Controller.ApplicationController.GAME_LOOP;
+import static Controller.ApplicationController.SLEEP_TIME;
 import static View.GameView.displayGameView;
 
-public class GameInstructionController {
-	private static List<String> gameInstructions;
+class GameInstructionController {
+	private static String gameInstructions;
 
 	enum Instruction {
 		north,
@@ -22,17 +21,15 @@ public class GameInstructionController {
 
 
 	static void gameInstructionParse() {
-		int instructionIndex = 0;
+		System.out.println("\nYour options are [north, south, east, west and exit]");
 		try {
-			gameInstructions = EventDataController.getInstructions();
+			gameInstructions = EventDataController.getInstruction();
 			displayGameView();
 			while ( StateManager.status == GAME_LOOP) {
-				for (int i = 0; i < gameInstructions.size(); i++) {
-					instructionIndex = i;
-					if (gameInstructions.get(i) != null) {
-						switch (Instruction.valueOf(gameInstructions.get(i).toLowerCase())) {
+				Thread.sleep( SLEEP_TIME);
+					if (!gameInstructions.equals("")) {
+						switch (Instruction.valueOf(gameInstructions.toLowerCase())) {
 							case exit: {
-//								EventDataController.setIsRunning(false);
 								System.out.println("killing program");
 								ApplicationController.closeApplication();
 								break;
@@ -53,18 +50,19 @@ public class GameInstructionController {
 								GameModel.moveEast(EventDataController.getHero());
 								break;
 							default: {
-								System.out.println("Invalid Game Instruction:" + gameInstructions.get(i));
+								System.out.println("Invalid Game Instruction:" + gameInstructions);
 							}
 						}
-						EventDataController.removeInstructions(gameInstructions.get(i));
+						EventDataController.removeInstructions();
 						displayGameView();
 					}
-				}
-				gameInstructions = EventDataController.getInstructions();
+					gameInstructions = EventDataController.getInstruction();
 			}
-		} catch (IllegalArgumentException e) {
-			System.out.println("Invalid instruction:" + gameInstructions.get(instructionIndex)+ "\nYour options are [north, south, east, west and exit]");
-			EventDataController.removeInstructions(gameInstructions.get(instructionIndex));
+		} catch (IllegalArgumentException | InterruptedException e) {
+			if (!gameInstructions.equals("h") && !gameInstructions.equals("help")) {
+				System.out.println("Invalid instruction:" + gameInstructions);
+			}
+			EventDataController.removeInstructions();
 			gameInstructionParse();
 		}
 	}

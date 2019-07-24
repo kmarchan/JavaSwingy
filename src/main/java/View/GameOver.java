@@ -23,5 +23,4 @@ public class GameOver extends BaseWindow{
 		frame.setContentPane(new GameOver().gameOver);
 		frame.pack();
 	}
-
 }

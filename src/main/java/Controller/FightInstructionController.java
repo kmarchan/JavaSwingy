@@ -14,7 +14,7 @@ import static Controller.ApplicationController.*;
 
 public class FightInstructionController {
 
-	private static List<String> fightInstructions;
+	private static String fightInstructions;
 	@Getter @Setter private static List<String> fightCommentary;
 
 	enum Instructions {
@@ -23,45 +23,42 @@ public class FightInstructionController {
 	}
 
 	static void fightInstructionParse() {
-		int instructionIndex = 0;
 		System.out.println("You have encountered: " + EventDataController.getFoe().getName() + "\nWill you: [fight] or [run?] \n");
 		setFightCommentary(new ArrayList<>());
 		try {
 			FightView.displayFightView();
-			fightInstructions = EventDataController.getInstructions();
+			fightInstructions = EventDataController.getInstruction();
 			while (StateManager.status == FIGHT_LOOP) {
-				if (fightInstructions.size() > 0)
-					System.out.println(fightInstructions.size());
-				for (int i = 0; i < fightInstructions.size(); i++) {
-					instructionIndex = i;
-					if (fightInstructions.get(i) != null) {
-						switch (Instructions.valueOf(fightInstructions.get(i).toLowerCase())) {
+				Thread.sleep( SLEEP_TIME);
+					if (!fightInstructions.equals("")) {
+						switch (Instructions.valueOf(fightInstructions.toLowerCase())) {
 							case fight: {
 								GameController.attack(EventDataController.getHero(), EventDataController.getFoe());
 								if (!checkForDeath()) {
 									GameController.attack(EventDataController.getFoe(), EventDataController.getHero());
 								}
-								EventDataController.removeInstructions(fightInstructions.get(i));
+								EventDataController.removeInstructions();
 								break;
 							}
 							case run:
 								GameController.run();
-								EventDataController.removeInstructions(fightInstructions.get(i));
+								EventDataController.removeInstructions();
 								break;
 							default:
-								System.out.println("Invalid Fight Instruction:" + fightInstructions.get(i));
-								EventDataController.removeInstructions(fightInstructions.get(i));
+								System.out.println("Invalid Fight Instruction:" + fightInstructions);
+								EventDataController.removeInstructions();
 								break;
 						}
 						FightView.displayFightView();
 					}
-				}
-				fightInstructions = EventDataController.getInstructions();
+				fightInstructions = EventDataController.getInstruction();
 				checkForDeath();
 			}
-		} catch (IllegalArgumentException e) {
-			System.out.println("Invalid instruction:" + fightInstructions.get(instructionIndex) + "\nYour options are [fight/run]");
-			EventDataController.removeInstructions(fightInstructions.get(instructionIndex));
+		} catch (IllegalArgumentException | InterruptedException e) {
+			if (!fightInstructions.equals("h") && !fightInstructions.equals("help")) {
+				System.out.println("Invalid instruction:" + fightInstructions);
+			}
+			EventDataController.removeInstructions();
 			fightInstructionParse();
 		}
 	}
@@ -82,7 +79,6 @@ public class FightInstructionController {
 
 	private static void searchForDrop() {
 		if (new Random().nextInt() % 2 == 0) {
-//			ArtifactPickupInstructionController.setArtifactView(true)
 			StateManager.status = ART_LOOP;
 		}
 		else StateManager.status = GAME_LOOP;

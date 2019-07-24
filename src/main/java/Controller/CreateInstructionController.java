@@ -6,14 +6,10 @@ import View.NewGame;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
-import static Controller.ApplicationController.CREATE_LOOP;
-import static Controller.ApplicationController.GAME_LOOP;
-import static Controller.ApplicationController.MENU_LOOP;
+import static Controller.ApplicationController.*;
 
 public class CreateInstructionController {
-    private static List<String> createInstructions;
+    private static String createInstructions;
     @Getter @Setter
 	private static int type = 0;
 	@Getter @Setter
@@ -26,7 +22,6 @@ public class CreateInstructionController {
     }
 
     static void createInstructionParse() {
-        int instructionIndex = 0;
 		if (name == null && type ==  0)System.out.println("\nPlease select a hero type by index and enter name:" +
 				"\nHero Types: " +
 				"\n[1] Black Mage, " +
@@ -41,12 +36,11 @@ public class CreateInstructionController {
 		}
         try {
             NewGame.displayNewGame();
-            createInstructions = EventDataController.getInstructions();
+            createInstructions = EventDataController.getInstruction();
             while (StateManager.status == CREATE_LOOP) {
-                for (int i = 0; i < createInstructions.size(); i++) {
-                    instructionIndex = i;
-                    if (createInstructions.get(i) != null) {
-                        switch (instruction.valueOf(createInstructions.get(i).toLowerCase())) {
+				Thread.sleep( SLEEP_TIME);
+                    if (createInstructions != "") {
+                        switch (instruction.valueOf(createInstructions.toLowerCase())) {
                             case menu:
                             	setName(null);
                             	setType(0);
@@ -73,27 +67,25 @@ public class CreateInstructionController {
 								}
                                 break;
                             default: {
-                                System.out.println("Invalid Create Instruction:" + createInstructions.get(i));
+                                System.out.println("Invalid Create Instruction:" + createInstructions);
                             }
                         }
-                        EventDataController.removeInstructions(createInstructions.get(i));
+                        EventDataController.removeInstructions();
                     }
-                }
-				createInstructions = EventDataController.getInstructions();
-
+				createInstructions = EventDataController.getInstruction();
 			}
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | InterruptedException e) {
 			try {
-				int in = Integer.parseInt(createInstructions.get(instructionIndex));
+				int in = Integer.parseInt(createInstructions);
 				if (in > 0 && in <= 4) {
 					setType(in);
 				} else {
 					System.out.println("index " + in + " invalid: enter a number from 1 to 4");
 				}
 			} catch (NumberFormatException ex) {
-				setName(createInstructions.get(instructionIndex));
+				setName(createInstructions);
 			}
-            EventDataController.removeInstructions(createInstructions.get(instructionIndex));
+            EventDataController.removeInstructions();
         }
     }
 }

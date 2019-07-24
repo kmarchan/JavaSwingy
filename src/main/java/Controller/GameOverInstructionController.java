@@ -4,44 +4,40 @@ import View.GameOver;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 import static Controller.ApplicationController.END_LOOP;
+import static Controller.ApplicationController.SLEEP_TIME;
 
-public class GameOverInstructionController {
+class GameOverInstructionController {
 	@Getter
 	@Setter
-	private static List<String> Instruction;
+	private static String Instruction;
 	enum instruction {
 		exit,
 	}
 
 	static void GameOverInstructionParse() {
-		int instructionIndex = 0;
+		System.out.println("You have died!\n[exit] is your only option");
 		try {
 			GameOver.displayGameOver();
-			Instruction = EventDataController.getInstructions();
+			Instruction = EventDataController.getInstruction();
 			while (StateManager.status == END_LOOP) {
-				for (int i = 0; i < Instruction.size(); i++) {
-					instructionIndex = i;
-					if (Instruction.get(i) != null) {
-						switch (instruction.valueOf(Instruction.get(i).toLowerCase())) {
+				Thread.sleep( SLEEP_TIME);
+					if (!Instruction.equals("")) {
+						switch (instruction.valueOf(Instruction.toLowerCase())) {
 							case exit:
-								StateManager.setGame(false);
 								System.exit(0);
 								break;
 							default: {
-								System.out.println("Invalid instruction:" + Instruction.get(i));
+								System.out.println("Invalid instruction:" + Instruction);
 							}
 						}
-						EventDataController.removeInstructions(Instruction.get(i));
+						EventDataController.removeInstructions();
 					}
+					Instruction = EventDataController.getInstruction();
 				}
-				Instruction = EventDataController.getInstructions();
-			}
-		} catch (IllegalArgumentException e) {
-			System.out.println("Invalid Over Instruction:" + Instruction.get(instructionIndex) + "\n[exit] is your only option");
-			EventDataController.removeInstructions(Instruction.get(instructionIndex));
+		} catch (IllegalArgumentException | InterruptedException e) {
+			System.out.println("Invalid Over Instruction:" + Instruction + "\n[exit] is your only option");
+			EventDataController.removeInstructions();
 			GameOverInstructionParse();
 		}
 	}
