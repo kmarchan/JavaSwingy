@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import static Controller.ApplicationController.END_LOOP;
+import static Controller.ApplicationController.SLEEP_TIME;
 
 public class GameOverInstructionController {
 	@Getter
@@ -19,6 +20,7 @@ public class GameOverInstructionController {
 			GameOver.displayGameOver();
 			Instruction = EventDataController.getInstruction();
 			while (StateManager.status == END_LOOP) {
+				Thread.sleep( SLEEP_TIME);
 					if (Instruction != "") {
 						switch (instruction.valueOf(Instruction.toLowerCase())) {
 							case exit:
@@ -32,7 +34,7 @@ public class GameOverInstructionController {
 					}
 					Instruction = EventDataController.getInstruction();
 				}
-		} catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException | InterruptedException e) {
 			System.out.println("Invalid Over Instruction:" + Instruction + "\n[exit] is your only option");
 			EventDataController.removeInstructions();
 			GameOverInstructionParse();

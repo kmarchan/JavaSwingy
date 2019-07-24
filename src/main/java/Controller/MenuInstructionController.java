@@ -22,10 +22,13 @@ class MenuInstructionController {
 		try {
 			MainMenu.displayMainMenu();
 			instructions = EventDataController.getInstruction();
-			System.out.println(EventDataController.getInstruction());
 			while(StateManager.status == MENU_LOOP) {
-					if (EventDataController.getInstruction() != "") {
-						switch (Instruction.valueOf(EventDataController.getInstruction().toLowerCase())) {
+				Thread.sleep( SLEEP_TIME);
+
+				if (instructions != "") {
+						System.out.println(instructions);
+
+						switch (Instruction.valueOf(instructions.toLowerCase())) {
 							case exit: {
 								ApplicationController.closeApplication();
 								break;
@@ -41,14 +44,14 @@ class MenuInstructionController {
 								HeroStorage.getSavedHeroes();
 								break;
 							default: {
-								System.out.println("Invalid Menu Instruction: " + EventDataController.getInstruction());
+								System.out.println("Invalid Menu Instruction: " + instructions);
 							}
 						}
 						EventDataController.removeInstructions();
 					}
 					instructions = EventDataController.getInstruction();
 			}
-		} catch (IllegalArgumentException | InputException e){
+		} catch (IllegalArgumentException | InputException | InterruptedException e){
 			System.out.println("Invalid Menu Instruction: " + EventDataController.getInstruction());
 			EventDataController.removeInstructions();
 			instructionParse();

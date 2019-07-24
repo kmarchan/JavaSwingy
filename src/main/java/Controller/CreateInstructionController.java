@@ -38,6 +38,7 @@ public class CreateInstructionController {
             NewGame.displayNewGame();
             createInstructions = EventDataController.getInstruction();
             while (StateManager.status == CREATE_LOOP) {
+				Thread.sleep( SLEEP_TIME);
                     if (createInstructions != "") {
                         switch (instruction.valueOf(createInstructions.toLowerCase())) {
                             case menu:
@@ -73,7 +74,7 @@ public class CreateInstructionController {
                     }
 				createInstructions = EventDataController.getInstruction();
 			}
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | InterruptedException e) {
 			try {
 				int in = Integer.parseInt(createInstructions);
 				if (in > 0 && in <= 4) {

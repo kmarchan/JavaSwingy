@@ -13,7 +13,7 @@ public class EventDataController {
     @Getter @Setter private static Hero hero;
     @Getter @Setter private static Foe foe;
 	@Getter	@Setter	private static String map;
-	@Getter private static String instruction = "";
+	@Getter private static String instruction = "menu";
 
 	public static void readStdinAsync(){
 		new Thread(new Runnable() {

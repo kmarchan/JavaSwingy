@@ -11,6 +11,7 @@ public class ApplicationController {
 	static final int END_LOOP = 4;
 	static final int LOAD_LOOP = 5;
 	static final int CREATE_LOOP = 6;
+	static final int SLEEP_TIME = 5;
 
 	static public void createWindow(){
 		BaseWindow.createBaseWindow();

@@ -23,6 +23,7 @@ class LoadInstructionController {
             LoadHero.displayLoadHero();
             loadInstructions = EventDataController.getInstruction();
             while (StateManager.status == LOAD_LOOP) {
+				Thread.sleep( SLEEP_TIME);
                     if (loadInstructions != "") {
                         switch (instruction.valueOf(loadInstructions.toLowerCase())) {
                             case menu:
@@ -39,7 +40,7 @@ class LoadInstructionController {
                     }
                     loadInstructions = EventDataController.getInstruction();
                 }
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException | InterruptedException e) {
             try {
                 int in = Integer.parseInt(loadInstructions);
                 if (in >= 0 && in < HeroStorage.savedHeroes.size()) {

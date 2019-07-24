@@ -4,6 +4,7 @@ import Model.GameModel;
 import View.BaseWindow;
 
 import static Controller.ApplicationController.GAME_LOOP;
+import static Controller.ApplicationController.SLEEP_TIME;
 import static View.GameView.displayGameView;
 
 public class GameInstructionController {
@@ -24,6 +25,7 @@ public class GameInstructionController {
 			gameInstructions = EventDataController.getInstruction();
 			displayGameView();
 			while ( StateManager.status == GAME_LOOP) {
+				Thread.sleep( SLEEP_TIME);
 					if (gameInstructions != "") {
 						switch (Instruction.valueOf(gameInstructions.toLowerCase())) {
 							case exit: {
@@ -55,7 +57,7 @@ public class GameInstructionController {
 					}
 					gameInstructions = EventDataController.getInstruction();
 			}
-		} catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException | InterruptedException e) {
 			System.out.println("Invalid instruction:" + gameInstructions+ "\nYour options are [north, south, east, west and exit]");
 			EventDataController.removeInstructions();
 			gameInstructionParse();

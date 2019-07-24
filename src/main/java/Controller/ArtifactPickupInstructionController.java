@@ -5,8 +5,7 @@ import Utils.ArtifactFactory;
 import View.ArtifactPickupView;
 import lombok.Getter;
 
-import static Controller.ApplicationController.ART_LOOP;
-import static Controller.ApplicationController.GAME_LOOP;
+import static Controller.ApplicationController.*;
 
 public class ArtifactPickupInstructionController {
 	private static String responseInstructions;
@@ -28,6 +27,7 @@ public class ArtifactPickupInstructionController {
 					" (" + ArtifactPickupInstructionController.getDrop().getClass().getSimpleName() +
 					" buff = " + ArtifactPickupInstructionController.getDrop().getBuff() + ")\nWould you like to equip it? [y/n] ");
 			while (StateManager.status == ART_LOOP) {
+				Thread.sleep( SLEEP_TIME);
 					if (responseInstructions != "") {
 						switch (ArtifactPickupInstructionController.response.valueOf(responseInstructions.toLowerCase())) {
 							case y:
@@ -46,7 +46,7 @@ public class ArtifactPickupInstructionController {
 					}
 					responseInstructions = EventDataController.getInstruction();
 				}
-		} catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException | InterruptedException e) {
 			System.out.println("Invalid instruction:" + responseInstructions + "\nYour options are [y/n]");
 			EventDataController.removeInstructions();
 			ArtifactInstructionParse();

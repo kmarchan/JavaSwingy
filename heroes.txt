@@ -1,1 +1,1 @@
-Beadle the Bug Killer, 590, Knight, 1, 41, 0, a Pebble, 10, Wooden Armour, 10, a Judicial Wig, 10
+Beadle the Bug Killer, 590, Knight, 1, 41, 0, a Pebble, 10, Wooden Armour, 10, a Judicial Wig, 10, asdasdasd, 90, Elf, 1, 36, 20, a Twig, 0, a Loincloth, 0, an Old Boot, 0, asdasdasd, 35, Elf, 2, 72, 40, a Stone, 10, a Loincloth, 0, an Old Boot, 0, asdasdasd, 245, Elf, 2, 72, 40, a Stone, 10, a Loincloth, 0, an Old Boot, 0, asdasdasd, 245, Elf, 2, 72, 40, a Stone, 10, a Loincloth, 0, an Old Boot, 0

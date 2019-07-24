@@ -29,6 +29,7 @@ public class FightInstructionController {
 			FightView.displayFightView();
 			fightInstructions = EventDataController.getInstruction();
 			while (StateManager.status == FIGHT_LOOP) {
+				Thread.sleep( SLEEP_TIME);
 					if (fightInstructions != "") {
 						switch (Instructions.valueOf(fightInstructions.toLowerCase())) {
 							case fight: {
@@ -53,7 +54,7 @@ public class FightInstructionController {
 				fightInstructions = EventDataController.getInstruction();
 				checkForDeath();
 			}
-		} catch (IllegalArgumentException e) {
+		} catch (IllegalArgumentException | InterruptedException e) {
 			System.out.println("Invalid instruction:" + fightInstructions + "\nYour options are [fight/run]");
 			EventDataController.removeInstructions();
 			fightInstructionParse();
