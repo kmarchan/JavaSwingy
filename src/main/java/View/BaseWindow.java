@@ -11,6 +11,10 @@ import static Model.Artifacts.Artifact.*;
 public class BaseWindow extends JFrame{
 	static JFrame frame ;
 
+	static public void hideBaseWindow() {
+		frame.setVisible(false);
+	}
+
 	static public void createBaseWindow(){
 		frame = new JFrame("Swingy");
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

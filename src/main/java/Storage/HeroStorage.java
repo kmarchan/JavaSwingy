@@ -79,11 +79,19 @@ public class HeroStorage {
         if (EventDataController.getHero() != null) {
 			try {
 				FileWriter fr = new FileWriter("heroes.txt", true);
-				fr.write(hero.saveString());
+				fr.write( checkFileEmpty() ? hero.saveStringFirst() : hero.saveString());
 				fr.close();
 			} catch (IOException e) {
 				System.out.println("Cannot save game.");
 			}
 		}
     }
+
+    public static boolean checkFileEmpty() {
+    	File loadFile = new File("heroes.txt");
+    	if (loadFile.length() == 0)
+    		return true;
+    	else
+    		return false;
+	}
 }
