@@ -4,7 +4,7 @@
 Swingy is a project produced by Academy+Plus where we develop a rudimentary text based game with a focus on a graphical user interface and related software design patterns in Java. 
 PDF instructions here: [Swingy.en.pdf](https://github.com/kmarchan/JavaSwingy/files/3430515/Swingy.en.pdf)
 
-My game is by no means perfect but I feel like it is a fun exercise to practice java and object oriented programming it is by no means perfect. We were tasked with utilizing a MVC design pattern which I am certain I have not done correctly. 
+The game is fun exercise to practice java and object oriented programming it is by no means perfect. We were tasked with utilizing a MVC design pattern which I am certain I have not done correctly. 
 
 Compile and run the program with ```./running.txt``` maven will need to be installed
 The next few images show the views of the game however it can be played in terminal and in the GUI.
